@@ -1,0 +1,87 @@
+grammar com.volkmann.Jararaca with org.eclipse.xtext.common.Terminals
+
+generate jararaca "http://www.volkmann.com/Jararaca"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Program:
+	'program' '{'
+		statements+=Statement*
+	'}';
+
+Statement:
+	VariableDeclaration | Assignment;
+
+VariableDeclaration:
+	'var' name=ID type=Type ('=' initialValue=Expression)? ';';
+
+Assignment:
+	name=ID '=' value=Expression ';';
+
+Type:
+	IntType | FloatType | BooleanType | StringType;
+
+IntType:
+	{IntType} 'int';
+
+FloatType:
+	{FloatType} 'float';
+
+BooleanType:
+	{BooleanType} 'boolean';
+
+StringType:
+	{StringType} 'string';
+
+Expression:
+	OrExpression;
+
+OrExpression returns Expression:
+	AndExpression ({OrExpression.left=current} 'or' right=AndExpression)*;
+
+AndExpression returns Expression:
+	NotExpression ({AndExpression.left=current} 'and' right=NotExpression)*;
+
+NotExpression returns Expression:
+	{NotExpression} 'not' operand=NotExpression | Comparison;
+
+Comparison returns Expression:
+	Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?;
+
+Addition returns Expression:
+	Multiplication ({Addition.left=current} operator=('+' | '-') right=Multiplication)*;
+
+Multiplication returns Expression:
+	Primary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*;
+
+Primary returns Expression:
+	{ParenExpression} '(' inner=Expression ')'
+	| IntLiteral
+	| FloatLiteral
+	| BooleanLiteral
+	| StringLiteral
+	| VariableReference;
+
+IntLiteral:
+	value=INT;
+
+FloatLiteral:
+	value=FLOAT;
+
+BooleanLiteral:
+	TrueLiteral | FalseLiteral;
+
+TrueLiteral:
+	{TrueLiteral} 'true';
+
+FalseLiteral:
+	{FalseLiteral} 'false';
+
+StringLiteral:
+	value=STRING;
+
+VariableReference:
+	name=ID;
+
+terminal FLOAT returns ecore::EDouble:
+	('0'..'9')+ '.' ('0'..'9')+;
