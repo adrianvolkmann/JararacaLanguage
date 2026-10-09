@@ -406,9 +406,9 @@ ruleFloatType returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='float'
+		otherlv_1='decimal'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFloatTypeAccess().getFloatKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFloatTypeAccess().getDecimalKeyword_1());
 		}
 	)
 ;
@@ -574,11 +574,11 @@ ruleAndExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getAndExpressionAccess().getNotExpressionParserRuleCall_0());
+			newCompositeNode(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0());
 		}
-		this_NotExpression_0=ruleNotExpression
+		this_Comparison_0=ruleComparison
 		{
-			$current = $this_NotExpression_0.current;
+			$current = $this_Comparison_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		(
@@ -596,9 +596,9 @@ ruleAndExpression returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightNotExpressionParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_2_0());
 					}
-					lv_right_3_0=ruleNotExpression
+					lv_right_3_0=ruleComparison
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAndExpressionRule());
@@ -607,72 +607,12 @@ ruleAndExpression returns [EObject current=null]
 							$current,
 							"right",
 							lv_right_3_0,
-							"com.volkmann.Jararaca.NotExpression");
+							"com.volkmann.Jararaca.Comparison");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-	)
-;
-
-// Entry rule entryRuleNotExpression
-entryRuleNotExpression returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNotExpressionRule()); }
-	iv_ruleNotExpression=ruleNotExpression
-	{ $current=$iv_ruleNotExpression.current; }
-	EOF;
-
-// Rule NotExpression
-ruleNotExpression returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getNotExpressionAccess().getNotExpressionAction_0_0(),
-						$current);
-				}
-			)
-			otherlv_1='not'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getNotExpressionAccess().getNotKeyword_0_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getNotExpressionAccess().getOperandNotExpressionParserRuleCall_0_2_0());
-					}
-					lv_operand_2_0=ruleNotExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getNotExpressionRule());
-						}
-						set(
-							$current,
-							"operand",
-							lv_operand_2_0,
-							"com.volkmann.Jararaca.NotExpression");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getNotExpressionAccess().getComparisonParserRuleCall_1());
-		}
-		this_Comparison_3=ruleComparison
-		{
-			$current = $this_Comparison_3.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
@@ -798,7 +738,7 @@ ruleComparison returns [EObject current=null]
 					}
 				)
 			)
-		)?
+		)*
 	)
 ;
 
@@ -901,11 +841,11 @@ ruleMultiplication returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getMultiplicationAccess().getPrimaryParserRuleCall_0());
+			newCompositeNode(grammarAccess.getMultiplicationAccess().getUnaryParserRuleCall_0());
 		}
-		this_Primary_0=rulePrimary
+		this_Unary_0=ruleUnary
 		{
-			$current = $this_Primary_0.current;
+			$current = $this_Unary_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		(
@@ -957,9 +897,9 @@ ruleMultiplication returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrimaryParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightUnaryParserRuleCall_1_2_0());
 					}
-					lv_right_3_0=rulePrimary
+					lv_right_3_0=ruleUnary
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMultiplicationRule());
@@ -968,12 +908,105 @@ ruleMultiplication returns [EObject current=null]
 							$current,
 							"right",
 							lv_right_3_0,
-							"com.volkmann.Jararaca.Primary");
+							"com.volkmann.Jararaca.Unary");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleUnary
+entryRuleUnary returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getUnaryRule()); }
+	iv_ruleUnary=ruleUnary
+	{ $current=$iv_ruleUnary.current; }
+	EOF;
+
+// Rule Unary
+ruleUnary returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getUnaryAccess().getNotExpressionAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='not'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getUnaryAccess().getNotKeyword_0_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_0_2_0());
+					}
+					lv_operand_2_0=ruleUnary
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getUnaryRule());
+						}
+						set(
+							$current,
+							"operand",
+							lv_operand_2_0,
+							"com.volkmann.Jararaca.Unary");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getUnaryAccess().getNegativeAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_4='-'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getUnaryAccess().getHyphenMinusKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_1_2_0());
+					}
+					lv_operand_5_0=ruleUnary
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getUnaryRule());
+						}
+						set(
+							$current,
+							"operand",
+							lv_operand_5_0,
+							"com.volkmann.Jararaca.Unary");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getUnaryAccess().getPrimaryParserRuleCall_2());
+		}
+		this_Primary_6=rulePrimary
+		{
+			$current = $this_Primary_6.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1315,15 +1348,15 @@ ruleVariableReference returns [EObject current=null]
 
 RULE_FLOAT : ('0'..'9')+ '.' ('0'..'9')+;
 
+RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\n'|'\r')?;
+
+RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
-
-RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
-
-RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 

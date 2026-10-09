@@ -2,7 +2,7 @@
 
 A linguagem tem uma lista. Ela cresce quando um valor entra. Não há array de tamanho fixo. O detalhe de memória fica escondido.
 
-O tipo é escrito uma vez, na declaração. `list<int>` é uma lista de `int`. O mesmo vale para `list<float>`, `list<boolean>` e `list<string>`.
+O tipo é escrito uma vez, na declaração. `list<int>` é uma lista de `int`. O mesmo vale para `list<decimal>`, `list<boolean>` e `list<string>`.
 
 ## Valor
 
@@ -17,7 +17,7 @@ var vazia list<int> = [];
 
 `var numeros list<int>;` sem valor nasce sem lista, como qualquer variável. Lista vazia e variável ainda não atribuída são coisas diferentes. A leitura antes da atribuição é erro, como está em [tipos.md](tipos.md).
 
-Os valores têm de ser do tipo do elemento. `list<int>` não recebe `float`, `boolean` nem `string`.
+Os valores têm de ser do tipo do elemento. `list<int>` não recebe `decimal`, `boolean` nem `string`.
 
 ## Operações
 

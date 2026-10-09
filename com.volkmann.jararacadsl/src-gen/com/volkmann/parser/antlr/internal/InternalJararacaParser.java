@@ -21,10 +21,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJararacaParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'program'", "'{'", "'}'", "'var'", "'='", "';'", "'int'", "'float'", "'boolean'", "'string'", "'or'", "'and'", "'not'", "'=='", "'!='", "'<='", "'>='", "'<'", "'>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'('", "')'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'program'", "'{'", "'}'", "'var'", "'='", "';'", "'int'", "'decimal'", "'boolean'", "'string'", "'or'", "'and'", "'=='", "'!='", "'<='", "'>='", "'<'", "'>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'not'", "'('", "')'", "'true'", "'false'"
     };
     public static final int RULE_STRING=7;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__37=37;
@@ -53,7 +53,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=5;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=8;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int RULE_FLOAT=6;
     public static final int T__24=24;
@@ -1020,7 +1020,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatType"
-    // InternalJararaca.g:394:1: ruleFloatType returns [EObject current=null] : ( () otherlv_1= 'float' ) ;
+    // InternalJararaca.g:394:1: ruleFloatType returns [EObject current=null] : ( () otherlv_1= 'decimal' ) ;
     public final EObject ruleFloatType() throws RecognitionException {
         EObject current = null;
 
@@ -1030,11 +1030,11 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:400:2: ( ( () otherlv_1= 'float' ) )
-            // InternalJararaca.g:401:2: ( () otherlv_1= 'float' )
+            // InternalJararaca.g:400:2: ( ( () otherlv_1= 'decimal' ) )
+            // InternalJararaca.g:401:2: ( () otherlv_1= 'decimal' )
             {
-            // InternalJararaca.g:401:2: ( () otherlv_1= 'float' )
-            // InternalJararaca.g:402:3: () otherlv_1= 'float'
+            // InternalJararaca.g:401:2: ( () otherlv_1= 'decimal' )
+            // InternalJararaca.g:402:3: () otherlv_1= 'decimal'
             {
             // InternalJararaca.g:402:3: ()
             // InternalJararaca.g:403:4: 
@@ -1049,7 +1049,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getFloatTypeAccess().getFloatKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getFloatTypeAccess().getDecimalKeyword_1());
             		
 
             }
@@ -1533,12 +1533,12 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAndExpression"
-    // InternalJararaca.g:568:1: ruleAndExpression returns [EObject current=null] : (this_NotExpression_0= ruleNotExpression ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )* ) ;
+    // InternalJararaca.g:568:1: ruleAndExpression returns [EObject current=null] : (this_Comparison_0= ruleComparison ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )* ) ;
     public final EObject ruleAndExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_2=null;
-        EObject this_NotExpression_0 = null;
+        EObject this_Comparison_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -1547,25 +1547,25 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:574:2: ( (this_NotExpression_0= ruleNotExpression ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )* ) )
-            // InternalJararaca.g:575:2: (this_NotExpression_0= ruleNotExpression ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )* )
+            // InternalJararaca.g:574:2: ( (this_Comparison_0= ruleComparison ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )* ) )
+            // InternalJararaca.g:575:2: (this_Comparison_0= ruleComparison ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )* )
             {
-            // InternalJararaca.g:575:2: (this_NotExpression_0= ruleNotExpression ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )* )
-            // InternalJararaca.g:576:3: this_NotExpression_0= ruleNotExpression ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )*
+            // InternalJararaca.g:575:2: (this_Comparison_0= ruleComparison ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )* )
+            // InternalJararaca.g:576:3: this_Comparison_0= ruleComparison ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getAndExpressionAccess().getNotExpressionParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0());
             		
             pushFollow(FOLLOW_12);
-            this_NotExpression_0=ruleNotExpression();
+            this_Comparison_0=ruleComparison();
 
             state._fsp--;
 
 
-            			current = this_NotExpression_0;
+            			current = this_Comparison_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalJararaca.g:584:3: ( () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) ) )*
+            // InternalJararaca.g:584:3: ( () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) ) )*
             loop6:
             do {
                 int alt6=2;
@@ -1578,7 +1578,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalJararaca.g:585:4: () otherlv_2= 'and' ( (lv_right_3_0= ruleNotExpression ) )
+            	    // InternalJararaca.g:585:4: () otherlv_2= 'and' ( (lv_right_3_0= ruleComparison ) )
             	    {
             	    // InternalJararaca.g:585:4: ()
             	    // InternalJararaca.g:586:5: 
@@ -1595,17 +1595,17 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             	    				newLeafNode(otherlv_2, grammarAccess.getAndExpressionAccess().getAndKeyword_1_1());
             	    			
-            	    // InternalJararaca.g:596:4: ( (lv_right_3_0= ruleNotExpression ) )
-            	    // InternalJararaca.g:597:5: (lv_right_3_0= ruleNotExpression )
+            	    // InternalJararaca.g:596:4: ( (lv_right_3_0= ruleComparison ) )
+            	    // InternalJararaca.g:597:5: (lv_right_3_0= ruleComparison )
             	    {
-            	    // InternalJararaca.g:597:5: (lv_right_3_0= ruleNotExpression )
-            	    // InternalJararaca.g:598:6: lv_right_3_0= ruleNotExpression
+            	    // InternalJararaca.g:597:5: (lv_right_3_0= ruleComparison )
+            	    // InternalJararaca.g:598:6: lv_right_3_0= ruleComparison
             	    {
 
-            	    						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightNotExpressionParserRuleCall_1_2_0());
+            	    						newCompositeNode(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_2_0());
             	    					
             	    pushFollow(FOLLOW_12);
-            	    lv_right_3_0=ruleNotExpression();
+            	    lv_right_3_0=ruleComparison();
 
             	    state._fsp--;
 
@@ -1617,7 +1617,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"right",
             	    							lv_right_3_0,
-            	    							"com.volkmann.Jararaca.NotExpression");
+            	    							"com.volkmann.Jararaca.Comparison");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -1657,177 +1657,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAndExpression"
 
 
-    // $ANTLR start "entryRuleNotExpression"
-    // InternalJararaca.g:620:1: entryRuleNotExpression returns [EObject current=null] : iv_ruleNotExpression= ruleNotExpression EOF ;
-    public final EObject entryRuleNotExpression() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleNotExpression = null;
-
-
-        try {
-            // InternalJararaca.g:620:54: (iv_ruleNotExpression= ruleNotExpression EOF )
-            // InternalJararaca.g:621:2: iv_ruleNotExpression= ruleNotExpression EOF
-            {
-             newCompositeNode(grammarAccess.getNotExpressionRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleNotExpression=ruleNotExpression();
-
-            state._fsp--;
-
-             current =iv_ruleNotExpression; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleNotExpression"
-
-
-    // $ANTLR start "ruleNotExpression"
-    // InternalJararaca.g:627:1: ruleNotExpression returns [EObject current=null] : ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) ) | this_Comparison_3= ruleComparison ) ;
-    public final EObject ruleNotExpression() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_operand_2_0 = null;
-
-        EObject this_Comparison_3 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalJararaca.g:633:2: ( ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) ) | this_Comparison_3= ruleComparison ) )
-            // InternalJararaca.g:634:2: ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) ) | this_Comparison_3= ruleComparison )
-            {
-            // InternalJararaca.g:634:2: ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) ) | this_Comparison_3= ruleComparison )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==24) ) {
-                alt7=1;
-            }
-            else if ( ((LA7_0>=RULE_ID && LA7_0<=RULE_STRING)||LA7_0==36||(LA7_0>=38 && LA7_0<=39)) ) {
-                alt7=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
-
-                throw nvae;
-            }
-            switch (alt7) {
-                case 1 :
-                    // InternalJararaca.g:635:3: ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) )
-                    {
-                    // InternalJararaca.g:635:3: ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) ) )
-                    // InternalJararaca.g:636:4: () otherlv_1= 'not' ( (lv_operand_2_0= ruleNotExpression ) )
-                    {
-                    // InternalJararaca.g:636:4: ()
-                    // InternalJararaca.g:637:5: 
-                    {
-
-                    					current = forceCreateModelElement(
-                    						grammarAccess.getNotExpressionAccess().getNotExpressionAction_0_0(),
-                    						current);
-                    				
-
-                    }
-
-                    otherlv_1=(Token)match(input,24,FOLLOW_8); 
-
-                    				newLeafNode(otherlv_1, grammarAccess.getNotExpressionAccess().getNotKeyword_0_1());
-                    			
-                    // InternalJararaca.g:647:4: ( (lv_operand_2_0= ruleNotExpression ) )
-                    // InternalJararaca.g:648:5: (lv_operand_2_0= ruleNotExpression )
-                    {
-                    // InternalJararaca.g:648:5: (lv_operand_2_0= ruleNotExpression )
-                    // InternalJararaca.g:649:6: lv_operand_2_0= ruleNotExpression
-                    {
-
-                    						newCompositeNode(grammarAccess.getNotExpressionAccess().getOperandNotExpressionParserRuleCall_0_2_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_operand_2_0=ruleNotExpression();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNotExpressionRule());
-                    						}
-                    						set(
-                    							current,
-                    							"operand",
-                    							lv_operand_2_0,
-                    							"com.volkmann.Jararaca.NotExpression");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalJararaca.g:668:3: this_Comparison_3= ruleComparison
-                    {
-
-                    			newCompositeNode(grammarAccess.getNotExpressionAccess().getComparisonParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Comparison_3=ruleComparison();
-
-                    state._fsp--;
-
-
-                    			current = this_Comparison_3;
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleNotExpression"
-
-
     // $ANTLR start "entryRuleComparison"
-    // InternalJararaca.g:680:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // InternalJararaca.g:620:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final EObject entryRuleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -1835,8 +1666,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:680:51: (iv_ruleComparison= ruleComparison EOF )
-            // InternalJararaca.g:681:2: iv_ruleComparison= ruleComparison EOF
+            // InternalJararaca.g:620:51: (iv_ruleComparison= ruleComparison EOF )
+            // InternalJararaca.g:621:2: iv_ruleComparison= ruleComparison EOF
             {
              newCompositeNode(grammarAccess.getComparisonRule()); 
             pushFollow(FOLLOW_1);
@@ -1863,7 +1694,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparison"
-    // InternalJararaca.g:687:1: ruleComparison returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )? ) ;
+    // InternalJararaca.g:627:1: ruleComparison returns [EObject current=null] : (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) ;
     public final EObject ruleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -1882,11 +1713,11 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:693:2: ( (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )? ) )
-            // InternalJararaca.g:694:2: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )? )
+            // InternalJararaca.g:633:2: ( (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* ) )
+            // InternalJararaca.g:634:2: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
             {
-            // InternalJararaca.g:694:2: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )? )
-            // InternalJararaca.g:695:3: this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )?
+            // InternalJararaca.g:634:2: (this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )* )
+            // InternalJararaca.g:635:3: this_Addition_0= ruleAddition ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getComparisonAccess().getAdditionParserRuleCall_0());
@@ -1900,216 +1731,223 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             			current = this_Addition_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalJararaca.g:703:3: ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalJararaca.g:643:3: ( () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-            if ( ((LA9_0>=25 && LA9_0<=30)) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalJararaca.g:704:4: () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) )
-                    {
-                    // InternalJararaca.g:704:4: ()
-                    // InternalJararaca.g:705:5: 
-                    {
-
-                    					current = forceCreateModelElementAndSet(
-                    						grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0(),
-                    						current);
-                    				
-
-                    }
-
-                    // InternalJararaca.g:711:4: ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) )
-                    // InternalJararaca.g:712:5: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) )
-                    {
-                    // InternalJararaca.g:712:5: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) )
-                    // InternalJararaca.g:713:6: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' )
-                    {
-                    // InternalJararaca.g:713:6: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' )
-                    int alt8=6;
-                    switch ( input.LA(1) ) {
-                    case 25:
-                        {
-                        alt8=1;
-                        }
-                        break;
-                    case 26:
-                        {
-                        alt8=2;
-                        }
-                        break;
-                    case 27:
-                        {
-                        alt8=3;
-                        }
-                        break;
-                    case 28:
-                        {
-                        alt8=4;
-                        }
-                        break;
-                    case 29:
-                        {
-                        alt8=5;
-                        }
-                        break;
-                    case 30:
-                        {
-                        alt8=6;
-                        }
-                        break;
-                    default:
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 8, 0, input);
-
-                        throw nvae;
-                    }
-
-                    switch (alt8) {
-                        case 1 :
-                            // InternalJararaca.g:714:7: lv_operator_2_1= '=='
-                            {
-                            lv_operator_2_1=(Token)match(input,25,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_1, grammarAccess.getComparisonAccess().getOperatorEqualsSignEqualsSignKeyword_1_1_0_0());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_1, null);
-                            						
-
-                            }
-                            break;
-                        case 2 :
-                            // InternalJararaca.g:725:7: lv_operator_2_2= '!='
-                            {
-                            lv_operator_2_2=(Token)match(input,26,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_2, grammarAccess.getComparisonAccess().getOperatorExclamationMarkEqualsSignKeyword_1_1_0_1());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_2, null);
-                            						
-
-                            }
-                            break;
-                        case 3 :
-                            // InternalJararaca.g:736:7: lv_operator_2_3= '<='
-                            {
-                            lv_operator_2_3=(Token)match(input,27,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_3, grammarAccess.getComparisonAccess().getOperatorLessThanSignEqualsSignKeyword_1_1_0_2());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_3, null);
-                            						
-
-                            }
-                            break;
-                        case 4 :
-                            // InternalJararaca.g:747:7: lv_operator_2_4= '>='
-                            {
-                            lv_operator_2_4=(Token)match(input,28,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_4, grammarAccess.getComparisonAccess().getOperatorGreaterThanSignEqualsSignKeyword_1_1_0_3());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_4, null);
-                            						
-
-                            }
-                            break;
-                        case 5 :
-                            // InternalJararaca.g:758:7: lv_operator_2_5= '<'
-                            {
-                            lv_operator_2_5=(Token)match(input,29,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_5, grammarAccess.getComparisonAccess().getOperatorLessThanSignKeyword_1_1_0_4());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_5, null);
-                            						
-
-                            }
-                            break;
-                        case 6 :
-                            // InternalJararaca.g:769:7: lv_operator_2_6= '>'
-                            {
-                            lv_operator_2_6=(Token)match(input,30,FOLLOW_8); 
-
-                            							newLeafNode(lv_operator_2_6, grammarAccess.getComparisonAccess().getOperatorGreaterThanSignKeyword_1_1_0_5());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getComparisonRule());
-                            							}
-                            							setWithLastConsumed(current, "operator", lv_operator_2_6, null);
-                            						
-
-                            }
-                            break;
-
-                    }
+                if ( ((LA8_0>=24 && LA8_0<=29)) ) {
+                    alt8=1;
+                }
 
 
-                    }
+                switch (alt8) {
+            	case 1 :
+            	    // InternalJararaca.g:644:4: () ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) ) ( (lv_right_3_0= ruleAddition ) )
+            	    {
+            	    // InternalJararaca.g:644:4: ()
+            	    // InternalJararaca.g:645:5: 
+            	    {
+
+            	    					current = forceCreateModelElementAndSet(
+            	    						grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0(),
+            	    						current);
+            	    				
+
+            	    }
+
+            	    // InternalJararaca.g:651:4: ( ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) ) )
+            	    // InternalJararaca.g:652:5: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) )
+            	    {
+            	    // InternalJararaca.g:652:5: ( (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' ) )
+            	    // InternalJararaca.g:653:6: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' )
+            	    {
+            	    // InternalJararaca.g:653:6: (lv_operator_2_1= '==' | lv_operator_2_2= '!=' | lv_operator_2_3= '<=' | lv_operator_2_4= '>=' | lv_operator_2_5= '<' | lv_operator_2_6= '>' )
+            	    int alt7=6;
+            	    switch ( input.LA(1) ) {
+            	    case 24:
+            	        {
+            	        alt7=1;
+            	        }
+            	        break;
+            	    case 25:
+            	        {
+            	        alt7=2;
+            	        }
+            	        break;
+            	    case 26:
+            	        {
+            	        alt7=3;
+            	        }
+            	        break;
+            	    case 27:
+            	        {
+            	        alt7=4;
+            	        }
+            	        break;
+            	    case 28:
+            	        {
+            	        alt7=5;
+            	        }
+            	        break;
+            	    case 29:
+            	        {
+            	        alt7=6;
+            	        }
+            	        break;
+            	    default:
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 7, 0, input);
+
+            	        throw nvae;
+            	    }
+
+            	    switch (alt7) {
+            	        case 1 :
+            	            // InternalJararaca.g:654:7: lv_operator_2_1= '=='
+            	            {
+            	            lv_operator_2_1=(Token)match(input,24,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_1, grammarAccess.getComparisonAccess().getOperatorEqualsSignEqualsSignKeyword_1_1_0_0());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_1, null);
+            	            						
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalJararaca.g:665:7: lv_operator_2_2= '!='
+            	            {
+            	            lv_operator_2_2=(Token)match(input,25,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_2, grammarAccess.getComparisonAccess().getOperatorExclamationMarkEqualsSignKeyword_1_1_0_1());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_2, null);
+            	            						
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            // InternalJararaca.g:676:7: lv_operator_2_3= '<='
+            	            {
+            	            lv_operator_2_3=(Token)match(input,26,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_3, grammarAccess.getComparisonAccess().getOperatorLessThanSignEqualsSignKeyword_1_1_0_2());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_3, null);
+            	            						
+
+            	            }
+            	            break;
+            	        case 4 :
+            	            // InternalJararaca.g:687:7: lv_operator_2_4= '>='
+            	            {
+            	            lv_operator_2_4=(Token)match(input,27,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_4, grammarAccess.getComparisonAccess().getOperatorGreaterThanSignEqualsSignKeyword_1_1_0_3());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_4, null);
+            	            						
+
+            	            }
+            	            break;
+            	        case 5 :
+            	            // InternalJararaca.g:698:7: lv_operator_2_5= '<'
+            	            {
+            	            lv_operator_2_5=(Token)match(input,28,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_5, grammarAccess.getComparisonAccess().getOperatorLessThanSignKeyword_1_1_0_4());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_5, null);
+            	            						
+
+            	            }
+            	            break;
+            	        case 6 :
+            	            // InternalJararaca.g:709:7: lv_operator_2_6= '>'
+            	            {
+            	            lv_operator_2_6=(Token)match(input,29,FOLLOW_8); 
+
+            	            							newLeafNode(lv_operator_2_6, grammarAccess.getComparisonAccess().getOperatorGreaterThanSignKeyword_1_1_0_5());
+            	            						
+
+            	            							if (current==null) {
+            	            								current = createModelElement(grammarAccess.getComparisonRule());
+            	            							}
+            	            							setWithLastConsumed(current, "operator", lv_operator_2_6, null);
+            	            						
+
+            	            }
+            	            break;
+
+            	    }
 
 
-                    }
-
-                    // InternalJararaca.g:782:4: ( (lv_right_3_0= ruleAddition ) )
-                    // InternalJararaca.g:783:5: (lv_right_3_0= ruleAddition )
-                    {
-                    // InternalJararaca.g:783:5: (lv_right_3_0= ruleAddition )
-                    // InternalJararaca.g:784:6: lv_right_3_0= ruleAddition
-                    {
-
-                    						newCompositeNode(grammarAccess.getComparisonAccess().getRightAdditionParserRuleCall_1_2_0());
-                    					
-                    pushFollow(FOLLOW_2);
-                    lv_right_3_0=ruleAddition();
-
-                    state._fsp--;
+            	    }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getComparisonRule());
-                    						}
-                    						set(
-                    							current,
-                    							"right",
-                    							lv_right_3_0,
-                    							"com.volkmann.Jararaca.Addition");
-                    						afterParserOrEnumRuleCall();
-                    					
+            	    }
 
-                    }
+            	    // InternalJararaca.g:722:4: ( (lv_right_3_0= ruleAddition ) )
+            	    // InternalJararaca.g:723:5: (lv_right_3_0= ruleAddition )
+            	    {
+            	    // InternalJararaca.g:723:5: (lv_right_3_0= ruleAddition )
+            	    // InternalJararaca.g:724:6: lv_right_3_0= ruleAddition
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getComparisonAccess().getRightAdditionParserRuleCall_1_2_0());
+            	    					
+            	    pushFollow(FOLLOW_13);
+            	    lv_right_3_0=ruleAddition();
+
+            	    state._fsp--;
 
 
-                    }
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getComparisonRule());
+            	    						}
+            	    						set(
+            	    							current,
+            	    							"right",
+            	    							lv_right_3_0,
+            	    							"com.volkmann.Jararaca.Addition");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
 
 
-                    }
-                    break;
+            	    }
 
-            }
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
 
 
             }
@@ -2134,7 +1972,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddition"
-    // InternalJararaca.g:806:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
+    // InternalJararaca.g:746:1: entryRuleAddition returns [EObject current=null] : iv_ruleAddition= ruleAddition EOF ;
     public final EObject entryRuleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -2142,8 +1980,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:806:49: (iv_ruleAddition= ruleAddition EOF )
-            // InternalJararaca.g:807:2: iv_ruleAddition= ruleAddition EOF
+            // InternalJararaca.g:746:49: (iv_ruleAddition= ruleAddition EOF )
+            // InternalJararaca.g:747:2: iv_ruleAddition= ruleAddition EOF
             {
              newCompositeNode(grammarAccess.getAdditionRule()); 
             pushFollow(FOLLOW_1);
@@ -2170,7 +2008,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddition"
-    // InternalJararaca.g:813:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
+    // InternalJararaca.g:753:1: ruleAddition returns [EObject current=null] : (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) ;
     public final EObject ruleAddition() throws RecognitionException {
         EObject current = null;
 
@@ -2185,11 +2023,11 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:819:2: ( (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
-            // InternalJararaca.g:820:2: (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // InternalJararaca.g:759:2: ( (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* ) )
+            // InternalJararaca.g:760:2: (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
             {
-            // InternalJararaca.g:820:2: (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
-            // InternalJararaca.g:821:3: this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
+            // InternalJararaca.g:760:2: (this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )* )
+            // InternalJararaca.g:761:3: this_Multiplication_0= ruleMultiplication ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0());
@@ -2203,23 +2041,23 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             			current = this_Multiplication_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalJararaca.g:829:3: ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
-            loop11:
+            // InternalJararaca.g:769:3: ( () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) ) )*
+            loop10:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( ((LA11_0>=31 && LA11_0<=32)) ) {
-                    alt11=1;
+                if ( ((LA10_0>=30 && LA10_0<=31)) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalJararaca.g:830:4: () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) )
+            	    // InternalJararaca.g:770:4: () ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) ) ( (lv_right_3_0= ruleMultiplication ) )
             	    {
-            	    // InternalJararaca.g:830:4: ()
-            	    // InternalJararaca.g:831:5: 
+            	    // InternalJararaca.g:770:4: ()
+            	    // InternalJararaca.g:771:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -2229,33 +2067,33 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalJararaca.g:837:4: ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) )
-            	    // InternalJararaca.g:838:5: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
+            	    // InternalJararaca.g:777:4: ( ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) ) )
+            	    // InternalJararaca.g:778:5: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
             	    {
-            	    // InternalJararaca.g:838:5: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
-            	    // InternalJararaca.g:839:6: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
+            	    // InternalJararaca.g:778:5: ( (lv_operator_2_1= '+' | lv_operator_2_2= '-' ) )
+            	    // InternalJararaca.g:779:6: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
             	    {
-            	    // InternalJararaca.g:839:6: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
-            	    int alt10=2;
-            	    int LA10_0 = input.LA(1);
+            	    // InternalJararaca.g:779:6: (lv_operator_2_1= '+' | lv_operator_2_2= '-' )
+            	    int alt9=2;
+            	    int LA9_0 = input.LA(1);
 
-            	    if ( (LA10_0==31) ) {
-            	        alt10=1;
+            	    if ( (LA9_0==30) ) {
+            	        alt9=1;
             	    }
-            	    else if ( (LA10_0==32) ) {
-            	        alt10=2;
+            	    else if ( (LA9_0==31) ) {
+            	        alt9=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 10, 0, input);
+            	            new NoViableAltException("", 9, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt10) {
+            	    switch (alt9) {
             	        case 1 :
-            	            // InternalJararaca.g:840:7: lv_operator_2_1= '+'
+            	            // InternalJararaca.g:780:7: lv_operator_2_1= '+'
             	            {
-            	            lv_operator_2_1=(Token)match(input,31,FOLLOW_8); 
+            	            lv_operator_2_1=(Token)match(input,30,FOLLOW_8); 
 
             	            							newLeafNode(lv_operator_2_1, grammarAccess.getAdditionAccess().getOperatorPlusSignKeyword_1_1_0_0());
             	            						
@@ -2269,9 +2107,9 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalJararaca.g:851:7: lv_operator_2_2= '-'
+            	            // InternalJararaca.g:791:7: lv_operator_2_2= '-'
             	            {
-            	            lv_operator_2_2=(Token)match(input,32,FOLLOW_8); 
+            	            lv_operator_2_2=(Token)match(input,31,FOLLOW_8); 
 
             	            							newLeafNode(lv_operator_2_2, grammarAccess.getAdditionAccess().getOperatorHyphenMinusKeyword_1_1_0_1());
             	            						
@@ -2293,11 +2131,11 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalJararaca.g:864:4: ( (lv_right_3_0= ruleMultiplication ) )
-            	    // InternalJararaca.g:865:5: (lv_right_3_0= ruleMultiplication )
+            	    // InternalJararaca.g:804:4: ( (lv_right_3_0= ruleMultiplication ) )
+            	    // InternalJararaca.g:805:5: (lv_right_3_0= ruleMultiplication )
             	    {
-            	    // InternalJararaca.g:865:5: (lv_right_3_0= ruleMultiplication )
-            	    // InternalJararaca.g:866:6: lv_right_3_0= ruleMultiplication
+            	    // InternalJararaca.g:805:5: (lv_right_3_0= ruleMultiplication )
+            	    // InternalJararaca.g:806:6: lv_right_3_0= ruleMultiplication
             	    {
 
             	    						newCompositeNode(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_2_0());
@@ -2329,7 +2167,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop10;
                 }
             } while (true);
 
@@ -2356,7 +2194,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMultiplication"
-    // InternalJararaca.g:888:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
+    // InternalJararaca.g:828:1: entryRuleMultiplication returns [EObject current=null] : iv_ruleMultiplication= ruleMultiplication EOF ;
     public final EObject entryRuleMultiplication() throws RecognitionException {
         EObject current = null;
 
@@ -2364,8 +2202,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:888:55: (iv_ruleMultiplication= ruleMultiplication EOF )
-            // InternalJararaca.g:889:2: iv_ruleMultiplication= ruleMultiplication EOF
+            // InternalJararaca.g:828:55: (iv_ruleMultiplication= ruleMultiplication EOF )
+            // InternalJararaca.g:829:2: iv_ruleMultiplication= ruleMultiplication EOF
             {
              newCompositeNode(grammarAccess.getMultiplicationRule()); 
             pushFollow(FOLLOW_1);
@@ -2392,14 +2230,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMultiplication"
-    // InternalJararaca.g:895:1: ruleMultiplication returns [EObject current=null] : (this_Primary_0= rulePrimary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )* ) ;
+    // InternalJararaca.g:835:1: ruleMultiplication returns [EObject current=null] : (this_Unary_0= ruleUnary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )* ) ;
     public final EObject ruleMultiplication() throws RecognitionException {
         EObject current = null;
 
         Token lv_operator_2_1=null;
         Token lv_operator_2_2=null;
         Token lv_operator_2_3=null;
-        EObject this_Primary_0 = null;
+        EObject this_Unary_0 = null;
 
         EObject lv_right_3_0 = null;
 
@@ -2408,41 +2246,41 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:901:2: ( (this_Primary_0= rulePrimary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )* ) )
-            // InternalJararaca.g:902:2: (this_Primary_0= rulePrimary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )* )
+            // InternalJararaca.g:841:2: ( (this_Unary_0= ruleUnary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )* ) )
+            // InternalJararaca.g:842:2: (this_Unary_0= ruleUnary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )* )
             {
-            // InternalJararaca.g:902:2: (this_Primary_0= rulePrimary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )* )
-            // InternalJararaca.g:903:3: this_Primary_0= rulePrimary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )*
+            // InternalJararaca.g:842:2: (this_Unary_0= ruleUnary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )* )
+            // InternalJararaca.g:843:3: this_Unary_0= ruleUnary ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )*
             {
 
-            			newCompositeNode(grammarAccess.getMultiplicationAccess().getPrimaryParserRuleCall_0());
+            			newCompositeNode(grammarAccess.getMultiplicationAccess().getUnaryParserRuleCall_0());
             		
             pushFollow(FOLLOW_15);
-            this_Primary_0=rulePrimary();
+            this_Unary_0=ruleUnary();
 
             state._fsp--;
 
 
-            			current = this_Primary_0;
+            			current = this_Unary_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalJararaca.g:911:3: ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) ) )*
-            loop13:
+            // InternalJararaca.g:851:3: ( () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) ) )*
+            loop12:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA13_0>=33 && LA13_0<=35)) ) {
-                    alt13=1;
+                if ( ((LA12_0>=32 && LA12_0<=34)) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt12) {
             	case 1 :
-            	    // InternalJararaca.g:912:4: () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= rulePrimary ) )
+            	    // InternalJararaca.g:852:4: () ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) ) ( (lv_right_3_0= ruleUnary ) )
             	    {
-            	    // InternalJararaca.g:912:4: ()
-            	    // InternalJararaca.g:913:5: 
+            	    // InternalJararaca.g:852:4: ()
+            	    // InternalJararaca.g:853:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -2452,42 +2290,42 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalJararaca.g:919:4: ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) )
-            	    // InternalJararaca.g:920:5: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) )
+            	    // InternalJararaca.g:859:4: ( ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) ) )
+            	    // InternalJararaca.g:860:5: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) )
             	    {
-            	    // InternalJararaca.g:920:5: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) )
-            	    // InternalJararaca.g:921:6: (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' )
+            	    // InternalJararaca.g:860:5: ( (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' ) )
+            	    // InternalJararaca.g:861:6: (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' )
             	    {
-            	    // InternalJararaca.g:921:6: (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' )
-            	    int alt12=3;
+            	    // InternalJararaca.g:861:6: (lv_operator_2_1= '*' | lv_operator_2_2= '/' | lv_operator_2_3= '%' )
+            	    int alt11=3;
             	    switch ( input.LA(1) ) {
+            	    case 32:
+            	        {
+            	        alt11=1;
+            	        }
+            	        break;
             	    case 33:
             	        {
-            	        alt12=1;
+            	        alt11=2;
             	        }
             	        break;
             	    case 34:
             	        {
-            	        alt12=2;
-            	        }
-            	        break;
-            	    case 35:
-            	        {
-            	        alt12=3;
+            	        alt11=3;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 12, 0, input);
+            	            new NoViableAltException("", 11, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt12) {
+            	    switch (alt11) {
             	        case 1 :
-            	            // InternalJararaca.g:922:7: lv_operator_2_1= '*'
+            	            // InternalJararaca.g:862:7: lv_operator_2_1= '*'
             	            {
-            	            lv_operator_2_1=(Token)match(input,33,FOLLOW_8); 
+            	            lv_operator_2_1=(Token)match(input,32,FOLLOW_8); 
 
             	            							newLeafNode(lv_operator_2_1, grammarAccess.getMultiplicationAccess().getOperatorAsteriskKeyword_1_1_0_0());
             	            						
@@ -2501,9 +2339,9 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalJararaca.g:933:7: lv_operator_2_2= '/'
+            	            // InternalJararaca.g:873:7: lv_operator_2_2= '/'
             	            {
-            	            lv_operator_2_2=(Token)match(input,34,FOLLOW_8); 
+            	            lv_operator_2_2=(Token)match(input,33,FOLLOW_8); 
 
             	            							newLeafNode(lv_operator_2_2, grammarAccess.getMultiplicationAccess().getOperatorSolidusKeyword_1_1_0_1());
             	            						
@@ -2517,9 +2355,9 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalJararaca.g:944:7: lv_operator_2_3= '%'
+            	            // InternalJararaca.g:884:7: lv_operator_2_3= '%'
             	            {
-            	            lv_operator_2_3=(Token)match(input,35,FOLLOW_8); 
+            	            lv_operator_2_3=(Token)match(input,34,FOLLOW_8); 
 
             	            							newLeafNode(lv_operator_2_3, grammarAccess.getMultiplicationAccess().getOperatorPercentSignKeyword_1_1_0_2());
             	            						
@@ -2541,17 +2379,17 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalJararaca.g:957:4: ( (lv_right_3_0= rulePrimary ) )
-            	    // InternalJararaca.g:958:5: (lv_right_3_0= rulePrimary )
+            	    // InternalJararaca.g:897:4: ( (lv_right_3_0= ruleUnary ) )
+            	    // InternalJararaca.g:898:5: (lv_right_3_0= ruleUnary )
             	    {
-            	    // InternalJararaca.g:958:5: (lv_right_3_0= rulePrimary )
-            	    // InternalJararaca.g:959:6: lv_right_3_0= rulePrimary
+            	    // InternalJararaca.g:898:5: (lv_right_3_0= ruleUnary )
+            	    // InternalJararaca.g:899:6: lv_right_3_0= ruleUnary
             	    {
 
-            	    						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightPrimaryParserRuleCall_1_2_0());
+            	    						newCompositeNode(grammarAccess.getMultiplicationAccess().getRightUnaryParserRuleCall_1_2_0());
             	    					
             	    pushFollow(FOLLOW_15);
-            	    lv_right_3_0=rulePrimary();
+            	    lv_right_3_0=ruleUnary();
 
             	    state._fsp--;
 
@@ -2563,7 +2401,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	    							current,
             	    							"right",
             	    							lv_right_3_0,
-            	    							"com.volkmann.Jararaca.Primary");
+            	    							"com.volkmann.Jararaca.Unary");
             	    						afterParserOrEnumRuleCall();
             	    					
 
@@ -2577,7 +2415,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop12;
                 }
             } while (true);
 
@@ -2603,8 +2441,253 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMultiplication"
 
 
+    // $ANTLR start "entryRuleUnary"
+    // InternalJararaca.g:921:1: entryRuleUnary returns [EObject current=null] : iv_ruleUnary= ruleUnary EOF ;
+    public final EObject entryRuleUnary() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleUnary = null;
+
+
+        try {
+            // InternalJararaca.g:921:46: (iv_ruleUnary= ruleUnary EOF )
+            // InternalJararaca.g:922:2: iv_ruleUnary= ruleUnary EOF
+            {
+             newCompositeNode(grammarAccess.getUnaryRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleUnary=ruleUnary();
+
+            state._fsp--;
+
+             current =iv_ruleUnary; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleUnary"
+
+
+    // $ANTLR start "ruleUnary"
+    // InternalJararaca.g:928:1: ruleUnary returns [EObject current=null] : ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) ) | ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) ) | this_Primary_6= rulePrimary ) ;
+    public final EObject ruleUnary() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_4=null;
+        EObject lv_operand_2_0 = null;
+
+        EObject lv_operand_5_0 = null;
+
+        EObject this_Primary_6 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalJararaca.g:934:2: ( ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) ) | ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) ) | this_Primary_6= rulePrimary ) )
+            // InternalJararaca.g:935:2: ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) ) | ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) ) | this_Primary_6= rulePrimary )
+            {
+            // InternalJararaca.g:935:2: ( ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) ) | ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) ) | this_Primary_6= rulePrimary )
+            int alt13=3;
+            switch ( input.LA(1) ) {
+            case 35:
+                {
+                alt13=1;
+                }
+                break;
+            case 31:
+                {
+                alt13=2;
+                }
+                break;
+            case RULE_ID:
+            case RULE_INT:
+            case RULE_FLOAT:
+            case RULE_STRING:
+            case 36:
+            case 38:
+            case 39:
+                {
+                alt13=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt13) {
+                case 1 :
+                    // InternalJararaca.g:936:3: ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) )
+                    {
+                    // InternalJararaca.g:936:3: ( () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) ) )
+                    // InternalJararaca.g:937:4: () otherlv_1= 'not' ( (lv_operand_2_0= ruleUnary ) )
+                    {
+                    // InternalJararaca.g:937:4: ()
+                    // InternalJararaca.g:938:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getUnaryAccess().getNotExpressionAction_0_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_1=(Token)match(input,35,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getUnaryAccess().getNotKeyword_0_1());
+                    			
+                    // InternalJararaca.g:948:4: ( (lv_operand_2_0= ruleUnary ) )
+                    // InternalJararaca.g:949:5: (lv_operand_2_0= ruleUnary )
+                    {
+                    // InternalJararaca.g:949:5: (lv_operand_2_0= ruleUnary )
+                    // InternalJararaca.g:950:6: lv_operand_2_0= ruleUnary
+                    {
+
+                    						newCompositeNode(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_0_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_operand_2_0=ruleUnary();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getUnaryRule());
+                    						}
+                    						set(
+                    							current,
+                    							"operand",
+                    							lv_operand_2_0,
+                    							"com.volkmann.Jararaca.Unary");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalJararaca.g:969:3: ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) )
+                    {
+                    // InternalJararaca.g:969:3: ( () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) ) )
+                    // InternalJararaca.g:970:4: () otherlv_4= '-' ( (lv_operand_5_0= ruleUnary ) )
+                    {
+                    // InternalJararaca.g:970:4: ()
+                    // InternalJararaca.g:971:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getUnaryAccess().getNegativeAction_1_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_4=(Token)match(input,31,FOLLOW_8); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getUnaryAccess().getHyphenMinusKeyword_1_1());
+                    			
+                    // InternalJararaca.g:981:4: ( (lv_operand_5_0= ruleUnary ) )
+                    // InternalJararaca.g:982:5: (lv_operand_5_0= ruleUnary )
+                    {
+                    // InternalJararaca.g:982:5: (lv_operand_5_0= ruleUnary )
+                    // InternalJararaca.g:983:6: lv_operand_5_0= ruleUnary
+                    {
+
+                    						newCompositeNode(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_operand_5_0=ruleUnary();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getUnaryRule());
+                    						}
+                    						set(
+                    							current,
+                    							"operand",
+                    							lv_operand_5_0,
+                    							"com.volkmann.Jararaca.Unary");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalJararaca.g:1002:3: this_Primary_6= rulePrimary
+                    {
+
+                    			newCompositeNode(grammarAccess.getUnaryAccess().getPrimaryParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Primary_6=rulePrimary();
+
+                    state._fsp--;
+
+
+                    			current = this_Primary_6;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleUnary"
+
+
     // $ANTLR start "entryRulePrimary"
-    // InternalJararaca.g:981:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalJararaca.g:1014:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -2612,8 +2695,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:981:48: (iv_rulePrimary= rulePrimary EOF )
-            // InternalJararaca.g:982:2: iv_rulePrimary= rulePrimary EOF
+            // InternalJararaca.g:1014:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalJararaca.g:1015:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
             pushFollow(FOLLOW_1);
@@ -2640,7 +2723,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimary"
-    // InternalJararaca.g:988:1: rulePrimary returns [EObject current=null] : ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference ) ;
+    // InternalJararaca.g:1021:1: rulePrimary returns [EObject current=null] : ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -2663,10 +2746,10 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:994:2: ( ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference ) )
-            // InternalJararaca.g:995:2: ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference )
+            // InternalJararaca.g:1027:2: ( ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference ) )
+            // InternalJararaca.g:1028:2: ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference )
             {
-            // InternalJararaca.g:995:2: ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference )
+            // InternalJararaca.g:1028:2: ( ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' ) | this_IntLiteral_4= ruleIntLiteral | this_FloatLiteral_5= ruleFloatLiteral | this_BooleanLiteral_6= ruleBooleanLiteral | this_StringLiteral_7= ruleStringLiteral | this_VariableReference_8= ruleVariableReference )
             int alt14=6;
             switch ( input.LA(1) ) {
             case 36:
@@ -2709,13 +2792,13 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
             switch (alt14) {
                 case 1 :
-                    // InternalJararaca.g:996:3: ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' )
+                    // InternalJararaca.g:1029:3: ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' )
                     {
-                    // InternalJararaca.g:996:3: ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' )
-                    // InternalJararaca.g:997:4: () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')'
+                    // InternalJararaca.g:1029:3: ( () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')' )
+                    // InternalJararaca.g:1030:4: () otherlv_1= '(' ( (lv_inner_2_0= ruleExpression ) ) otherlv_3= ')'
                     {
-                    // InternalJararaca.g:997:4: ()
-                    // InternalJararaca.g:998:5: 
+                    // InternalJararaca.g:1030:4: ()
+                    // InternalJararaca.g:1031:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -2729,11 +2812,11 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_1());
                     			
-                    // InternalJararaca.g:1008:4: ( (lv_inner_2_0= ruleExpression ) )
-                    // InternalJararaca.g:1009:5: (lv_inner_2_0= ruleExpression )
+                    // InternalJararaca.g:1041:4: ( (lv_inner_2_0= ruleExpression ) )
+                    // InternalJararaca.g:1042:5: (lv_inner_2_0= ruleExpression )
                     {
-                    // InternalJararaca.g:1009:5: (lv_inner_2_0= ruleExpression )
-                    // InternalJararaca.g:1010:6: lv_inner_2_0= ruleExpression
+                    // InternalJararaca.g:1042:5: (lv_inner_2_0= ruleExpression )
+                    // InternalJararaca.g:1043:6: lv_inner_2_0= ruleExpression
                     {
 
                     						newCompositeNode(grammarAccess.getPrimaryAccess().getInnerExpressionParserRuleCall_0_2_0());
@@ -2771,7 +2854,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:1033:3: this_IntLiteral_4= ruleIntLiteral
+                    // InternalJararaca.g:1066:3: this_IntLiteral_4= ruleIntLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getIntLiteralParserRuleCall_1());
@@ -2789,7 +2872,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJararaca.g:1042:3: this_FloatLiteral_5= ruleFloatLiteral
+                    // InternalJararaca.g:1075:3: this_FloatLiteral_5= ruleFloatLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getFloatLiteralParserRuleCall_2());
@@ -2807,7 +2890,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJararaca.g:1051:3: this_BooleanLiteral_6= ruleBooleanLiteral
+                    // InternalJararaca.g:1084:3: this_BooleanLiteral_6= ruleBooleanLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getBooleanLiteralParserRuleCall_3());
@@ -2825,7 +2908,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJararaca.g:1060:3: this_StringLiteral_7= ruleStringLiteral
+                    // InternalJararaca.g:1093:3: this_StringLiteral_7= ruleStringLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getStringLiteralParserRuleCall_4());
@@ -2843,7 +2926,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJararaca.g:1069:3: this_VariableReference_8= ruleVariableReference
+                    // InternalJararaca.g:1102:3: this_VariableReference_8= ruleVariableReference
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getVariableReferenceParserRuleCall_5());
@@ -2883,7 +2966,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntLiteral"
-    // InternalJararaca.g:1081:1: entryRuleIntLiteral returns [EObject current=null] : iv_ruleIntLiteral= ruleIntLiteral EOF ;
+    // InternalJararaca.g:1114:1: entryRuleIntLiteral returns [EObject current=null] : iv_ruleIntLiteral= ruleIntLiteral EOF ;
     public final EObject entryRuleIntLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -2891,8 +2974,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1081:51: (iv_ruleIntLiteral= ruleIntLiteral EOF )
-            // InternalJararaca.g:1082:2: iv_ruleIntLiteral= ruleIntLiteral EOF
+            // InternalJararaca.g:1114:51: (iv_ruleIntLiteral= ruleIntLiteral EOF )
+            // InternalJararaca.g:1115:2: iv_ruleIntLiteral= ruleIntLiteral EOF
             {
              newCompositeNode(grammarAccess.getIntLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -2919,7 +3002,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntLiteral"
-    // InternalJararaca.g:1088:1: ruleIntLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalJararaca.g:1121:1: ruleIntLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleIntLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -2929,14 +3012,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1094:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalJararaca.g:1095:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalJararaca.g:1127:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalJararaca.g:1128:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalJararaca.g:1095:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalJararaca.g:1096:3: (lv_value_0_0= RULE_INT )
+            // InternalJararaca.g:1128:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalJararaca.g:1129:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalJararaca.g:1096:3: (lv_value_0_0= RULE_INT )
-            // InternalJararaca.g:1097:4: lv_value_0_0= RULE_INT
+            // InternalJararaca.g:1129:3: (lv_value_0_0= RULE_INT )
+            // InternalJararaca.g:1130:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2978,7 +3061,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFloatLiteral"
-    // InternalJararaca.g:1116:1: entryRuleFloatLiteral returns [EObject current=null] : iv_ruleFloatLiteral= ruleFloatLiteral EOF ;
+    // InternalJararaca.g:1149:1: entryRuleFloatLiteral returns [EObject current=null] : iv_ruleFloatLiteral= ruleFloatLiteral EOF ;
     public final EObject entryRuleFloatLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -2986,8 +3069,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1116:53: (iv_ruleFloatLiteral= ruleFloatLiteral EOF )
-            // InternalJararaca.g:1117:2: iv_ruleFloatLiteral= ruleFloatLiteral EOF
+            // InternalJararaca.g:1149:53: (iv_ruleFloatLiteral= ruleFloatLiteral EOF )
+            // InternalJararaca.g:1150:2: iv_ruleFloatLiteral= ruleFloatLiteral EOF
             {
              newCompositeNode(grammarAccess.getFloatLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -3014,7 +3097,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFloatLiteral"
-    // InternalJararaca.g:1123:1: ruleFloatLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_FLOAT ) ) ;
+    // InternalJararaca.g:1156:1: ruleFloatLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_FLOAT ) ) ;
     public final EObject ruleFloatLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3024,14 +3107,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1129:2: ( ( (lv_value_0_0= RULE_FLOAT ) ) )
-            // InternalJararaca.g:1130:2: ( (lv_value_0_0= RULE_FLOAT ) )
+            // InternalJararaca.g:1162:2: ( ( (lv_value_0_0= RULE_FLOAT ) ) )
+            // InternalJararaca.g:1163:2: ( (lv_value_0_0= RULE_FLOAT ) )
             {
-            // InternalJararaca.g:1130:2: ( (lv_value_0_0= RULE_FLOAT ) )
-            // InternalJararaca.g:1131:3: (lv_value_0_0= RULE_FLOAT )
+            // InternalJararaca.g:1163:2: ( (lv_value_0_0= RULE_FLOAT ) )
+            // InternalJararaca.g:1164:3: (lv_value_0_0= RULE_FLOAT )
             {
-            // InternalJararaca.g:1131:3: (lv_value_0_0= RULE_FLOAT )
-            // InternalJararaca.g:1132:4: lv_value_0_0= RULE_FLOAT
+            // InternalJararaca.g:1164:3: (lv_value_0_0= RULE_FLOAT )
+            // InternalJararaca.g:1165:4: lv_value_0_0= RULE_FLOAT
             {
             lv_value_0_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); 
 
@@ -3073,7 +3156,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBooleanLiteral"
-    // InternalJararaca.g:1151:1: entryRuleBooleanLiteral returns [EObject current=null] : iv_ruleBooleanLiteral= ruleBooleanLiteral EOF ;
+    // InternalJararaca.g:1184:1: entryRuleBooleanLiteral returns [EObject current=null] : iv_ruleBooleanLiteral= ruleBooleanLiteral EOF ;
     public final EObject entryRuleBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3081,8 +3164,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1151:55: (iv_ruleBooleanLiteral= ruleBooleanLiteral EOF )
-            // InternalJararaca.g:1152:2: iv_ruleBooleanLiteral= ruleBooleanLiteral EOF
+            // InternalJararaca.g:1184:55: (iv_ruleBooleanLiteral= ruleBooleanLiteral EOF )
+            // InternalJararaca.g:1185:2: iv_ruleBooleanLiteral= ruleBooleanLiteral EOF
             {
              newCompositeNode(grammarAccess.getBooleanLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -3109,7 +3192,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanLiteral"
-    // InternalJararaca.g:1158:1: ruleBooleanLiteral returns [EObject current=null] : (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral ) ;
+    // InternalJararaca.g:1191:1: ruleBooleanLiteral returns [EObject current=null] : (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral ) ;
     public final EObject ruleBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3122,10 +3205,10 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1164:2: ( (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral ) )
-            // InternalJararaca.g:1165:2: (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral )
+            // InternalJararaca.g:1197:2: ( (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral ) )
+            // InternalJararaca.g:1198:2: (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral )
             {
-            // InternalJararaca.g:1165:2: (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral )
+            // InternalJararaca.g:1198:2: (this_TrueLiteral_0= ruleTrueLiteral | this_FalseLiteral_1= ruleFalseLiteral )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -3143,7 +3226,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalJararaca.g:1166:3: this_TrueLiteral_0= ruleTrueLiteral
+                    // InternalJararaca.g:1199:3: this_TrueLiteral_0= ruleTrueLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getBooleanLiteralAccess().getTrueLiteralParserRuleCall_0());
@@ -3161,7 +3244,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:1175:3: this_FalseLiteral_1= ruleFalseLiteral
+                    // InternalJararaca.g:1208:3: this_FalseLiteral_1= ruleFalseLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getBooleanLiteralAccess().getFalseLiteralParserRuleCall_1());
@@ -3201,7 +3284,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrueLiteral"
-    // InternalJararaca.g:1187:1: entryRuleTrueLiteral returns [EObject current=null] : iv_ruleTrueLiteral= ruleTrueLiteral EOF ;
+    // InternalJararaca.g:1220:1: entryRuleTrueLiteral returns [EObject current=null] : iv_ruleTrueLiteral= ruleTrueLiteral EOF ;
     public final EObject entryRuleTrueLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3209,8 +3292,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1187:52: (iv_ruleTrueLiteral= ruleTrueLiteral EOF )
-            // InternalJararaca.g:1188:2: iv_ruleTrueLiteral= ruleTrueLiteral EOF
+            // InternalJararaca.g:1220:52: (iv_ruleTrueLiteral= ruleTrueLiteral EOF )
+            // InternalJararaca.g:1221:2: iv_ruleTrueLiteral= ruleTrueLiteral EOF
             {
              newCompositeNode(grammarAccess.getTrueLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -3237,7 +3320,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrueLiteral"
-    // InternalJararaca.g:1194:1: ruleTrueLiteral returns [EObject current=null] : ( () otherlv_1= 'true' ) ;
+    // InternalJararaca.g:1227:1: ruleTrueLiteral returns [EObject current=null] : ( () otherlv_1= 'true' ) ;
     public final EObject ruleTrueLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3247,14 +3330,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1200:2: ( ( () otherlv_1= 'true' ) )
-            // InternalJararaca.g:1201:2: ( () otherlv_1= 'true' )
+            // InternalJararaca.g:1233:2: ( ( () otherlv_1= 'true' ) )
+            // InternalJararaca.g:1234:2: ( () otherlv_1= 'true' )
             {
-            // InternalJararaca.g:1201:2: ( () otherlv_1= 'true' )
-            // InternalJararaca.g:1202:3: () otherlv_1= 'true'
+            // InternalJararaca.g:1234:2: ( () otherlv_1= 'true' )
+            // InternalJararaca.g:1235:3: () otherlv_1= 'true'
             {
-            // InternalJararaca.g:1202:3: ()
-            // InternalJararaca.g:1203:4: 
+            // InternalJararaca.g:1235:3: ()
+            // InternalJararaca.g:1236:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3291,7 +3374,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFalseLiteral"
-    // InternalJararaca.g:1217:1: entryRuleFalseLiteral returns [EObject current=null] : iv_ruleFalseLiteral= ruleFalseLiteral EOF ;
+    // InternalJararaca.g:1250:1: entryRuleFalseLiteral returns [EObject current=null] : iv_ruleFalseLiteral= ruleFalseLiteral EOF ;
     public final EObject entryRuleFalseLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3299,8 +3382,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1217:53: (iv_ruleFalseLiteral= ruleFalseLiteral EOF )
-            // InternalJararaca.g:1218:2: iv_ruleFalseLiteral= ruleFalseLiteral EOF
+            // InternalJararaca.g:1250:53: (iv_ruleFalseLiteral= ruleFalseLiteral EOF )
+            // InternalJararaca.g:1251:2: iv_ruleFalseLiteral= ruleFalseLiteral EOF
             {
              newCompositeNode(grammarAccess.getFalseLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -3327,7 +3410,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFalseLiteral"
-    // InternalJararaca.g:1224:1: ruleFalseLiteral returns [EObject current=null] : ( () otherlv_1= 'false' ) ;
+    // InternalJararaca.g:1257:1: ruleFalseLiteral returns [EObject current=null] : ( () otherlv_1= 'false' ) ;
     public final EObject ruleFalseLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3337,14 +3420,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1230:2: ( ( () otherlv_1= 'false' ) )
-            // InternalJararaca.g:1231:2: ( () otherlv_1= 'false' )
+            // InternalJararaca.g:1263:2: ( ( () otherlv_1= 'false' ) )
+            // InternalJararaca.g:1264:2: ( () otherlv_1= 'false' )
             {
-            // InternalJararaca.g:1231:2: ( () otherlv_1= 'false' )
-            // InternalJararaca.g:1232:3: () otherlv_1= 'false'
+            // InternalJararaca.g:1264:2: ( () otherlv_1= 'false' )
+            // InternalJararaca.g:1265:3: () otherlv_1= 'false'
             {
-            // InternalJararaca.g:1232:3: ()
-            // InternalJararaca.g:1233:4: 
+            // InternalJararaca.g:1265:3: ()
+            // InternalJararaca.g:1266:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3381,7 +3464,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringLiteral"
-    // InternalJararaca.g:1247:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
+    // InternalJararaca.g:1280:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
     public final EObject entryRuleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3389,8 +3472,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1247:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
-            // InternalJararaca.g:1248:2: iv_ruleStringLiteral= ruleStringLiteral EOF
+            // InternalJararaca.g:1280:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
+            // InternalJararaca.g:1281:2: iv_ruleStringLiteral= ruleStringLiteral EOF
             {
              newCompositeNode(grammarAccess.getStringLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -3417,7 +3500,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringLiteral"
-    // InternalJararaca.g:1254:1: ruleStringLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // InternalJararaca.g:1287:1: ruleStringLiteral returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -3427,14 +3510,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1260:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // InternalJararaca.g:1261:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalJararaca.g:1293:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // InternalJararaca.g:1294:2: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // InternalJararaca.g:1261:2: ( (lv_value_0_0= RULE_STRING ) )
-            // InternalJararaca.g:1262:3: (lv_value_0_0= RULE_STRING )
+            // InternalJararaca.g:1294:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalJararaca.g:1295:3: (lv_value_0_0= RULE_STRING )
             {
-            // InternalJararaca.g:1262:3: (lv_value_0_0= RULE_STRING )
-            // InternalJararaca.g:1263:4: lv_value_0_0= RULE_STRING
+            // InternalJararaca.g:1295:3: (lv_value_0_0= RULE_STRING )
+            // InternalJararaca.g:1296:4: lv_value_0_0= RULE_STRING
             {
             lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -3476,7 +3559,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableReference"
-    // InternalJararaca.g:1282:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
+    // InternalJararaca.g:1315:1: entryRuleVariableReference returns [EObject current=null] : iv_ruleVariableReference= ruleVariableReference EOF ;
     public final EObject entryRuleVariableReference() throws RecognitionException {
         EObject current = null;
 
@@ -3484,8 +3567,8 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJararaca.g:1282:58: (iv_ruleVariableReference= ruleVariableReference EOF )
-            // InternalJararaca.g:1283:2: iv_ruleVariableReference= ruleVariableReference EOF
+            // InternalJararaca.g:1315:58: (iv_ruleVariableReference= ruleVariableReference EOF )
+            // InternalJararaca.g:1316:2: iv_ruleVariableReference= ruleVariableReference EOF
             {
              newCompositeNode(grammarAccess.getVariableReferenceRule()); 
             pushFollow(FOLLOW_1);
@@ -3512,7 +3595,7 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableReference"
-    // InternalJararaca.g:1289:1: ruleVariableReference returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalJararaca.g:1322:1: ruleVariableReference returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleVariableReference() throws RecognitionException {
         EObject current = null;
 
@@ -3522,14 +3605,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJararaca.g:1295:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalJararaca.g:1296:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalJararaca.g:1328:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalJararaca.g:1329:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalJararaca.g:1296:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalJararaca.g:1297:3: (lv_name_0_0= RULE_ID )
+            // InternalJararaca.g:1329:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalJararaca.g:1330:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalJararaca.g:1297:3: (lv_name_0_0= RULE_ID )
-            // InternalJararaca.g:1298:4: lv_name_0_0= RULE_ID
+            // InternalJararaca.g:1330:3: (lv_name_0_0= RULE_ID )
+            // InternalJararaca.g:1331:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -3581,14 +3664,14 @@ public class InternalJararacaParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000003C0000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000D0010000F0L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000D8800000F0L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000400002L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000007E000002L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000180000002L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000E00000002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x000000003F000002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x00000000C0000002L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000700000002L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000002000000000L});
 
 }

@@ -23,6 +23,7 @@ import com.volkmann.jararaca.IntLiteral;
 import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaPackage;
 import com.volkmann.jararaca.Multiplication;
+import com.volkmann.jararaca.Negative;
 import com.volkmann.jararaca.NotExpression;
 import com.volkmann.jararaca.OrExpression;
 import com.volkmann.jararaca.ParenExpression;
@@ -44,6 +45,9 @@ public class JararacaValidator extends AbstractJararacaValidator {
 	public static final String UNASSIGNED_VARIABLE = "unassignedVariable";
 	public static final String TYPE_MISMATCH = "typeMismatch";
 	public static final String MIXED_LOGIC = "mixedLogic";
+	public static final String CHAINED_COMPARISON = "chainedComparison";
+	public static final String DOUBLE_SIGN = "doubleSign";
+	public static final String DOUBLE_NOT = "doubleNot";
 
 	@Check
 	public void checkProgram(Program program) {
@@ -128,6 +132,9 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		if (expression instanceof Multiplication multiplication) {
 			return checkMultiplication(multiplication, scope);
 		}
+		if (expression instanceof Negative negative) {
+			return checkNegative(negative, scope);
+		}
 		if (expression instanceof IntLiteral) {
 			return Value.of(TypeKind.INT);
 		}
@@ -173,9 +180,15 @@ public class JararacaValidator extends AbstractJararacaValidator {
 
 	private Value checkNot(NotExpression expression, Map<String, Binding> scope) {
 		Value value = checkExpression(expression.getOperand(), scope);
+		if (unwrap(expression.getOperand()) instanceof NotExpression) {
+			error("not não se aplica a outro not.", expression, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND,
+					DOUBLE_NOT);
+			return Value.bool(defined(value));
+		}
 		if (value != null && value.type != null && value.type != TypeKind.BOOLEAN) {
 			error("not só se aplica a boolean.", expression, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND,
 					TYPE_MISMATCH);
+			return Value.undefined(null);
 		}
 		return Value.bool(defined(value));
 	}
@@ -183,13 +196,18 @@ public class JararacaValidator extends AbstractJararacaValidator {
 	private Value checkComparison(Comparison comparison, Map<String, Binding> scope) {
 		Value left = checkExpression(comparison.getLeft(), scope);
 		Value right = checkExpression(comparison.getRight(), scope);
+		if (comparison.getLeft() instanceof Comparison) {
+			error("Duas comparações coladas exigem parênteses.", comparison,
+					JararacaPackage.Literals.COMPARISON__OPERATOR, CHAINED_COMPARISON);
+			return Value.bool(defined(left) && defined(right));
+		}
 		String operator = comparison.getOperator();
 		if (left != null && right != null && left.type != null && right.type != null) {
 			if (left.type != right.type) {
 				error("Não é possível comparar " + left.type.label + " com " + right.type.label + ".", comparison,
 						JararacaPackage.Literals.COMPARISON__OPERATOR, TYPE_MISMATCH);
 			} else if (isRelational(operator) && !left.type.numeric()) {
-				error("A comparação " + operator + " só é permitida para int e float.", comparison,
+				error("A comparação " + operator + " só é permitida para int e decimal.", comparison,
 						JararacaPackage.Literals.COMPARISON__OPERATOR, TYPE_MISMATCH);
 			}
 		}
@@ -228,11 +246,29 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		}
 		if ("/".equals(operator)) {
 			if (left.type != TypeKind.FLOAT || right.type != TypeKind.FLOAT) {
-				error("A divisão só é permitida entre valores float.", multiplication,
+				error("A divisão só é permitida entre valores decimal.", multiplication,
+						JararacaPackage.Literals.MULTIPLICATION__OPERATOR, TYPE_MISMATCH);
+				return Value.undefined(null);
+			}
+			if (isWrittenZero(multiplication.getRight())) {
+				error("O divisor zero escrito na conta é erro de compilação.", multiplication,
 						JararacaPackage.Literals.MULTIPLICATION__OPERATOR, TYPE_MISMATCH);
 				return Value.undefined(null);
 			}
 			return Value.of(TypeKind.FLOAT, defined(left) && defined(right));
+		}
+		if ("%".equals(operator)) {
+			if (left.type != right.type || !left.type.numeric()) {
+				error("O resto só é permitido entre int e int, ou entre decimal e decimal.", multiplication,
+						JararacaPackage.Literals.MULTIPLICATION__OPERATOR, TYPE_MISMATCH);
+				return Value.undefined(null);
+			}
+			if (isWrittenZero(multiplication.getRight())) {
+				error("O divisor zero escrito na conta é erro de compilação.", multiplication,
+						JararacaPackage.Literals.MULTIPLICATION__OPERATOR, TYPE_MISMATCH);
+				return Value.undefined(null);
+			}
+			return Value.of(left.type, defined(left) && defined(right));
 		}
 		if (left.type != right.type || !left.type.numeric()) {
 			error("Não é possível calcular " + operator + " entre " + left.type.label + " e " + right.type.label + ".",
@@ -240,6 +276,24 @@ public class JararacaValidator extends AbstractJararacaValidator {
 			return Value.undefined(null);
 		}
 		return Value.of(left.type, defined(left) && defined(right));
+	}
+
+	private Value checkNegative(Negative negative, Map<String, Binding> scope) {
+		Value value = checkExpression(negative.getOperand(), scope);
+		if (negative.getOperand() instanceof Negative) {
+			error("Dois sinais seguidos exigem parênteses.", negative,
+					JararacaPackage.Literals.NEGATIVE__OPERAND, DOUBLE_SIGN);
+			return Value.undefined(value == null ? null : value.type);
+		}
+		if (value != null && value.type != null && !value.type.numeric()) {
+			error("O sinal negativo só se aplica a int e decimal.", negative,
+					JararacaPackage.Literals.NEGATIVE__OPERAND, TYPE_MISMATCH);
+			return Value.undefined(null);
+		}
+		if (value == null || value.type == null) {
+			return Value.undefined(null);
+		}
+		return Value.of(value.type, value.defined);
 	}
 
 	private Value checkReference(VariableReference reference, Map<String, Binding> scope) {
@@ -260,8 +314,29 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.of(binding.type);
 	}
 
+	private Expression unwrap(Expression expression) {
+		while (expression instanceof ParenExpression paren) {
+			expression = paren.getInner();
+		}
+		return expression;
+	}
+
 	private boolean defined(Value value) {
 		return value != null && value.defined;
+	}
+
+	private boolean isWrittenZero(Expression expression) {
+		expression = unwrap(expression);
+		if (expression instanceof Negative negative) {
+			return isWrittenZero(negative.getOperand());
+		}
+		if (expression instanceof IntLiteral literal) {
+			return literal.getValue() == 0;
+		}
+		if (expression instanceof FloatLiteral literal) {
+			return literal.getValue() == 0.0d;
+		}
+		return false;
 	}
 
 	private boolean isRelational(String operator) {
@@ -286,7 +361,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 
 	private enum TypeKind {
 		INT("int", true),
-		FLOAT("float", true),
+		FLOAT("decimal", true),
 		BOOLEAN("boolean", false),
 		STRING("string", false);
 

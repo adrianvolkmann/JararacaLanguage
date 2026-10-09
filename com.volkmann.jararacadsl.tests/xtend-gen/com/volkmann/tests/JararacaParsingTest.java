@@ -4,7 +4,13 @@
 package com.volkmann.tests;
 
 import com.google.inject.Inject;
+import com.volkmann.jararaca.Comparison;
+import com.volkmann.jararaca.Expression;
+import com.volkmann.jararaca.NotExpression;
+import com.volkmann.jararaca.ParenExpression;
 import com.volkmann.jararaca.Program;
+import com.volkmann.jararaca.Statement;
+import com.volkmann.jararaca.VariableDeclaration;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -40,7 +46,7 @@ public class JararacaParsingTest {
       _builder.append("var pronto boolean = false;");
       _builder.newLine();
       _builder.append("\t");
-      _builder.append("var medida float = 10.0 / 4.0;");
+      _builder.append("var medida decimal = 10.0 / 4.0;");
       _builder.newLine();
       _builder.append("\t");
       _builder.append("var nome string = \"Ana\" + \"Lia\";");
@@ -62,6 +68,49 @@ public class JararacaParsingTest {
       String _join = IterableExtensions.join(errors, ", ");
       _builder_1.append(_join);
       Assertions.assertTrue(_isEmpty, _builder_1.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+
+  @Test
+  public void notBindsToTheValueOnTheRight() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("program {");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("var idade int = 30;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("var bloqueado boolean = not idade >= 18;");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("var negado boolean = not (idade >= 18);");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      final Program result = this.parseHelper.parse(_builder);
+      Assertions.assertNotNull(result);
+      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder_1.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder_1.toString());
+      Statement _get = result.getStatements().get(1);
+      final VariableDeclaration bloqueado = ((VariableDeclaration) _get);
+      Expression _initialValue = bloqueado.getInitialValue();
+      final Comparison comparison = ((Comparison) _initialValue);
+      Expression _left = comparison.getLeft();
+      Assertions.assertTrue((_left instanceof NotExpression));
+      Statement _get_1 = result.getStatements().get(2);
+      final VariableDeclaration negado = ((VariableDeclaration) _get_1);
+      Expression _initialValue_1 = negado.getInitialValue();
+      final NotExpression negation = ((NotExpression) _initialValue_1);
+      Expression _operand = negation.getOperand();
+      Assertions.assertTrue((_operand instanceof ParenExpression));
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

@@ -4,7 +4,11 @@
 package com.volkmann.tests
 
 import com.google.inject.Inject
+import com.volkmann.jararaca.Comparison
+import com.volkmann.jararaca.NotExpression
+import com.volkmann.jararaca.ParenExpression
 import com.volkmann.jararaca.Program
+import com.volkmann.jararaca.VariableDeclaration
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -25,7 +29,7 @@ class JararacaParsingTest {
 				var idade int = 30;
 				var ativo boolean = true;
 				var pronto boolean = false;
-				var medida float = 10.0 / 4.0;
+				var medida decimal = 10.0 / 4.0;
 				var nome string = "Ana" + "Lia";
 				var pode boolean = (idade >= 18 and ativo) or pronto;
 				idade = idade + 1;
@@ -34,5 +38,25 @@ class JararacaParsingTest {
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+
+	@Test
+	def void notBindsToTheValueOnTheRight() {
+		val result = parseHelper.parse('''
+			program {
+				var idade int = 30;
+				var bloqueado boolean = not idade >= 18;
+				var negado boolean = not (idade >= 18);
+			}
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		val bloqueado = result.statements.get(1) as VariableDeclaration
+		val comparison = bloqueado.initialValue as Comparison
+		Assertions.assertTrue(comparison.left instanceof NotExpression)
+		val negado = result.statements.get(2) as VariableDeclaration
+		val negation = negado.initialValue as NotExpression
+		Assertions.assertTrue(negation.operand instanceof ParenExpression)
 	}
 }

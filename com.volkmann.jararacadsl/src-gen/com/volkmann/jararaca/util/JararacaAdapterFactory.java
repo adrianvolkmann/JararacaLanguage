@@ -171,11 +171,6 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
         return createAndExpressionAdapter();
       }
       @Override
-      public Adapter caseNotExpression(NotExpression object)
-      {
-        return createNotExpressionAdapter();
-      }
-      @Override
       public Adapter caseComparison(Comparison object)
       {
         return createComparisonAdapter();
@@ -189,6 +184,16 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMultiplication(Multiplication object)
       {
         return createMultiplicationAdapter();
+      }
+      @Override
+      public Adapter caseNotExpression(NotExpression object)
+      {
+        return createNotExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNegative(Negative object)
+      {
+        return createNegativeAdapter();
       }
       @Override
       public Adapter caseParenExpression(ParenExpression object)
@@ -503,21 +508,6 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.NotExpression <em>Not Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.volkmann.jararaca.NotExpression
-   * @generated
-   */
-  public Adapter createNotExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.Comparison <em>Comparison</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -558,6 +548,36 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMultiplicationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.NotExpression <em>Not Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.NotExpression
+   * @generated
+   */
+  public Adapter createNotExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.Negative <em>Negative</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.Negative
+   * @generated
+   */
+  public Adapter createNegativeAdapter()
   {
     return null;
   }

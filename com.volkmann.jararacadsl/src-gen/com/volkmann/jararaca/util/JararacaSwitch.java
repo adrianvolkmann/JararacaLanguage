@@ -223,14 +223,6 @@ public class JararacaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JararacaPackage.NOT_EXPRESSION:
-      {
-        NotExpression notExpression = (NotExpression)theEObject;
-        T result = caseNotExpression(notExpression);
-        if (result == null) result = caseExpression(notExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JararacaPackage.COMPARISON:
       {
         Comparison comparison = (Comparison)theEObject;
@@ -252,6 +244,22 @@ public class JararacaSwitch<T> extends Switch<T>
         Multiplication multiplication = (Multiplication)theEObject;
         T result = caseMultiplication(multiplication);
         if (result == null) result = caseExpression(multiplication);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.NOT_EXPRESSION:
+      {
+        NotExpression notExpression = (NotExpression)theEObject;
+        T result = caseNotExpression(notExpression);
+        if (result == null) result = caseExpression(notExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.NEGATIVE:
+      {
+        Negative negative = (Negative)theEObject;
+        T result = caseNegative(negative);
+        if (result == null) result = caseExpression(negative);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -572,22 +580,6 @@ public class JararacaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Not Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Not Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseNotExpression(NotExpression object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Comparison</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -631,6 +623,38 @@ public class JararacaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMultiplication(Multiplication object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNotExpression(NotExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Negative</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Negative</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNegative(Negative object)
   {
     return null;
   }

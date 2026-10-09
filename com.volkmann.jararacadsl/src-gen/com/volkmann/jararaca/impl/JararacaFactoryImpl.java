@@ -84,10 +84,11 @@ public class JararacaFactoryImpl extends EFactoryImpl implements JararacaFactory
       case JararacaPackage.VARIABLE_REFERENCE: return createVariableReference();
       case JararacaPackage.OR_EXPRESSION: return createOrExpression();
       case JararacaPackage.AND_EXPRESSION: return createAndExpression();
-      case JararacaPackage.NOT_EXPRESSION: return createNotExpression();
       case JararacaPackage.COMPARISON: return createComparison();
       case JararacaPackage.ADDITION: return createAddition();
       case JararacaPackage.MULTIPLICATION: return createMultiplication();
+      case JararacaPackage.NOT_EXPRESSION: return createNotExpression();
+      case JararacaPackage.NEGATIVE: return createNegative();
       case JararacaPackage.PAREN_EXPRESSION: return createParenExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -328,18 +329,6 @@ public class JararacaFactoryImpl extends EFactoryImpl implements JararacaFactory
    * @generated
    */
   @Override
-  public NotExpression createNotExpression()
-  {
-    NotExpressionImpl notExpression = new NotExpressionImpl();
-    return notExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Comparison createComparison()
   {
     ComparisonImpl comparison = new ComparisonImpl();
@@ -368,6 +357,30 @@ public class JararacaFactoryImpl extends EFactoryImpl implements JararacaFactory
   {
     MultiplicationImpl multiplication = new MultiplicationImpl();
     return multiplication;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotExpression createNotExpression()
+  {
+    NotExpressionImpl notExpression = new NotExpressionImpl();
+    return notExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Negative createNegative()
+  {
+    NegativeImpl negative = new NegativeImpl();
+    return negative;
   }
 
   /**

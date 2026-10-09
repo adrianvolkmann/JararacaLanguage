@@ -18,6 +18,7 @@ import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaFactory;
 import com.volkmann.jararaca.JararacaPackage;
 import com.volkmann.jararaca.Multiplication;
+import com.volkmann.jararaca.Negative;
 import com.volkmann.jararaca.NotExpression;
 import com.volkmann.jararaca.OrExpression;
 import com.volkmann.jararaca.ParenExpression;
@@ -183,13 +184,6 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass notExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass comparisonEClass = null;
 
   /**
@@ -205,6 +199,20 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   private EClass multiplicationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass notExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass negativeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -633,28 +641,6 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   @Override
-  public EClass getNotExpression()
-  {
-    return notExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getNotExpression_Operand()
-  {
-    return (EReference)notExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getComparison()
   {
     return comparisonEClass;
@@ -787,6 +773,50 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   @Override
+  public EClass getNotExpression()
+  {
+    return notExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNotExpression_Operand()
+  {
+    return (EReference)notExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNegative()
+  {
+    return negativeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNegative_Operand()
+  {
+    return (EReference)negativeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getParenExpression()
   {
     return parenExpressionEClass;
@@ -885,9 +915,6 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     createEReference(andExpressionEClass, AND_EXPRESSION__LEFT);
     createEReference(andExpressionEClass, AND_EXPRESSION__RIGHT);
 
-    notExpressionEClass = createEClass(NOT_EXPRESSION);
-    createEReference(notExpressionEClass, NOT_EXPRESSION__OPERAND);
-
     comparisonEClass = createEClass(COMPARISON);
     createEReference(comparisonEClass, COMPARISON__LEFT);
     createEAttribute(comparisonEClass, COMPARISON__OPERATOR);
@@ -902,6 +929,12 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     createEReference(multiplicationEClass, MULTIPLICATION__LEFT);
     createEAttribute(multiplicationEClass, MULTIPLICATION__OPERATOR);
     createEReference(multiplicationEClass, MULTIPLICATION__RIGHT);
+
+    notExpressionEClass = createEClass(NOT_EXPRESSION);
+    createEReference(notExpressionEClass, NOT_EXPRESSION__OPERAND);
+
+    negativeEClass = createEClass(NEGATIVE);
+    createEReference(negativeEClass, NEGATIVE__OPERAND);
 
     parenExpressionEClass = createEClass(PAREN_EXPRESSION);
     createEReference(parenExpressionEClass, PAREN_EXPRESSION__INNER);
@@ -951,10 +984,11 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     variableReferenceEClass.getESuperTypes().add(this.getExpression());
     orExpressionEClass.getESuperTypes().add(this.getExpression());
     andExpressionEClass.getESuperTypes().add(this.getExpression());
-    notExpressionEClass.getESuperTypes().add(this.getExpression());
     comparisonEClass.getESuperTypes().add(this.getExpression());
     additionEClass.getESuperTypes().add(this.getExpression());
     multiplicationEClass.getESuperTypes().add(this.getExpression());
+    notExpressionEClass.getESuperTypes().add(this.getExpression());
+    negativeEClass.getESuperTypes().add(this.getExpression());
     parenExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -1009,9 +1043,6 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     initEReference(getAndExpression_Left(), this.getExpression(), null, "left", null, 0, 1, AndExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAndExpression_Right(), this.getExpression(), null, "right", null, 0, 1, AndExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(notExpressionEClass, NotExpression.class, "NotExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNotExpression_Operand(), this.getExpression(), null, "operand", null, 0, 1, NotExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(comparisonEClass, Comparison.class, "Comparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComparison_Left(), this.getExpression(), null, "left", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComparison_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Comparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1026,6 +1057,12 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     initEReference(getMultiplication_Left(), this.getExpression(), null, "left", null, 0, 1, Multiplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMultiplication_Operator(), ecorePackage.getEString(), "operator", null, 0, 1, Multiplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMultiplication_Right(), this.getExpression(), null, "right", null, 0, 1, Multiplication.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(notExpressionEClass, NotExpression.class, "NotExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNotExpression_Operand(), this.getExpression(), null, "operand", null, 0, 1, NotExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(negativeEClass, Negative.class, "Negative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNegative_Operand(), this.getExpression(), null, "operand", null, 0, 1, Negative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parenExpressionEClass, ParenExpression.class, "ParenExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParenExpression_Inner(), this.getExpression(), null, "inner", null, 0, 1, ParenExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

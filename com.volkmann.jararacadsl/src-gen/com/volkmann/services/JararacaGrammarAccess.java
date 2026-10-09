@@ -213,20 +213,20 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.FloatType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFloatTypeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cFloatKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cDecimalKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//FloatType:
-		//    {FloatType} 'float';
+		//    {FloatType} 'decimal';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FloatType} 'float'
+		//{FloatType} 'decimal'
 		public Group getGroup() { return cGroup; }
 		
 		//{FloatType}
 		public Action getFloatTypeAction_0() { return cFloatTypeAction_0; }
 		
-		//'float'
-		public Keyword getFloatKeyword_1() { return cFloatKeyword_1; }
+		//'decimal'
+		public Keyword getDecimalKeyword_1() { return cDecimalKeyword_1; }
 	}
 	public class BooleanTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.BooleanType");
@@ -315,24 +315,24 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class AndExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.AndExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cNotExpressionParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cComparisonParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cAndExpressionLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Keyword cAndKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightNotExpressionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightComparisonParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//AndExpression returns Expression:
-		//    NotExpression ({AndExpression.left=current} 'and' right=NotExpression)*;
+		//    Comparison ({AndExpression.left=current} 'and' right=Comparison)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NotExpression ({AndExpression.left=current} 'and' right=NotExpression)*
+		//Comparison ({AndExpression.left=current} 'and' right=Comparison)*
 		public Group getGroup() { return cGroup; }
 		
-		//NotExpression
-		public RuleCall getNotExpressionParserRuleCall_0() { return cNotExpressionParserRuleCall_0; }
+		//Comparison
+		public RuleCall getComparisonParserRuleCall_0() { return cComparisonParserRuleCall_0; }
 		
-		//({AndExpression.left=current} 'and' right=NotExpression)*
+		//({AndExpression.left=current} 'and' right=Comparison)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{AndExpression.left=current}
@@ -341,46 +341,11 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'and'
 		public Keyword getAndKeyword_1_1() { return cAndKeyword_1_1; }
 		
-		//right=NotExpression
+		//right=Comparison
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 		
-		//NotExpression
-		public RuleCall getRightNotExpressionParserRuleCall_1_2_0() { return cRightNotExpressionParserRuleCall_1_2_0; }
-	}
-	public class NotExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.NotExpression");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cNotExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cNotKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cOperandAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cOperandNotExpressionParserRuleCall_0_2_0 = (RuleCall)cOperandAssignment_0_2.eContents().get(0);
-		private final RuleCall cComparisonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//NotExpression returns Expression:
-		//    {NotExpression} 'not' operand=NotExpression | Comparison;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{NotExpression} 'not' operand=NotExpression | Comparison
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//{NotExpression} 'not' operand=NotExpression
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{NotExpression}
-		public Action getNotExpressionAction_0_0() { return cNotExpressionAction_0_0; }
-		
-		//'not'
-		public Keyword getNotKeyword_0_1() { return cNotKeyword_0_1; }
-		
-		//operand=NotExpression
-		public Assignment getOperandAssignment_0_2() { return cOperandAssignment_0_2; }
-		
-		//NotExpression
-		public RuleCall getOperandNotExpressionParserRuleCall_0_2_0() { return cOperandNotExpressionParserRuleCall_0_2_0; }
-		
 		//Comparison
-		public RuleCall getComparisonParserRuleCall_1() { return cComparisonParserRuleCall_1; }
+		public RuleCall getRightComparisonParserRuleCall_1_2_0() { return cRightComparisonParserRuleCall_1_2_0; }
 	}
 	public class ComparisonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.Comparison");
@@ -400,16 +365,16 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cRightAdditionParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Comparison returns Expression:
-		//    Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?;
+		//    Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?
+		//Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)*
 		public Group getGroup() { return cGroup; }
 		
 		//Addition
 		public RuleCall getAdditionParserRuleCall_0() { return cAdditionParserRuleCall_0; }
 		
-		//({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?
+		//({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{Comparison.left=current}
@@ -495,7 +460,7 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class MultiplicationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.Multiplication");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cPrimaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cUnaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cMultiplicationLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cOperatorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -504,19 +469,19 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cOperatorSolidusKeyword_1_1_0_1 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(1);
 		private final Keyword cOperatorPercentSignKeyword_1_1_0_2 = (Keyword)cOperatorAlternatives_1_1_0.eContents().get(2);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightPrimaryParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		private final RuleCall cRightUnaryParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//Multiplication returns Expression:
-		//    Primary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*;
+		//    Unary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Unary)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Primary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*
+		//Unary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Unary)*
 		public Group getGroup() { return cGroup; }
 		
-		//Primary
-		public RuleCall getPrimaryParserRuleCall_0() { return cPrimaryParserRuleCall_0; }
+		//Unary
+		public RuleCall getUnaryParserRuleCall_0() { return cUnaryParserRuleCall_0; }
 		
-		//({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*
+		//({Multiplication.left=current} operator=('*' | '/' | '%') right=Unary)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{Multiplication.left=current}
@@ -537,11 +502,70 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//'%'
 		public Keyword getOperatorPercentSignKeyword_1_1_0_2() { return cOperatorPercentSignKeyword_1_1_0_2; }
 		
-		//right=Primary
+		//right=Unary
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 		
+		//Unary
+		public RuleCall getRightUnaryParserRuleCall_1_2_0() { return cRightUnaryParserRuleCall_1_2_0; }
+	}
+	public class UnaryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.Unary");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cNotExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cNotKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cOperandAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cOperandUnaryParserRuleCall_0_2_0 = (RuleCall)cOperandAssignment_0_2.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cNegativeAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cOperandAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cOperandUnaryParserRuleCall_1_2_0 = (RuleCall)cOperandAssignment_1_2.eContents().get(0);
+		private final RuleCall cPrimaryParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Unary returns Expression:
+		//    {NotExpression} 'not' operand=Unary
+		//    | {Negative} '-' operand=Unary
+		//    | Primary;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{NotExpression} 'not' operand=Unary
+		//| {Negative} '-' operand=Unary
+		//| Primary
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{NotExpression} 'not' operand=Unary
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{NotExpression}
+		public Action getNotExpressionAction_0_0() { return cNotExpressionAction_0_0; }
+		
+		//'not'
+		public Keyword getNotKeyword_0_1() { return cNotKeyword_0_1; }
+		
+		//operand=Unary
+		public Assignment getOperandAssignment_0_2() { return cOperandAssignment_0_2; }
+		
+		//Unary
+		public RuleCall getOperandUnaryParserRuleCall_0_2_0() { return cOperandUnaryParserRuleCall_0_2_0; }
+		
+		//{Negative} '-' operand=Unary
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Negative}
+		public Action getNegativeAction_1_0() { return cNegativeAction_1_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1_1() { return cHyphenMinusKeyword_1_1; }
+		
+		//operand=Unary
+		public Assignment getOperandAssignment_1_2() { return cOperandAssignment_1_2; }
+		
+		//Unary
+		public RuleCall getOperandUnaryParserRuleCall_1_2_0() { return cOperandUnaryParserRuleCall_1_2_0; }
+		
 		//Primary
-		public RuleCall getRightPrimaryParserRuleCall_1_2_0() { return cRightPrimaryParserRuleCall_1_2_0; }
+		public RuleCall getPrimaryParserRuleCall_2() { return cPrimaryParserRuleCall_2; }
 	}
 	public class PrimaryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.Primary");
@@ -739,10 +763,10 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final ExpressionElements pExpression;
 	private final OrExpressionElements pOrExpression;
 	private final AndExpressionElements pAndExpression;
-	private final NotExpressionElements pNotExpression;
 	private final ComparisonElements pComparison;
 	private final AdditionElements pAddition;
 	private final MultiplicationElements pMultiplication;
+	private final UnaryElements pUnary;
 	private final PrimaryElements pPrimary;
 	private final IntLiteralElements pIntLiteral;
 	private final FloatLiteralElements pFloatLiteral;
@@ -752,6 +776,8 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final StringLiteralElements pStringLiteral;
 	private final VariableReferenceElements pVariableReference;
 	private final TerminalRule tFLOAT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tML_COMMENT;
 	
 	private final Grammar grammar;
 	
@@ -774,10 +800,10 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pExpression = new ExpressionElements();
 		this.pOrExpression = new OrExpressionElements();
 		this.pAndExpression = new AndExpressionElements();
-		this.pNotExpression = new NotExpressionElements();
 		this.pComparison = new ComparisonElements();
 		this.pAddition = new AdditionElements();
 		this.pMultiplication = new MultiplicationElements();
+		this.pUnary = new UnaryElements();
 		this.pPrimary = new PrimaryElements();
 		this.pIntLiteral = new IntLiteralElements();
 		this.pFloatLiteral = new FloatLiteralElements();
@@ -787,6 +813,8 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pStringLiteral = new StringLiteralElements();
 		this.pVariableReference = new VariableReferenceElements();
 		this.tFLOAT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.FLOAT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.SL_COMMENT");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.ML_COMMENT");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -879,7 +907,7 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//FloatType:
-	//    {FloatType} 'float';
+	//    {FloatType} 'decimal';
 	public FloatTypeElements getFloatTypeAccess() {
 		return pFloatType;
 	}
@@ -929,7 +957,7 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//AndExpression returns Expression:
-	//    NotExpression ({AndExpression.left=current} 'and' right=NotExpression)*;
+	//    Comparison ({AndExpression.left=current} 'and' right=Comparison)*;
 	public AndExpressionElements getAndExpressionAccess() {
 		return pAndExpression;
 	}
@@ -938,18 +966,8 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getAndExpressionAccess().getRule();
 	}
 	
-	//NotExpression returns Expression:
-	//    {NotExpression} 'not' operand=NotExpression | Comparison;
-	public NotExpressionElements getNotExpressionAccess() {
-		return pNotExpression;
-	}
-	
-	public ParserRule getNotExpressionRule() {
-		return getNotExpressionAccess().getRule();
-	}
-	
 	//Comparison returns Expression:
-	//    Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?;
+	//    Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)*;
 	public ComparisonElements getComparisonAccess() {
 		return pComparison;
 	}
@@ -969,13 +987,25 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Multiplication returns Expression:
-	//    Primary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*;
+	//    Unary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Unary)*;
 	public MultiplicationElements getMultiplicationAccess() {
 		return pMultiplication;
 	}
 	
 	public ParserRule getMultiplicationRule() {
 		return getMultiplicationAccess().getRule();
+	}
+	
+	//Unary returns Expression:
+	//    {NotExpression} 'not' operand=Unary
+	//    | {Negative} '-' operand=Unary
+	//    | Primary;
+	public UnaryElements getUnaryAccess() {
+		return pUnary;
+	}
+	
+	public ParserRule getUnaryRule() {
+		return getUnaryAccess().getRule();
 	}
 	
 	//Primary returns Expression:
@@ -1069,6 +1099,18 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return tFLOAT;
 	}
 	
+	//terminal SL_COMMENT:
+	//    '//' !('\n' | '\r')* ('\n' | '\r')?;
+	public TerminalRule getSL_COMMENTRule() {
+		return tSL_COMMENT;
+	}
+	
+	//terminal ML_COMMENT:
+	//    '/*' -> '*/';
+	public TerminalRule getML_COMMENTRule() {
+		return tML_COMMENT;
+	}
+	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
@@ -1085,16 +1127,6 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        ;
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
-	}
-	
-	//terminal ML_COMMENT : '/*' -> '*/';
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	}
-	
-	//terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
 	}
 	
 	//terminal WS         : (' '|'\t'|'\r'|'\n')+;

@@ -554,34 +554,6 @@ public interface JararacaPackage extends EPackage
   int AND_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.volkmann.jararaca.impl.NotExpressionImpl <em>Not Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.volkmann.jararaca.impl.NotExpressionImpl
-   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNotExpression()
-   * @generated
-   */
-  int NOT_EXPRESSION = 19;
-
-  /**
-   * The feature id for the '<em><b>Operand</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT_EXPRESSION__OPERAND = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Not Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link com.volkmann.jararaca.impl.ComparisonImpl <em>Comparison</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -589,7 +561,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 20;
+  int COMPARISON = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -635,7 +607,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 21;
+  int ADDITION = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -681,7 +653,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 22;
+  int MULTIPLICATION = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -720,6 +692,62 @@ public interface JararacaPackage extends EPackage
   int MULTIPLICATION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.NotExpressionImpl <em>Not Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.NotExpressionImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNotExpression()
+   * @generated
+   */
+  int NOT_EXPRESSION = 22;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EXPRESSION__OPERAND = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.NegativeImpl <em>Negative</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.NegativeImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNegative()
+   * @generated
+   */
+  int NEGATIVE = 23;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATIVE__OPERAND = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Negative</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NEGATIVE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.volkmann.jararaca.impl.ParenExpressionImpl <em>Paren Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -727,7 +755,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getParenExpression()
    * @generated
    */
-  int PAREN_EXPRESSION = 23;
+  int PAREN_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Inner</b></em>' containment reference.
@@ -1082,27 +1110,6 @@ public interface JararacaPackage extends EPackage
   EReference getAndExpression_Right();
 
   /**
-   * Returns the meta object for class '{@link com.volkmann.jararaca.NotExpression <em>Not Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Not Expression</em>'.
-   * @see com.volkmann.jararaca.NotExpression
-   * @generated
-   */
-  EClass getNotExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.NotExpression#getOperand <em>Operand</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operand</em>'.
-   * @see com.volkmann.jararaca.NotExpression#getOperand()
-   * @see #getNotExpression()
-   * @generated
-   */
-  EReference getNotExpression_Operand();
-
-  /**
    * Returns the meta object for class '{@link com.volkmann.jararaca.Comparison <em>Comparison</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1230,6 +1237,48 @@ public interface JararacaPackage extends EPackage
    * @generated
    */
   EReference getMultiplication_Right();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.NotExpression <em>Not Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not Expression</em>'.
+   * @see com.volkmann.jararaca.NotExpression
+   * @generated
+   */
+  EClass getNotExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.NotExpression#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see com.volkmann.jararaca.NotExpression#getOperand()
+   * @see #getNotExpression()
+   * @generated
+   */
+  EReference getNotExpression_Operand();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.Negative <em>Negative</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Negative</em>'.
+   * @see com.volkmann.jararaca.Negative
+   * @generated
+   */
+  EClass getNegative();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.Negative#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Operand</em>'.
+   * @see com.volkmann.jararaca.Negative#getOperand()
+   * @see #getNegative()
+   * @generated
+   */
+  EReference getNegative_Operand();
 
   /**
    * Returns the meta object for class '{@link com.volkmann.jararaca.ParenExpression <em>Paren Expression</em>}'.
@@ -1570,24 +1619,6 @@ public interface JararacaPackage extends EPackage
     EReference AND_EXPRESSION__RIGHT = eINSTANCE.getAndExpression_Right();
 
     /**
-     * The meta object literal for the '{@link com.volkmann.jararaca.impl.NotExpressionImpl <em>Not Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.volkmann.jararaca.impl.NotExpressionImpl
-     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNotExpression()
-     * @generated
-     */
-    EClass NOT_EXPRESSION = eINSTANCE.getNotExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NOT_EXPRESSION__OPERAND = eINSTANCE.getNotExpression_Operand();
-
-    /**
      * The meta object literal for the '{@link com.volkmann.jararaca.impl.ComparisonImpl <em>Comparison</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1688,6 +1719,42 @@ public interface JararacaPackage extends EPackage
      * @generated
      */
     EReference MULTIPLICATION__RIGHT = eINSTANCE.getMultiplication_Right();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.NotExpressionImpl <em>Not Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.NotExpressionImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNotExpression()
+     * @generated
+     */
+    EClass NOT_EXPRESSION = eINSTANCE.getNotExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT_EXPRESSION__OPERAND = eINSTANCE.getNotExpression_Operand();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.NegativeImpl <em>Negative</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.NegativeImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNegative()
+     * @generated
+     */
+    EClass NEGATIVE = eINSTANCE.getNegative();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NEGATIVE__OPERAND = eINSTANCE.getNegative_Operand();
 
     /**
      * The meta object literal for the '{@link com.volkmann.jararaca.impl.ParenExpressionImpl <em>Paren Expression</em>}' class.

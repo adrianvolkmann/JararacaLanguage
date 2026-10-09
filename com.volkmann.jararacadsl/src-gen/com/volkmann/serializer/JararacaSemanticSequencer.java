@@ -16,6 +16,7 @@ import com.volkmann.jararaca.IntLiteral;
 import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaPackage;
 import com.volkmann.jararaca.Multiplication;
+import com.volkmann.jararaca.Negative;
 import com.volkmann.jararaca.NotExpression;
 import com.volkmann.jararaca.OrExpression;
 import com.volkmann.jararaca.ParenExpression;
@@ -84,8 +85,11 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case JararacaPackage.MULTIPLICATION:
 				sequence_Multiplication(context, (Multiplication) semanticObject); 
 				return; 
+			case JararacaPackage.NEGATIVE:
+				sequence_Unary(context, (Negative) semanticObject); 
+				return; 
 			case JararacaPackage.NOT_EXPRESSION:
-				sequence_NotExpression(context, (NotExpression) semanticObject); 
+				sequence_Unary(context, (NotExpression) semanticObject); 
 				return; 
 			case JararacaPackage.OR_EXPRESSION:
 				sequence_OrExpression(context, (OrExpression) semanticObject); 
@@ -124,7 +128,6 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns Addition
 	 *     AndExpression returns Addition
 	 *     AndExpression.AndExpression_1_0 returns Addition
-	 *     NotExpression returns Addition
 	 *     Comparison returns Addition
 	 *     Comparison.Comparison_1_0 returns Addition
 	 *     Addition returns Addition
@@ -149,7 +152,7 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AndExpression.AndExpression_1_0 returns AndExpression
 	 *
 	 * Constraint:
-	 *     (left=AndExpression_AndExpression_1_0 right=NotExpression)
+	 *     (left=AndExpression_AndExpression_1_0 right=Comparison)
 	 * </pre>
 	 */
 	protected void sequence_AndExpression(ISerializationContext context, AndExpression semanticObject) {
@@ -161,7 +164,7 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAndExpressionAccess().getAndExpressionLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getAndExpressionAccess().getRightNotExpressionParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -213,8 +216,8 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns Comparison
 	 *     AndExpression returns Comparison
 	 *     AndExpression.AndExpression_1_0 returns Comparison
-	 *     NotExpression returns Comparison
 	 *     Comparison returns Comparison
+	 *     Comparison.Comparison_1_0 returns Comparison
 	 *
 	 * Constraint:
 	 *     (
@@ -244,13 +247,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns FalseLiteral
 	 *     AndExpression returns FalseLiteral
 	 *     AndExpression.AndExpression_1_0 returns FalseLiteral
-	 *     NotExpression returns FalseLiteral
 	 *     Comparison returns FalseLiteral
 	 *     Comparison.Comparison_1_0 returns FalseLiteral
 	 *     Addition returns FalseLiteral
 	 *     Addition.Addition_1_0 returns FalseLiteral
 	 *     Multiplication returns FalseLiteral
 	 *     Multiplication.Multiplication_1_0 returns FalseLiteral
+	 *     Unary returns FalseLiteral
 	 *     Primary returns FalseLiteral
 	 *     BooleanLiteral returns FalseLiteral
 	 *     FalseLiteral returns FalseLiteral
@@ -272,13 +275,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns FloatLiteral
 	 *     AndExpression returns FloatLiteral
 	 *     AndExpression.AndExpression_1_0 returns FloatLiteral
-	 *     NotExpression returns FloatLiteral
 	 *     Comparison returns FloatLiteral
 	 *     Comparison.Comparison_1_0 returns FloatLiteral
 	 *     Addition returns FloatLiteral
 	 *     Addition.Addition_1_0 returns FloatLiteral
 	 *     Multiplication returns FloatLiteral
 	 *     Multiplication.Multiplication_1_0 returns FloatLiteral
+	 *     Unary returns FloatLiteral
 	 *     Primary returns FloatLiteral
 	 *     FloatLiteral returns FloatLiteral
 	 *
@@ -320,13 +323,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns IntLiteral
 	 *     AndExpression returns IntLiteral
 	 *     AndExpression.AndExpression_1_0 returns IntLiteral
-	 *     NotExpression returns IntLiteral
 	 *     Comparison returns IntLiteral
 	 *     Comparison.Comparison_1_0 returns IntLiteral
 	 *     Addition returns IntLiteral
 	 *     Addition.Addition_1_0 returns IntLiteral
 	 *     Multiplication returns IntLiteral
 	 *     Multiplication.Multiplication_1_0 returns IntLiteral
+	 *     Unary returns IntLiteral
 	 *     Primary returns IntLiteral
 	 *     IntLiteral returns IntLiteral
 	 *
@@ -368,7 +371,6 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns Multiplication
 	 *     AndExpression returns Multiplication
 	 *     AndExpression.AndExpression_1_0 returns Multiplication
-	 *     NotExpression returns Multiplication
 	 *     Comparison returns Multiplication
 	 *     Comparison.Comparison_1_0 returns Multiplication
 	 *     Addition returns Multiplication
@@ -377,36 +379,11 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Multiplication.Multiplication_1_0 returns Multiplication
 	 *
 	 * Constraint:
-	 *     (left=Multiplication_Multiplication_1_0 (operator='*' | operator='/' | operator='%') right=Primary)
+	 *     (left=Multiplication_Multiplication_1_0 (operator='*' | operator='/' | operator='%') right=Unary)
 	 * </pre>
 	 */
 	protected void sequence_Multiplication(ISerializationContext context, Multiplication semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Expression returns NotExpression
-	 *     OrExpression returns NotExpression
-	 *     OrExpression.OrExpression_1_0 returns NotExpression
-	 *     AndExpression returns NotExpression
-	 *     AndExpression.AndExpression_1_0 returns NotExpression
-	 *     NotExpression returns NotExpression
-	 *
-	 * Constraint:
-	 *     operand=NotExpression
-	 * </pre>
-	 */
-	protected void sequence_NotExpression(ISerializationContext context, NotExpression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNotExpressionAccess().getOperandNotExpressionParserRuleCall_0_2_0(), semanticObject.getOperand());
-		feeder.finish();
 	}
 	
 	
@@ -443,13 +420,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns ParenExpression
 	 *     AndExpression returns ParenExpression
 	 *     AndExpression.AndExpression_1_0 returns ParenExpression
-	 *     NotExpression returns ParenExpression
 	 *     Comparison returns ParenExpression
 	 *     Comparison.Comparison_1_0 returns ParenExpression
 	 *     Addition returns ParenExpression
 	 *     Addition.Addition_1_0 returns ParenExpression
 	 *     Multiplication returns ParenExpression
 	 *     Multiplication.Multiplication_1_0 returns ParenExpression
+	 *     Unary returns ParenExpression
 	 *     Primary returns ParenExpression
 	 *
 	 * Constraint:
@@ -489,13 +466,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns StringLiteral
 	 *     AndExpression returns StringLiteral
 	 *     AndExpression.AndExpression_1_0 returns StringLiteral
-	 *     NotExpression returns StringLiteral
 	 *     Comparison returns StringLiteral
 	 *     Comparison.Comparison_1_0 returns StringLiteral
 	 *     Addition returns StringLiteral
 	 *     Addition.Addition_1_0 returns StringLiteral
 	 *     Multiplication returns StringLiteral
 	 *     Multiplication.Multiplication_1_0 returns StringLiteral
+	 *     Unary returns StringLiteral
 	 *     Primary returns StringLiteral
 	 *     StringLiteral returns StringLiteral
 	 *
@@ -537,13 +514,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns TrueLiteral
 	 *     AndExpression returns TrueLiteral
 	 *     AndExpression.AndExpression_1_0 returns TrueLiteral
-	 *     NotExpression returns TrueLiteral
 	 *     Comparison returns TrueLiteral
 	 *     Comparison.Comparison_1_0 returns TrueLiteral
 	 *     Addition returns TrueLiteral
 	 *     Addition.Addition_1_0 returns TrueLiteral
 	 *     Multiplication returns TrueLiteral
 	 *     Multiplication.Multiplication_1_0 returns TrueLiteral
+	 *     Unary returns TrueLiteral
 	 *     Primary returns TrueLiteral
 	 *     BooleanLiteral returns TrueLiteral
 	 *     TrueLiteral returns TrueLiteral
@@ -554,6 +531,68 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_TrueLiteral(ISerializationContext context, TrueLiteral semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns Negative
+	 *     OrExpression returns Negative
+	 *     OrExpression.OrExpression_1_0 returns Negative
+	 *     AndExpression returns Negative
+	 *     AndExpression.AndExpression_1_0 returns Negative
+	 *     Comparison returns Negative
+	 *     Comparison.Comparison_1_0 returns Negative
+	 *     Addition returns Negative
+	 *     Addition.Addition_1_0 returns Negative
+	 *     Multiplication returns Negative
+	 *     Multiplication.Multiplication_1_0 returns Negative
+	 *     Unary returns Negative
+	 *
+	 * Constraint:
+	 *     operand=Unary
+	 * </pre>
+	 */
+	protected void sequence_Unary(ISerializationContext context, Negative semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.NEGATIVE__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.NEGATIVE__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_1_2_0(), semanticObject.getOperand());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns NotExpression
+	 *     OrExpression returns NotExpression
+	 *     OrExpression.OrExpression_1_0 returns NotExpression
+	 *     AndExpression returns NotExpression
+	 *     AndExpression.AndExpression_1_0 returns NotExpression
+	 *     Comparison returns NotExpression
+	 *     Comparison.Comparison_1_0 returns NotExpression
+	 *     Addition returns NotExpression
+	 *     Addition.Addition_1_0 returns NotExpression
+	 *     Multiplication returns NotExpression
+	 *     Multiplication.Multiplication_1_0 returns NotExpression
+	 *     Unary returns NotExpression
+	 *
+	 * Constraint:
+	 *     operand=Unary
+	 * </pre>
+	 */
+	protected void sequence_Unary(ISerializationContext context, NotExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_0_2_0(), semanticObject.getOperand());
+		feeder.finish();
 	}
 	
 	
@@ -580,13 +619,13 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     OrExpression.OrExpression_1_0 returns VariableReference
 	 *     AndExpression returns VariableReference
 	 *     AndExpression.AndExpression_1_0 returns VariableReference
-	 *     NotExpression returns VariableReference
 	 *     Comparison returns VariableReference
 	 *     Comparison.Comparison_1_0 returns VariableReference
 	 *     Addition returns VariableReference
 	 *     Addition.Addition_1_0 returns VariableReference
 	 *     Multiplication returns VariableReference
 	 *     Multiplication.Multiplication_1_0 returns VariableReference
+	 *     Unary returns VariableReference
 	 *     Primary returns VariableReference
 	 *     VariableReference returns VariableReference
 	 *

@@ -22,10 +22,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJararacaParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'=='", "'!='", "'<='", "'>='", "'<'", "'>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'program'", "'{'", "'}'", "'var'", "';'", "'='", "'int'", "'float'", "'boolean'", "'string'", "'or'", "'and'", "'not'", "'('", "')'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_FLOAT", "RULE_STRING", "RULE_SL_COMMENT", "RULE_ML_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'=='", "'!='", "'<='", "'>='", "'<'", "'>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'program'", "'{'", "'}'", "'var'", "';'", "'='", "'int'", "'decimal'", "'boolean'", "'string'", "'or'", "'and'", "'not'", "'('", "')'", "'true'", "'false'"
     };
     public static final int RULE_STRING=7;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__37=37;
@@ -54,7 +54,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     public static final int RULE_INT=5;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=8;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int RULE_FLOAT=6;
     public static final int T__24=24;
@@ -1015,89 +1015,12 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleAndExpression"
 
 
-    // $ANTLR start "entryRuleNotExpression"
-    // InternalJararaca.g:353:1: entryRuleNotExpression : ruleNotExpression EOF ;
-    public final void entryRuleNotExpression() throws RecognitionException {
-        try {
-            // InternalJararaca.g:354:1: ( ruleNotExpression EOF )
-            // InternalJararaca.g:355:1: ruleNotExpression EOF
-            {
-             before(grammarAccess.getNotExpressionRule()); 
-            pushFollow(FOLLOW_1);
-            ruleNotExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getNotExpressionRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleNotExpression"
-
-
-    // $ANTLR start "ruleNotExpression"
-    // InternalJararaca.g:362:1: ruleNotExpression : ( ( rule__NotExpression__Alternatives ) ) ;
-    public final void ruleNotExpression() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:366:2: ( ( ( rule__NotExpression__Alternatives ) ) )
-            // InternalJararaca.g:367:2: ( ( rule__NotExpression__Alternatives ) )
-            {
-            // InternalJararaca.g:367:2: ( ( rule__NotExpression__Alternatives ) )
-            // InternalJararaca.g:368:3: ( rule__NotExpression__Alternatives )
-            {
-             before(grammarAccess.getNotExpressionAccess().getAlternatives()); 
-            // InternalJararaca.g:369:3: ( rule__NotExpression__Alternatives )
-            // InternalJararaca.g:369:4: rule__NotExpression__Alternatives
-            {
-            pushFollow(FOLLOW_2);
-            rule__NotExpression__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNotExpressionAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleNotExpression"
-
-
     // $ANTLR start "entryRuleComparison"
-    // InternalJararaca.g:378:1: entryRuleComparison : ruleComparison EOF ;
+    // InternalJararaca.g:353:1: entryRuleComparison : ruleComparison EOF ;
     public final void entryRuleComparison() throws RecognitionException {
         try {
-            // InternalJararaca.g:379:1: ( ruleComparison EOF )
-            // InternalJararaca.g:380:1: ruleComparison EOF
+            // InternalJararaca.g:354:1: ( ruleComparison EOF )
+            // InternalJararaca.g:355:1: ruleComparison EOF
             {
              before(grammarAccess.getComparisonRule()); 
             pushFollow(FOLLOW_1);
@@ -1123,21 +1046,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleComparison"
-    // InternalJararaca.g:387:1: ruleComparison : ( ( rule__Comparison__Group__0 ) ) ;
+    // InternalJararaca.g:362:1: ruleComparison : ( ( rule__Comparison__Group__0 ) ) ;
     public final void ruleComparison() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:391:2: ( ( ( rule__Comparison__Group__0 ) ) )
-            // InternalJararaca.g:392:2: ( ( rule__Comparison__Group__0 ) )
+            // InternalJararaca.g:366:2: ( ( ( rule__Comparison__Group__0 ) ) )
+            // InternalJararaca.g:367:2: ( ( rule__Comparison__Group__0 ) )
             {
-            // InternalJararaca.g:392:2: ( ( rule__Comparison__Group__0 ) )
-            // InternalJararaca.g:393:3: ( rule__Comparison__Group__0 )
+            // InternalJararaca.g:367:2: ( ( rule__Comparison__Group__0 ) )
+            // InternalJararaca.g:368:3: ( rule__Comparison__Group__0 )
             {
              before(grammarAccess.getComparisonAccess().getGroup()); 
-            // InternalJararaca.g:394:3: ( rule__Comparison__Group__0 )
-            // InternalJararaca.g:394:4: rule__Comparison__Group__0
+            // InternalJararaca.g:369:3: ( rule__Comparison__Group__0 )
+            // InternalJararaca.g:369:4: rule__Comparison__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group__0();
@@ -1170,11 +1093,11 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleAddition"
-    // InternalJararaca.g:403:1: entryRuleAddition : ruleAddition EOF ;
+    // InternalJararaca.g:378:1: entryRuleAddition : ruleAddition EOF ;
     public final void entryRuleAddition() throws RecognitionException {
         try {
-            // InternalJararaca.g:404:1: ( ruleAddition EOF )
-            // InternalJararaca.g:405:1: ruleAddition EOF
+            // InternalJararaca.g:379:1: ( ruleAddition EOF )
+            // InternalJararaca.g:380:1: ruleAddition EOF
             {
              before(grammarAccess.getAdditionRule()); 
             pushFollow(FOLLOW_1);
@@ -1200,21 +1123,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleAddition"
-    // InternalJararaca.g:412:1: ruleAddition : ( ( rule__Addition__Group__0 ) ) ;
+    // InternalJararaca.g:387:1: ruleAddition : ( ( rule__Addition__Group__0 ) ) ;
     public final void ruleAddition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:416:2: ( ( ( rule__Addition__Group__0 ) ) )
-            // InternalJararaca.g:417:2: ( ( rule__Addition__Group__0 ) )
+            // InternalJararaca.g:391:2: ( ( ( rule__Addition__Group__0 ) ) )
+            // InternalJararaca.g:392:2: ( ( rule__Addition__Group__0 ) )
             {
-            // InternalJararaca.g:417:2: ( ( rule__Addition__Group__0 ) )
-            // InternalJararaca.g:418:3: ( rule__Addition__Group__0 )
+            // InternalJararaca.g:392:2: ( ( rule__Addition__Group__0 ) )
+            // InternalJararaca.g:393:3: ( rule__Addition__Group__0 )
             {
              before(grammarAccess.getAdditionAccess().getGroup()); 
-            // InternalJararaca.g:419:3: ( rule__Addition__Group__0 )
-            // InternalJararaca.g:419:4: rule__Addition__Group__0
+            // InternalJararaca.g:394:3: ( rule__Addition__Group__0 )
+            // InternalJararaca.g:394:4: rule__Addition__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group__0();
@@ -1247,11 +1170,11 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "entryRuleMultiplication"
-    // InternalJararaca.g:428:1: entryRuleMultiplication : ruleMultiplication EOF ;
+    // InternalJararaca.g:403:1: entryRuleMultiplication : ruleMultiplication EOF ;
     public final void entryRuleMultiplication() throws RecognitionException {
         try {
-            // InternalJararaca.g:429:1: ( ruleMultiplication EOF )
-            // InternalJararaca.g:430:1: ruleMultiplication EOF
+            // InternalJararaca.g:404:1: ( ruleMultiplication EOF )
+            // InternalJararaca.g:405:1: ruleMultiplication EOF
             {
              before(grammarAccess.getMultiplicationRule()); 
             pushFollow(FOLLOW_1);
@@ -1277,21 +1200,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "ruleMultiplication"
-    // InternalJararaca.g:437:1: ruleMultiplication : ( ( rule__Multiplication__Group__0 ) ) ;
+    // InternalJararaca.g:412:1: ruleMultiplication : ( ( rule__Multiplication__Group__0 ) ) ;
     public final void ruleMultiplication() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:441:2: ( ( ( rule__Multiplication__Group__0 ) ) )
-            // InternalJararaca.g:442:2: ( ( rule__Multiplication__Group__0 ) )
+            // InternalJararaca.g:416:2: ( ( ( rule__Multiplication__Group__0 ) ) )
+            // InternalJararaca.g:417:2: ( ( rule__Multiplication__Group__0 ) )
             {
-            // InternalJararaca.g:442:2: ( ( rule__Multiplication__Group__0 ) )
-            // InternalJararaca.g:443:3: ( rule__Multiplication__Group__0 )
+            // InternalJararaca.g:417:2: ( ( rule__Multiplication__Group__0 ) )
+            // InternalJararaca.g:418:3: ( rule__Multiplication__Group__0 )
             {
              before(grammarAccess.getMultiplicationAccess().getGroup()); 
-            // InternalJararaca.g:444:3: ( rule__Multiplication__Group__0 )
-            // InternalJararaca.g:444:4: rule__Multiplication__Group__0
+            // InternalJararaca.g:419:3: ( rule__Multiplication__Group__0 )
+            // InternalJararaca.g:419:4: rule__Multiplication__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group__0();
@@ -1321,6 +1244,83 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
         return ;
     }
     // $ANTLR end "ruleMultiplication"
+
+
+    // $ANTLR start "entryRuleUnary"
+    // InternalJararaca.g:428:1: entryRuleUnary : ruleUnary EOF ;
+    public final void entryRuleUnary() throws RecognitionException {
+        try {
+            // InternalJararaca.g:429:1: ( ruleUnary EOF )
+            // InternalJararaca.g:430:1: ruleUnary EOF
+            {
+             before(grammarAccess.getUnaryRule()); 
+            pushFollow(FOLLOW_1);
+            ruleUnary();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnaryRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleUnary"
+
+
+    // $ANTLR start "ruleUnary"
+    // InternalJararaca.g:437:1: ruleUnary : ( ( rule__Unary__Alternatives ) ) ;
+    public final void ruleUnary() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:441:2: ( ( ( rule__Unary__Alternatives ) ) )
+            // InternalJararaca.g:442:2: ( ( rule__Unary__Alternatives ) )
+            {
+            // InternalJararaca.g:442:2: ( ( rule__Unary__Alternatives ) )
+            // InternalJararaca.g:443:3: ( rule__Unary__Alternatives )
+            {
+             before(grammarAccess.getUnaryAccess().getAlternatives()); 
+            // InternalJararaca.g:444:3: ( rule__Unary__Alternatives )
+            // InternalJararaca.g:444:4: rule__Unary__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__Unary__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnaryAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleUnary"
 
 
     // $ANTLR start "entryRulePrimary"
@@ -2149,144 +2149,59 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Type__Alternatives"
 
 
-    // $ANTLR start "rule__NotExpression__Alternatives"
-    // InternalJararaca.g:706:1: rule__NotExpression__Alternatives : ( ( ( rule__NotExpression__Group_0__0 ) ) | ( ruleComparison ) );
-    public final void rule__NotExpression__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:710:1: ( ( ( rule__NotExpression__Group_0__0 ) ) | ( ruleComparison ) )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==35) ) {
-                alt3=1;
-            }
-            else if ( ((LA3_0>=RULE_ID && LA3_0<=RULE_STRING)||LA3_0==36||(LA3_0>=38 && LA3_0<=39)) ) {
-                alt3=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // InternalJararaca.g:711:2: ( ( rule__NotExpression__Group_0__0 ) )
-                    {
-                    // InternalJararaca.g:711:2: ( ( rule__NotExpression__Group_0__0 ) )
-                    // InternalJararaca.g:712:3: ( rule__NotExpression__Group_0__0 )
-                    {
-                     before(grammarAccess.getNotExpressionAccess().getGroup_0()); 
-                    // InternalJararaca.g:713:3: ( rule__NotExpression__Group_0__0 )
-                    // InternalJararaca.g:713:4: rule__NotExpression__Group_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__NotExpression__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getNotExpressionAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalJararaca.g:717:2: ( ruleComparison )
-                    {
-                    // InternalJararaca.g:717:2: ( ruleComparison )
-                    // InternalJararaca.g:718:3: ruleComparison
-                    {
-                     before(grammarAccess.getNotExpressionAccess().getComparisonParserRuleCall_1()); 
-                    pushFollow(FOLLOW_2);
-                    ruleComparison();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getNotExpressionAccess().getComparisonParserRuleCall_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Alternatives"
-
-
     // $ANTLR start "rule__Comparison__OperatorAlternatives_1_1_0"
-    // InternalJararaca.g:727:1: rule__Comparison__OperatorAlternatives_1_1_0 : ( ( '==' ) | ( '!=' ) | ( '<=' ) | ( '>=' ) | ( '<' ) | ( '>' ) );
+    // InternalJararaca.g:706:1: rule__Comparison__OperatorAlternatives_1_1_0 : ( ( '==' ) | ( '!=' ) | ( '<=' ) | ( '>=' ) | ( '<' ) | ( '>' ) );
     public final void rule__Comparison__OperatorAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:731:1: ( ( '==' ) | ( '!=' ) | ( '<=' ) | ( '>=' ) | ( '<' ) | ( '>' ) )
-            int alt4=6;
+            // InternalJararaca.g:710:1: ( ( '==' ) | ( '!=' ) | ( '<=' ) | ( '>=' ) | ( '<' ) | ( '>' ) )
+            int alt3=6;
             switch ( input.LA(1) ) {
             case 12:
                 {
-                alt4=1;
+                alt3=1;
                 }
                 break;
             case 13:
                 {
-                alt4=2;
+                alt3=2;
                 }
                 break;
             case 14:
                 {
-                alt4=3;
+                alt3=3;
                 }
                 break;
             case 15:
                 {
-                alt4=4;
+                alt3=4;
                 }
                 break;
             case 16:
                 {
-                alt4=5;
+                alt3=5;
                 }
                 break;
             case 17:
                 {
-                alt4=6;
+                alt3=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // InternalJararaca.g:732:2: ( '==' )
+                    // InternalJararaca.g:711:2: ( '==' )
                     {
-                    // InternalJararaca.g:732:2: ( '==' )
-                    // InternalJararaca.g:733:3: '=='
+                    // InternalJararaca.g:711:2: ( '==' )
+                    // InternalJararaca.g:712:3: '=='
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorEqualsSignEqualsSignKeyword_1_1_0_0()); 
                     match(input,12,FOLLOW_2); 
@@ -2298,10 +2213,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:738:2: ( '!=' )
+                    // InternalJararaca.g:717:2: ( '!=' )
                     {
-                    // InternalJararaca.g:738:2: ( '!=' )
-                    // InternalJararaca.g:739:3: '!='
+                    // InternalJararaca.g:717:2: ( '!=' )
+                    // InternalJararaca.g:718:3: '!='
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorExclamationMarkEqualsSignKeyword_1_1_0_1()); 
                     match(input,13,FOLLOW_2); 
@@ -2313,10 +2228,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalJararaca.g:744:2: ( '<=' )
+                    // InternalJararaca.g:723:2: ( '<=' )
                     {
-                    // InternalJararaca.g:744:2: ( '<=' )
-                    // InternalJararaca.g:745:3: '<='
+                    // InternalJararaca.g:723:2: ( '<=' )
+                    // InternalJararaca.g:724:3: '<='
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorLessThanSignEqualsSignKeyword_1_1_0_2()); 
                     match(input,14,FOLLOW_2); 
@@ -2328,10 +2243,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalJararaca.g:750:2: ( '>=' )
+                    // InternalJararaca.g:729:2: ( '>=' )
                     {
-                    // InternalJararaca.g:750:2: ( '>=' )
-                    // InternalJararaca.g:751:3: '>='
+                    // InternalJararaca.g:729:2: ( '>=' )
+                    // InternalJararaca.g:730:3: '>='
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorGreaterThanSignEqualsSignKeyword_1_1_0_3()); 
                     match(input,15,FOLLOW_2); 
@@ -2343,10 +2258,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // InternalJararaca.g:756:2: ( '<' )
+                    // InternalJararaca.g:735:2: ( '<' )
                     {
-                    // InternalJararaca.g:756:2: ( '<' )
-                    // InternalJararaca.g:757:3: '<'
+                    // InternalJararaca.g:735:2: ( '<' )
+                    // InternalJararaca.g:736:3: '<'
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorLessThanSignKeyword_1_1_0_4()); 
                     match(input,16,FOLLOW_2); 
@@ -2358,10 +2273,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // InternalJararaca.g:762:2: ( '>' )
+                    // InternalJararaca.g:741:2: ( '>' )
                     {
-                    // InternalJararaca.g:762:2: ( '>' )
-                    // InternalJararaca.g:763:3: '>'
+                    // InternalJararaca.g:741:2: ( '>' )
+                    // InternalJararaca.g:742:3: '>'
                     {
                      before(grammarAccess.getComparisonAccess().getOperatorGreaterThanSignKeyword_1_1_0_5()); 
                     match(input,17,FOLLOW_2); 
@@ -2390,34 +2305,34 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__OperatorAlternatives_1_1_0"
-    // InternalJararaca.g:772:1: rule__Addition__OperatorAlternatives_1_1_0 : ( ( '+' ) | ( '-' ) );
+    // InternalJararaca.g:751:1: rule__Addition__OperatorAlternatives_1_1_0 : ( ( '+' ) | ( '-' ) );
     public final void rule__Addition__OperatorAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:776:1: ( ( '+' ) | ( '-' ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // InternalJararaca.g:755:1: ( ( '+' ) | ( '-' ) )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==18) ) {
-                alt5=1;
+            if ( (LA4_0==18) ) {
+                alt4=1;
             }
-            else if ( (LA5_0==19) ) {
-                alt5=2;
+            else if ( (LA4_0==19) ) {
+                alt4=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // InternalJararaca.g:777:2: ( '+' )
+                    // InternalJararaca.g:756:2: ( '+' )
                     {
-                    // InternalJararaca.g:777:2: ( '+' )
-                    // InternalJararaca.g:778:3: '+'
+                    // InternalJararaca.g:756:2: ( '+' )
+                    // InternalJararaca.g:757:3: '+'
                     {
                      before(grammarAccess.getAdditionAccess().getOperatorPlusSignKeyword_1_1_0_0()); 
                     match(input,18,FOLLOW_2); 
@@ -2429,10 +2344,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:783:2: ( '-' )
+                    // InternalJararaca.g:762:2: ( '-' )
                     {
-                    // InternalJararaca.g:783:2: ( '-' )
-                    // InternalJararaca.g:784:3: '-'
+                    // InternalJararaca.g:762:2: ( '-' )
+                    // InternalJararaca.g:763:3: '-'
                     {
                      before(grammarAccess.getAdditionAccess().getOperatorHyphenMinusKeyword_1_1_0_1()); 
                     match(input,19,FOLLOW_2); 
@@ -2461,43 +2376,43 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__OperatorAlternatives_1_1_0"
-    // InternalJararaca.g:793:1: rule__Multiplication__OperatorAlternatives_1_1_0 : ( ( '*' ) | ( '/' ) | ( '%' ) );
+    // InternalJararaca.g:772:1: rule__Multiplication__OperatorAlternatives_1_1_0 : ( ( '*' ) | ( '/' ) | ( '%' ) );
     public final void rule__Multiplication__OperatorAlternatives_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:797:1: ( ( '*' ) | ( '/' ) | ( '%' ) )
-            int alt6=3;
+            // InternalJararaca.g:776:1: ( ( '*' ) | ( '/' ) | ( '%' ) )
+            int alt5=3;
             switch ( input.LA(1) ) {
             case 20:
                 {
-                alt6=1;
+                alt5=1;
                 }
                 break;
             case 21:
                 {
-                alt6=2;
+                alt5=2;
                 }
                 break;
             case 22:
                 {
-                alt6=3;
+                alt5=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalJararaca.g:798:2: ( '*' )
+                    // InternalJararaca.g:777:2: ( '*' )
                     {
-                    // InternalJararaca.g:798:2: ( '*' )
-                    // InternalJararaca.g:799:3: '*'
+                    // InternalJararaca.g:777:2: ( '*' )
+                    // InternalJararaca.g:778:3: '*'
                     {
                      before(grammarAccess.getMultiplicationAccess().getOperatorAsteriskKeyword_1_1_0_0()); 
                     match(input,20,FOLLOW_2); 
@@ -2509,10 +2424,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:804:2: ( '/' )
+                    // InternalJararaca.g:783:2: ( '/' )
                     {
-                    // InternalJararaca.g:804:2: ( '/' )
-                    // InternalJararaca.g:805:3: '/'
+                    // InternalJararaca.g:783:2: ( '/' )
+                    // InternalJararaca.g:784:3: '/'
                     {
                      before(grammarAccess.getMultiplicationAccess().getOperatorSolidusKeyword_1_1_0_1()); 
                     match(input,21,FOLLOW_2); 
@@ -2524,10 +2439,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalJararaca.g:810:2: ( '%' )
+                    // InternalJararaca.g:789:2: ( '%' )
                     {
-                    // InternalJararaca.g:810:2: ( '%' )
-                    // InternalJararaca.g:811:3: '%'
+                    // InternalJararaca.g:789:2: ( '%' )
+                    // InternalJararaca.g:790:3: '%'
                     {
                      before(grammarAccess.getMultiplicationAccess().getOperatorPercentSignKeyword_1_1_0_2()); 
                     match(input,22,FOLLOW_2); 
@@ -2555,14 +2470,139 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Multiplication__OperatorAlternatives_1_1_0"
 
 
+    // $ANTLR start "rule__Unary__Alternatives"
+    // InternalJararaca.g:799:1: rule__Unary__Alternatives : ( ( ( rule__Unary__Group_0__0 ) ) | ( ( rule__Unary__Group_1__0 ) ) | ( rulePrimary ) );
+    public final void rule__Unary__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:803:1: ( ( ( rule__Unary__Group_0__0 ) ) | ( ( rule__Unary__Group_1__0 ) ) | ( rulePrimary ) )
+            int alt6=3;
+            switch ( input.LA(1) ) {
+            case 35:
+                {
+                alt6=1;
+                }
+                break;
+            case 19:
+                {
+                alt6=2;
+                }
+                break;
+            case RULE_ID:
+            case RULE_INT:
+            case RULE_FLOAT:
+            case RULE_STRING:
+            case 36:
+            case 38:
+            case 39:
+                {
+                alt6=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt6) {
+                case 1 :
+                    // InternalJararaca.g:804:2: ( ( rule__Unary__Group_0__0 ) )
+                    {
+                    // InternalJararaca.g:804:2: ( ( rule__Unary__Group_0__0 ) )
+                    // InternalJararaca.g:805:3: ( rule__Unary__Group_0__0 )
+                    {
+                     before(grammarAccess.getUnaryAccess().getGroup_0()); 
+                    // InternalJararaca.g:806:3: ( rule__Unary__Group_0__0 )
+                    // InternalJararaca.g:806:4: rule__Unary__Group_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Unary__Group_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getUnaryAccess().getGroup_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalJararaca.g:810:2: ( ( rule__Unary__Group_1__0 ) )
+                    {
+                    // InternalJararaca.g:810:2: ( ( rule__Unary__Group_1__0 ) )
+                    // InternalJararaca.g:811:3: ( rule__Unary__Group_1__0 )
+                    {
+                     before(grammarAccess.getUnaryAccess().getGroup_1()); 
+                    // InternalJararaca.g:812:3: ( rule__Unary__Group_1__0 )
+                    // InternalJararaca.g:812:4: rule__Unary__Group_1__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Unary__Group_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getUnaryAccess().getGroup_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalJararaca.g:816:2: ( rulePrimary )
+                    {
+                    // InternalJararaca.g:816:2: ( rulePrimary )
+                    // InternalJararaca.g:817:3: rulePrimary
+                    {
+                     before(grammarAccess.getUnaryAccess().getPrimaryParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    rulePrimary();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getUnaryAccess().getPrimaryParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Alternatives"
+
+
     // $ANTLR start "rule__Primary__Alternatives"
-    // InternalJararaca.g:820:1: rule__Primary__Alternatives : ( ( ( rule__Primary__Group_0__0 ) ) | ( ruleIntLiteral ) | ( ruleFloatLiteral ) | ( ruleBooleanLiteral ) | ( ruleStringLiteral ) | ( ruleVariableReference ) );
+    // InternalJararaca.g:826:1: rule__Primary__Alternatives : ( ( ( rule__Primary__Group_0__0 ) ) | ( ruleIntLiteral ) | ( ruleFloatLiteral ) | ( ruleBooleanLiteral ) | ( ruleStringLiteral ) | ( ruleVariableReference ) );
     public final void rule__Primary__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:824:1: ( ( ( rule__Primary__Group_0__0 ) ) | ( ruleIntLiteral ) | ( ruleFloatLiteral ) | ( ruleBooleanLiteral ) | ( ruleStringLiteral ) | ( ruleVariableReference ) )
+            // InternalJararaca.g:830:1: ( ( ( rule__Primary__Group_0__0 ) ) | ( ruleIntLiteral ) | ( ruleFloatLiteral ) | ( ruleBooleanLiteral ) | ( ruleStringLiteral ) | ( ruleVariableReference ) )
             int alt7=6;
             switch ( input.LA(1) ) {
             case 36:
@@ -2605,14 +2645,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
             switch (alt7) {
                 case 1 :
-                    // InternalJararaca.g:825:2: ( ( rule__Primary__Group_0__0 ) )
+                    // InternalJararaca.g:831:2: ( ( rule__Primary__Group_0__0 ) )
                     {
-                    // InternalJararaca.g:825:2: ( ( rule__Primary__Group_0__0 ) )
-                    // InternalJararaca.g:826:3: ( rule__Primary__Group_0__0 )
+                    // InternalJararaca.g:831:2: ( ( rule__Primary__Group_0__0 ) )
+                    // InternalJararaca.g:832:3: ( rule__Primary__Group_0__0 )
                     {
                      before(grammarAccess.getPrimaryAccess().getGroup_0()); 
-                    // InternalJararaca.g:827:3: ( rule__Primary__Group_0__0 )
-                    // InternalJararaca.g:827:4: rule__Primary__Group_0__0
+                    // InternalJararaca.g:833:3: ( rule__Primary__Group_0__0 )
+                    // InternalJararaca.g:833:4: rule__Primary__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Primary__Group_0__0();
@@ -2630,10 +2670,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:831:2: ( ruleIntLiteral )
+                    // InternalJararaca.g:837:2: ( ruleIntLiteral )
                     {
-                    // InternalJararaca.g:831:2: ( ruleIntLiteral )
-                    // InternalJararaca.g:832:3: ruleIntLiteral
+                    // InternalJararaca.g:837:2: ( ruleIntLiteral )
+                    // InternalJararaca.g:838:3: ruleIntLiteral
                     {
                      before(grammarAccess.getPrimaryAccess().getIntLiteralParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2649,10 +2689,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalJararaca.g:837:2: ( ruleFloatLiteral )
+                    // InternalJararaca.g:843:2: ( ruleFloatLiteral )
                     {
-                    // InternalJararaca.g:837:2: ( ruleFloatLiteral )
-                    // InternalJararaca.g:838:3: ruleFloatLiteral
+                    // InternalJararaca.g:843:2: ( ruleFloatLiteral )
+                    // InternalJararaca.g:844:3: ruleFloatLiteral
                     {
                      before(grammarAccess.getPrimaryAccess().getFloatLiteralParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -2668,10 +2708,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalJararaca.g:843:2: ( ruleBooleanLiteral )
+                    // InternalJararaca.g:849:2: ( ruleBooleanLiteral )
                     {
-                    // InternalJararaca.g:843:2: ( ruleBooleanLiteral )
-                    // InternalJararaca.g:844:3: ruleBooleanLiteral
+                    // InternalJararaca.g:849:2: ( ruleBooleanLiteral )
+                    // InternalJararaca.g:850:3: ruleBooleanLiteral
                     {
                      before(grammarAccess.getPrimaryAccess().getBooleanLiteralParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -2687,10 +2727,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // InternalJararaca.g:849:2: ( ruleStringLiteral )
+                    // InternalJararaca.g:855:2: ( ruleStringLiteral )
                     {
-                    // InternalJararaca.g:849:2: ( ruleStringLiteral )
-                    // InternalJararaca.g:850:3: ruleStringLiteral
+                    // InternalJararaca.g:855:2: ( ruleStringLiteral )
+                    // InternalJararaca.g:856:3: ruleStringLiteral
                     {
                      before(grammarAccess.getPrimaryAccess().getStringLiteralParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -2706,10 +2746,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // InternalJararaca.g:855:2: ( ruleVariableReference )
+                    // InternalJararaca.g:861:2: ( ruleVariableReference )
                     {
-                    // InternalJararaca.g:855:2: ( ruleVariableReference )
-                    // InternalJararaca.g:856:3: ruleVariableReference
+                    // InternalJararaca.g:861:2: ( ruleVariableReference )
+                    // InternalJararaca.g:862:3: ruleVariableReference
                     {
                      before(grammarAccess.getPrimaryAccess().getVariableReferenceParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
@@ -2742,13 +2782,13 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BooleanLiteral__Alternatives"
-    // InternalJararaca.g:865:1: rule__BooleanLiteral__Alternatives : ( ( ruleTrueLiteral ) | ( ruleFalseLiteral ) );
+    // InternalJararaca.g:871:1: rule__BooleanLiteral__Alternatives : ( ( ruleTrueLiteral ) | ( ruleFalseLiteral ) );
     public final void rule__BooleanLiteral__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:869:1: ( ( ruleTrueLiteral ) | ( ruleFalseLiteral ) )
+            // InternalJararaca.g:875:1: ( ( ruleTrueLiteral ) | ( ruleFalseLiteral ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2766,10 +2806,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
             }
             switch (alt8) {
                 case 1 :
-                    // InternalJararaca.g:870:2: ( ruleTrueLiteral )
+                    // InternalJararaca.g:876:2: ( ruleTrueLiteral )
                     {
-                    // InternalJararaca.g:870:2: ( ruleTrueLiteral )
-                    // InternalJararaca.g:871:3: ruleTrueLiteral
+                    // InternalJararaca.g:876:2: ( ruleTrueLiteral )
+                    // InternalJararaca.g:877:3: ruleTrueLiteral
                     {
                      before(grammarAccess.getBooleanLiteralAccess().getTrueLiteralParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -2785,10 +2825,10 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:876:2: ( ruleFalseLiteral )
+                    // InternalJararaca.g:882:2: ( ruleFalseLiteral )
                     {
-                    // InternalJararaca.g:876:2: ( ruleFalseLiteral )
-                    // InternalJararaca.g:877:3: ruleFalseLiteral
+                    // InternalJararaca.g:882:2: ( ruleFalseLiteral )
+                    // InternalJararaca.g:883:3: ruleFalseLiteral
                     {
                      before(grammarAccess.getBooleanLiteralAccess().getFalseLiteralParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -2821,14 +2861,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__0"
-    // InternalJararaca.g:886:1: rule__Program__Group__0 : rule__Program__Group__0__Impl rule__Program__Group__1 ;
+    // InternalJararaca.g:892:1: rule__Program__Group__0 : rule__Program__Group__0__Impl rule__Program__Group__1 ;
     public final void rule__Program__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:890:1: ( rule__Program__Group__0__Impl rule__Program__Group__1 )
-            // InternalJararaca.g:891:2: rule__Program__Group__0__Impl rule__Program__Group__1
+            // InternalJararaca.g:896:1: ( rule__Program__Group__0__Impl rule__Program__Group__1 )
+            // InternalJararaca.g:897:2: rule__Program__Group__0__Impl rule__Program__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Program__Group__0__Impl();
@@ -2859,17 +2899,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__0__Impl"
-    // InternalJararaca.g:898:1: rule__Program__Group__0__Impl : ( 'program' ) ;
+    // InternalJararaca.g:904:1: rule__Program__Group__0__Impl : ( 'program' ) ;
     public final void rule__Program__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:902:1: ( ( 'program' ) )
-            // InternalJararaca.g:903:1: ( 'program' )
+            // InternalJararaca.g:908:1: ( ( 'program' ) )
+            // InternalJararaca.g:909:1: ( 'program' )
             {
-            // InternalJararaca.g:903:1: ( 'program' )
-            // InternalJararaca.g:904:2: 'program'
+            // InternalJararaca.g:909:1: ( 'program' )
+            // InternalJararaca.g:910:2: 'program'
             {
              before(grammarAccess.getProgramAccess().getProgramKeyword_0()); 
             match(input,23,FOLLOW_2); 
@@ -2896,14 +2936,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__1"
-    // InternalJararaca.g:913:1: rule__Program__Group__1 : rule__Program__Group__1__Impl rule__Program__Group__2 ;
+    // InternalJararaca.g:919:1: rule__Program__Group__1 : rule__Program__Group__1__Impl rule__Program__Group__2 ;
     public final void rule__Program__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:917:1: ( rule__Program__Group__1__Impl rule__Program__Group__2 )
-            // InternalJararaca.g:918:2: rule__Program__Group__1__Impl rule__Program__Group__2
+            // InternalJararaca.g:923:1: ( rule__Program__Group__1__Impl rule__Program__Group__2 )
+            // InternalJararaca.g:924:2: rule__Program__Group__1__Impl rule__Program__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Program__Group__1__Impl();
@@ -2934,17 +2974,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__1__Impl"
-    // InternalJararaca.g:925:1: rule__Program__Group__1__Impl : ( '{' ) ;
+    // InternalJararaca.g:931:1: rule__Program__Group__1__Impl : ( '{' ) ;
     public final void rule__Program__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:929:1: ( ( '{' ) )
-            // InternalJararaca.g:930:1: ( '{' )
+            // InternalJararaca.g:935:1: ( ( '{' ) )
+            // InternalJararaca.g:936:1: ( '{' )
             {
-            // InternalJararaca.g:930:1: ( '{' )
-            // InternalJararaca.g:931:2: '{'
+            // InternalJararaca.g:936:1: ( '{' )
+            // InternalJararaca.g:937:2: '{'
             {
              before(grammarAccess.getProgramAccess().getLeftCurlyBracketKeyword_1()); 
             match(input,24,FOLLOW_2); 
@@ -2971,14 +3011,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__2"
-    // InternalJararaca.g:940:1: rule__Program__Group__2 : rule__Program__Group__2__Impl rule__Program__Group__3 ;
+    // InternalJararaca.g:946:1: rule__Program__Group__2 : rule__Program__Group__2__Impl rule__Program__Group__3 ;
     public final void rule__Program__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:944:1: ( rule__Program__Group__2__Impl rule__Program__Group__3 )
-            // InternalJararaca.g:945:2: rule__Program__Group__2__Impl rule__Program__Group__3
+            // InternalJararaca.g:950:1: ( rule__Program__Group__2__Impl rule__Program__Group__3 )
+            // InternalJararaca.g:951:2: rule__Program__Group__2__Impl rule__Program__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Program__Group__2__Impl();
@@ -3009,20 +3049,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__2__Impl"
-    // InternalJararaca.g:952:1: rule__Program__Group__2__Impl : ( ( rule__Program__StatementsAssignment_2 )* ) ;
+    // InternalJararaca.g:958:1: rule__Program__Group__2__Impl : ( ( rule__Program__StatementsAssignment_2 )* ) ;
     public final void rule__Program__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:956:1: ( ( ( rule__Program__StatementsAssignment_2 )* ) )
-            // InternalJararaca.g:957:1: ( ( rule__Program__StatementsAssignment_2 )* )
+            // InternalJararaca.g:962:1: ( ( ( rule__Program__StatementsAssignment_2 )* ) )
+            // InternalJararaca.g:963:1: ( ( rule__Program__StatementsAssignment_2 )* )
             {
-            // InternalJararaca.g:957:1: ( ( rule__Program__StatementsAssignment_2 )* )
-            // InternalJararaca.g:958:2: ( rule__Program__StatementsAssignment_2 )*
+            // InternalJararaca.g:963:1: ( ( rule__Program__StatementsAssignment_2 )* )
+            // InternalJararaca.g:964:2: ( rule__Program__StatementsAssignment_2 )*
             {
              before(grammarAccess.getProgramAccess().getStatementsAssignment_2()); 
-            // InternalJararaca.g:959:2: ( rule__Program__StatementsAssignment_2 )*
+            // InternalJararaca.g:965:2: ( rule__Program__StatementsAssignment_2 )*
             loop9:
             do {
                 int alt9=2;
@@ -3035,7 +3075,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalJararaca.g:959:3: rule__Program__StatementsAssignment_2
+            	    // InternalJararaca.g:965:3: rule__Program__StatementsAssignment_2
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__Program__StatementsAssignment_2();
@@ -3074,14 +3114,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__3"
-    // InternalJararaca.g:967:1: rule__Program__Group__3 : rule__Program__Group__3__Impl ;
+    // InternalJararaca.g:973:1: rule__Program__Group__3 : rule__Program__Group__3__Impl ;
     public final void rule__Program__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:971:1: ( rule__Program__Group__3__Impl )
-            // InternalJararaca.g:972:2: rule__Program__Group__3__Impl
+            // InternalJararaca.g:977:1: ( rule__Program__Group__3__Impl )
+            // InternalJararaca.g:978:2: rule__Program__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Program__Group__3__Impl();
@@ -3107,17 +3147,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__Group__3__Impl"
-    // InternalJararaca.g:978:1: rule__Program__Group__3__Impl : ( '}' ) ;
+    // InternalJararaca.g:984:1: rule__Program__Group__3__Impl : ( '}' ) ;
     public final void rule__Program__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:982:1: ( ( '}' ) )
-            // InternalJararaca.g:983:1: ( '}' )
+            // InternalJararaca.g:988:1: ( ( '}' ) )
+            // InternalJararaca.g:989:1: ( '}' )
             {
-            // InternalJararaca.g:983:1: ( '}' )
-            // InternalJararaca.g:984:2: '}'
+            // InternalJararaca.g:989:1: ( '}' )
+            // InternalJararaca.g:990:2: '}'
             {
              before(grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_3()); 
             match(input,25,FOLLOW_2); 
@@ -3144,14 +3184,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__0"
-    // InternalJararaca.g:994:1: rule__VariableDeclaration__Group__0 : rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1 ;
+    // InternalJararaca.g:1000:1: rule__VariableDeclaration__Group__0 : rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1 ;
     public final void rule__VariableDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:998:1: ( rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1 )
-            // InternalJararaca.g:999:2: rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1
+            // InternalJararaca.g:1004:1: ( rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1 )
+            // InternalJararaca.g:1005:2: rule__VariableDeclaration__Group__0__Impl rule__VariableDeclaration__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__VariableDeclaration__Group__0__Impl();
@@ -3182,17 +3222,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__0__Impl"
-    // InternalJararaca.g:1006:1: rule__VariableDeclaration__Group__0__Impl : ( 'var' ) ;
+    // InternalJararaca.g:1012:1: rule__VariableDeclaration__Group__0__Impl : ( 'var' ) ;
     public final void rule__VariableDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1010:1: ( ( 'var' ) )
-            // InternalJararaca.g:1011:1: ( 'var' )
+            // InternalJararaca.g:1016:1: ( ( 'var' ) )
+            // InternalJararaca.g:1017:1: ( 'var' )
             {
-            // InternalJararaca.g:1011:1: ( 'var' )
-            // InternalJararaca.g:1012:2: 'var'
+            // InternalJararaca.g:1017:1: ( 'var' )
+            // InternalJararaca.g:1018:2: 'var'
             {
              before(grammarAccess.getVariableDeclarationAccess().getVarKeyword_0()); 
             match(input,26,FOLLOW_2); 
@@ -3219,14 +3259,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__1"
-    // InternalJararaca.g:1021:1: rule__VariableDeclaration__Group__1 : rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2 ;
+    // InternalJararaca.g:1027:1: rule__VariableDeclaration__Group__1 : rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2 ;
     public final void rule__VariableDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1025:1: ( rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2 )
-            // InternalJararaca.g:1026:2: rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2
+            // InternalJararaca.g:1031:1: ( rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2 )
+            // InternalJararaca.g:1032:2: rule__VariableDeclaration__Group__1__Impl rule__VariableDeclaration__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__VariableDeclaration__Group__1__Impl();
@@ -3257,21 +3297,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__1__Impl"
-    // InternalJararaca.g:1033:1: rule__VariableDeclaration__Group__1__Impl : ( ( rule__VariableDeclaration__NameAssignment_1 ) ) ;
+    // InternalJararaca.g:1039:1: rule__VariableDeclaration__Group__1__Impl : ( ( rule__VariableDeclaration__NameAssignment_1 ) ) ;
     public final void rule__VariableDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1037:1: ( ( ( rule__VariableDeclaration__NameAssignment_1 ) ) )
-            // InternalJararaca.g:1038:1: ( ( rule__VariableDeclaration__NameAssignment_1 ) )
+            // InternalJararaca.g:1043:1: ( ( ( rule__VariableDeclaration__NameAssignment_1 ) ) )
+            // InternalJararaca.g:1044:1: ( ( rule__VariableDeclaration__NameAssignment_1 ) )
             {
-            // InternalJararaca.g:1038:1: ( ( rule__VariableDeclaration__NameAssignment_1 ) )
-            // InternalJararaca.g:1039:2: ( rule__VariableDeclaration__NameAssignment_1 )
+            // InternalJararaca.g:1044:1: ( ( rule__VariableDeclaration__NameAssignment_1 ) )
+            // InternalJararaca.g:1045:2: ( rule__VariableDeclaration__NameAssignment_1 )
             {
              before(grammarAccess.getVariableDeclarationAccess().getNameAssignment_1()); 
-            // InternalJararaca.g:1040:2: ( rule__VariableDeclaration__NameAssignment_1 )
-            // InternalJararaca.g:1040:3: rule__VariableDeclaration__NameAssignment_1
+            // InternalJararaca.g:1046:2: ( rule__VariableDeclaration__NameAssignment_1 )
+            // InternalJararaca.g:1046:3: rule__VariableDeclaration__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclaration__NameAssignment_1();
@@ -3304,14 +3344,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__2"
-    // InternalJararaca.g:1048:1: rule__VariableDeclaration__Group__2 : rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3 ;
+    // InternalJararaca.g:1054:1: rule__VariableDeclaration__Group__2 : rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3 ;
     public final void rule__VariableDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1052:1: ( rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3 )
-            // InternalJararaca.g:1053:2: rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3
+            // InternalJararaca.g:1058:1: ( rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3 )
+            // InternalJararaca.g:1059:2: rule__VariableDeclaration__Group__2__Impl rule__VariableDeclaration__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__VariableDeclaration__Group__2__Impl();
@@ -3342,21 +3382,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__2__Impl"
-    // InternalJararaca.g:1060:1: rule__VariableDeclaration__Group__2__Impl : ( ( rule__VariableDeclaration__TypeAssignment_2 ) ) ;
+    // InternalJararaca.g:1066:1: rule__VariableDeclaration__Group__2__Impl : ( ( rule__VariableDeclaration__TypeAssignment_2 ) ) ;
     public final void rule__VariableDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1064:1: ( ( ( rule__VariableDeclaration__TypeAssignment_2 ) ) )
-            // InternalJararaca.g:1065:1: ( ( rule__VariableDeclaration__TypeAssignment_2 ) )
+            // InternalJararaca.g:1070:1: ( ( ( rule__VariableDeclaration__TypeAssignment_2 ) ) )
+            // InternalJararaca.g:1071:1: ( ( rule__VariableDeclaration__TypeAssignment_2 ) )
             {
-            // InternalJararaca.g:1065:1: ( ( rule__VariableDeclaration__TypeAssignment_2 ) )
-            // InternalJararaca.g:1066:2: ( rule__VariableDeclaration__TypeAssignment_2 )
+            // InternalJararaca.g:1071:1: ( ( rule__VariableDeclaration__TypeAssignment_2 ) )
+            // InternalJararaca.g:1072:2: ( rule__VariableDeclaration__TypeAssignment_2 )
             {
              before(grammarAccess.getVariableDeclarationAccess().getTypeAssignment_2()); 
-            // InternalJararaca.g:1067:2: ( rule__VariableDeclaration__TypeAssignment_2 )
-            // InternalJararaca.g:1067:3: rule__VariableDeclaration__TypeAssignment_2
+            // InternalJararaca.g:1073:2: ( rule__VariableDeclaration__TypeAssignment_2 )
+            // InternalJararaca.g:1073:3: rule__VariableDeclaration__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclaration__TypeAssignment_2();
@@ -3389,14 +3429,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__3"
-    // InternalJararaca.g:1075:1: rule__VariableDeclaration__Group__3 : rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4 ;
+    // InternalJararaca.g:1081:1: rule__VariableDeclaration__Group__3 : rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4 ;
     public final void rule__VariableDeclaration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1079:1: ( rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4 )
-            // InternalJararaca.g:1080:2: rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4
+            // InternalJararaca.g:1085:1: ( rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4 )
+            // InternalJararaca.g:1086:2: rule__VariableDeclaration__Group__3__Impl rule__VariableDeclaration__Group__4
             {
             pushFollow(FOLLOW_8);
             rule__VariableDeclaration__Group__3__Impl();
@@ -3427,20 +3467,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__3__Impl"
-    // InternalJararaca.g:1087:1: rule__VariableDeclaration__Group__3__Impl : ( ( rule__VariableDeclaration__Group_3__0 )? ) ;
+    // InternalJararaca.g:1093:1: rule__VariableDeclaration__Group__3__Impl : ( ( rule__VariableDeclaration__Group_3__0 )? ) ;
     public final void rule__VariableDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1091:1: ( ( ( rule__VariableDeclaration__Group_3__0 )? ) )
-            // InternalJararaca.g:1092:1: ( ( rule__VariableDeclaration__Group_3__0 )? )
+            // InternalJararaca.g:1097:1: ( ( ( rule__VariableDeclaration__Group_3__0 )? ) )
+            // InternalJararaca.g:1098:1: ( ( rule__VariableDeclaration__Group_3__0 )? )
             {
-            // InternalJararaca.g:1092:1: ( ( rule__VariableDeclaration__Group_3__0 )? )
-            // InternalJararaca.g:1093:2: ( rule__VariableDeclaration__Group_3__0 )?
+            // InternalJararaca.g:1098:1: ( ( rule__VariableDeclaration__Group_3__0 )? )
+            // InternalJararaca.g:1099:2: ( rule__VariableDeclaration__Group_3__0 )?
             {
              before(grammarAccess.getVariableDeclarationAccess().getGroup_3()); 
-            // InternalJararaca.g:1094:2: ( rule__VariableDeclaration__Group_3__0 )?
+            // InternalJararaca.g:1100:2: ( rule__VariableDeclaration__Group_3__0 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3449,7 +3489,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
             }
             switch (alt10) {
                 case 1 :
-                    // InternalJararaca.g:1094:3: rule__VariableDeclaration__Group_3__0
+                    // InternalJararaca.g:1100:3: rule__VariableDeclaration__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__VariableDeclaration__Group_3__0();
@@ -3485,14 +3525,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__4"
-    // InternalJararaca.g:1102:1: rule__VariableDeclaration__Group__4 : rule__VariableDeclaration__Group__4__Impl ;
+    // InternalJararaca.g:1108:1: rule__VariableDeclaration__Group__4 : rule__VariableDeclaration__Group__4__Impl ;
     public final void rule__VariableDeclaration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1106:1: ( rule__VariableDeclaration__Group__4__Impl )
-            // InternalJararaca.g:1107:2: rule__VariableDeclaration__Group__4__Impl
+            // InternalJararaca.g:1112:1: ( rule__VariableDeclaration__Group__4__Impl )
+            // InternalJararaca.g:1113:2: rule__VariableDeclaration__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclaration__Group__4__Impl();
@@ -3518,17 +3558,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__4__Impl"
-    // InternalJararaca.g:1113:1: rule__VariableDeclaration__Group__4__Impl : ( ';' ) ;
+    // InternalJararaca.g:1119:1: rule__VariableDeclaration__Group__4__Impl : ( ';' ) ;
     public final void rule__VariableDeclaration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1117:1: ( ( ';' ) )
-            // InternalJararaca.g:1118:1: ( ';' )
+            // InternalJararaca.g:1123:1: ( ( ';' ) )
+            // InternalJararaca.g:1124:1: ( ';' )
             {
-            // InternalJararaca.g:1118:1: ( ';' )
-            // InternalJararaca.g:1119:2: ';'
+            // InternalJararaca.g:1124:1: ( ';' )
+            // InternalJararaca.g:1125:2: ';'
             {
              before(grammarAccess.getVariableDeclarationAccess().getSemicolonKeyword_4()); 
             match(input,27,FOLLOW_2); 
@@ -3555,14 +3595,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group_3__0"
-    // InternalJararaca.g:1129:1: rule__VariableDeclaration__Group_3__0 : rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1 ;
+    // InternalJararaca.g:1135:1: rule__VariableDeclaration__Group_3__0 : rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1 ;
     public final void rule__VariableDeclaration__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1133:1: ( rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1 )
-            // InternalJararaca.g:1134:2: rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1
+            // InternalJararaca.g:1139:1: ( rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1 )
+            // InternalJararaca.g:1140:2: rule__VariableDeclaration__Group_3__0__Impl rule__VariableDeclaration__Group_3__1
             {
             pushFollow(FOLLOW_9);
             rule__VariableDeclaration__Group_3__0__Impl();
@@ -3593,17 +3633,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group_3__0__Impl"
-    // InternalJararaca.g:1141:1: rule__VariableDeclaration__Group_3__0__Impl : ( '=' ) ;
+    // InternalJararaca.g:1147:1: rule__VariableDeclaration__Group_3__0__Impl : ( '=' ) ;
     public final void rule__VariableDeclaration__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1145:1: ( ( '=' ) )
-            // InternalJararaca.g:1146:1: ( '=' )
+            // InternalJararaca.g:1151:1: ( ( '=' ) )
+            // InternalJararaca.g:1152:1: ( '=' )
             {
-            // InternalJararaca.g:1146:1: ( '=' )
-            // InternalJararaca.g:1147:2: '='
+            // InternalJararaca.g:1152:1: ( '=' )
+            // InternalJararaca.g:1153:2: '='
             {
              before(grammarAccess.getVariableDeclarationAccess().getEqualsSignKeyword_3_0()); 
             match(input,28,FOLLOW_2); 
@@ -3630,14 +3670,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group_3__1"
-    // InternalJararaca.g:1156:1: rule__VariableDeclaration__Group_3__1 : rule__VariableDeclaration__Group_3__1__Impl ;
+    // InternalJararaca.g:1162:1: rule__VariableDeclaration__Group_3__1 : rule__VariableDeclaration__Group_3__1__Impl ;
     public final void rule__VariableDeclaration__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1160:1: ( rule__VariableDeclaration__Group_3__1__Impl )
-            // InternalJararaca.g:1161:2: rule__VariableDeclaration__Group_3__1__Impl
+            // InternalJararaca.g:1166:1: ( rule__VariableDeclaration__Group_3__1__Impl )
+            // InternalJararaca.g:1167:2: rule__VariableDeclaration__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclaration__Group_3__1__Impl();
@@ -3663,21 +3703,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__Group_3__1__Impl"
-    // InternalJararaca.g:1167:1: rule__VariableDeclaration__Group_3__1__Impl : ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) ) ;
+    // InternalJararaca.g:1173:1: rule__VariableDeclaration__Group_3__1__Impl : ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) ) ;
     public final void rule__VariableDeclaration__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1171:1: ( ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) ) )
-            // InternalJararaca.g:1172:1: ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) )
+            // InternalJararaca.g:1177:1: ( ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) ) )
+            // InternalJararaca.g:1178:1: ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) )
             {
-            // InternalJararaca.g:1172:1: ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) )
-            // InternalJararaca.g:1173:2: ( rule__VariableDeclaration__InitialValueAssignment_3_1 )
+            // InternalJararaca.g:1178:1: ( ( rule__VariableDeclaration__InitialValueAssignment_3_1 ) )
+            // InternalJararaca.g:1179:2: ( rule__VariableDeclaration__InitialValueAssignment_3_1 )
             {
              before(grammarAccess.getVariableDeclarationAccess().getInitialValueAssignment_3_1()); 
-            // InternalJararaca.g:1174:2: ( rule__VariableDeclaration__InitialValueAssignment_3_1 )
-            // InternalJararaca.g:1174:3: rule__VariableDeclaration__InitialValueAssignment_3_1
+            // InternalJararaca.g:1180:2: ( rule__VariableDeclaration__InitialValueAssignment_3_1 )
+            // InternalJararaca.g:1180:3: rule__VariableDeclaration__InitialValueAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__VariableDeclaration__InitialValueAssignment_3_1();
@@ -3710,14 +3750,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__0"
-    // InternalJararaca.g:1183:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
+    // InternalJararaca.g:1189:1: rule__Assignment__Group__0 : rule__Assignment__Group__0__Impl rule__Assignment__Group__1 ;
     public final void rule__Assignment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1187:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
-            // InternalJararaca.g:1188:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
+            // InternalJararaca.g:1193:1: ( rule__Assignment__Group__0__Impl rule__Assignment__Group__1 )
+            // InternalJararaca.g:1194:2: rule__Assignment__Group__0__Impl rule__Assignment__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__Assignment__Group__0__Impl();
@@ -3748,21 +3788,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__0__Impl"
-    // InternalJararaca.g:1195:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__NameAssignment_0 ) ) ;
+    // InternalJararaca.g:1201:1: rule__Assignment__Group__0__Impl : ( ( rule__Assignment__NameAssignment_0 ) ) ;
     public final void rule__Assignment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1199:1: ( ( ( rule__Assignment__NameAssignment_0 ) ) )
-            // InternalJararaca.g:1200:1: ( ( rule__Assignment__NameAssignment_0 ) )
+            // InternalJararaca.g:1205:1: ( ( ( rule__Assignment__NameAssignment_0 ) ) )
+            // InternalJararaca.g:1206:1: ( ( rule__Assignment__NameAssignment_0 ) )
             {
-            // InternalJararaca.g:1200:1: ( ( rule__Assignment__NameAssignment_0 ) )
-            // InternalJararaca.g:1201:2: ( rule__Assignment__NameAssignment_0 )
+            // InternalJararaca.g:1206:1: ( ( rule__Assignment__NameAssignment_0 ) )
+            // InternalJararaca.g:1207:2: ( rule__Assignment__NameAssignment_0 )
             {
              before(grammarAccess.getAssignmentAccess().getNameAssignment_0()); 
-            // InternalJararaca.g:1202:2: ( rule__Assignment__NameAssignment_0 )
-            // InternalJararaca.g:1202:3: rule__Assignment__NameAssignment_0
+            // InternalJararaca.g:1208:2: ( rule__Assignment__NameAssignment_0 )
+            // InternalJararaca.g:1208:3: rule__Assignment__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__NameAssignment_0();
@@ -3795,14 +3835,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__1"
-    // InternalJararaca.g:1210:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl rule__Assignment__Group__2 ;
+    // InternalJararaca.g:1216:1: rule__Assignment__Group__1 : rule__Assignment__Group__1__Impl rule__Assignment__Group__2 ;
     public final void rule__Assignment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1214:1: ( rule__Assignment__Group__1__Impl rule__Assignment__Group__2 )
-            // InternalJararaca.g:1215:2: rule__Assignment__Group__1__Impl rule__Assignment__Group__2
+            // InternalJararaca.g:1220:1: ( rule__Assignment__Group__1__Impl rule__Assignment__Group__2 )
+            // InternalJararaca.g:1221:2: rule__Assignment__Group__1__Impl rule__Assignment__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Assignment__Group__1__Impl();
@@ -3833,17 +3873,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__1__Impl"
-    // InternalJararaca.g:1222:1: rule__Assignment__Group__1__Impl : ( '=' ) ;
+    // InternalJararaca.g:1228:1: rule__Assignment__Group__1__Impl : ( '=' ) ;
     public final void rule__Assignment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1226:1: ( ( '=' ) )
-            // InternalJararaca.g:1227:1: ( '=' )
+            // InternalJararaca.g:1232:1: ( ( '=' ) )
+            // InternalJararaca.g:1233:1: ( '=' )
             {
-            // InternalJararaca.g:1227:1: ( '=' )
-            // InternalJararaca.g:1228:2: '='
+            // InternalJararaca.g:1233:1: ( '=' )
+            // InternalJararaca.g:1234:2: '='
             {
              before(grammarAccess.getAssignmentAccess().getEqualsSignKeyword_1()); 
             match(input,28,FOLLOW_2); 
@@ -3870,14 +3910,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__2"
-    // InternalJararaca.g:1237:1: rule__Assignment__Group__2 : rule__Assignment__Group__2__Impl rule__Assignment__Group__3 ;
+    // InternalJararaca.g:1243:1: rule__Assignment__Group__2 : rule__Assignment__Group__2__Impl rule__Assignment__Group__3 ;
     public final void rule__Assignment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1241:1: ( rule__Assignment__Group__2__Impl rule__Assignment__Group__3 )
-            // InternalJararaca.g:1242:2: rule__Assignment__Group__2__Impl rule__Assignment__Group__3
+            // InternalJararaca.g:1247:1: ( rule__Assignment__Group__2__Impl rule__Assignment__Group__3 )
+            // InternalJararaca.g:1248:2: rule__Assignment__Group__2__Impl rule__Assignment__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Assignment__Group__2__Impl();
@@ -3908,21 +3948,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__2__Impl"
-    // InternalJararaca.g:1249:1: rule__Assignment__Group__2__Impl : ( ( rule__Assignment__ValueAssignment_2 ) ) ;
+    // InternalJararaca.g:1255:1: rule__Assignment__Group__2__Impl : ( ( rule__Assignment__ValueAssignment_2 ) ) ;
     public final void rule__Assignment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1253:1: ( ( ( rule__Assignment__ValueAssignment_2 ) ) )
-            // InternalJararaca.g:1254:1: ( ( rule__Assignment__ValueAssignment_2 ) )
+            // InternalJararaca.g:1259:1: ( ( ( rule__Assignment__ValueAssignment_2 ) ) )
+            // InternalJararaca.g:1260:1: ( ( rule__Assignment__ValueAssignment_2 ) )
             {
-            // InternalJararaca.g:1254:1: ( ( rule__Assignment__ValueAssignment_2 ) )
-            // InternalJararaca.g:1255:2: ( rule__Assignment__ValueAssignment_2 )
+            // InternalJararaca.g:1260:1: ( ( rule__Assignment__ValueAssignment_2 ) )
+            // InternalJararaca.g:1261:2: ( rule__Assignment__ValueAssignment_2 )
             {
              before(grammarAccess.getAssignmentAccess().getValueAssignment_2()); 
-            // InternalJararaca.g:1256:2: ( rule__Assignment__ValueAssignment_2 )
-            // InternalJararaca.g:1256:3: rule__Assignment__ValueAssignment_2
+            // InternalJararaca.g:1262:2: ( rule__Assignment__ValueAssignment_2 )
+            // InternalJararaca.g:1262:3: rule__Assignment__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__ValueAssignment_2();
@@ -3955,14 +3995,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__3"
-    // InternalJararaca.g:1264:1: rule__Assignment__Group__3 : rule__Assignment__Group__3__Impl ;
+    // InternalJararaca.g:1270:1: rule__Assignment__Group__3 : rule__Assignment__Group__3__Impl ;
     public final void rule__Assignment__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1268:1: ( rule__Assignment__Group__3__Impl )
-            // InternalJararaca.g:1269:2: rule__Assignment__Group__3__Impl
+            // InternalJararaca.g:1274:1: ( rule__Assignment__Group__3__Impl )
+            // InternalJararaca.g:1275:2: rule__Assignment__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Assignment__Group__3__Impl();
@@ -3988,17 +4028,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__Group__3__Impl"
-    // InternalJararaca.g:1275:1: rule__Assignment__Group__3__Impl : ( ';' ) ;
+    // InternalJararaca.g:1281:1: rule__Assignment__Group__3__Impl : ( ';' ) ;
     public final void rule__Assignment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1279:1: ( ( ';' ) )
-            // InternalJararaca.g:1280:1: ( ';' )
+            // InternalJararaca.g:1285:1: ( ( ';' ) )
+            // InternalJararaca.g:1286:1: ( ';' )
             {
-            // InternalJararaca.g:1280:1: ( ';' )
-            // InternalJararaca.g:1281:2: ';'
+            // InternalJararaca.g:1286:1: ( ';' )
+            // InternalJararaca.g:1287:2: ';'
             {
              before(grammarAccess.getAssignmentAccess().getSemicolonKeyword_3()); 
             match(input,27,FOLLOW_2); 
@@ -4025,14 +4065,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntType__Group__0"
-    // InternalJararaca.g:1291:1: rule__IntType__Group__0 : rule__IntType__Group__0__Impl rule__IntType__Group__1 ;
+    // InternalJararaca.g:1297:1: rule__IntType__Group__0 : rule__IntType__Group__0__Impl rule__IntType__Group__1 ;
     public final void rule__IntType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1295:1: ( rule__IntType__Group__0__Impl rule__IntType__Group__1 )
-            // InternalJararaca.g:1296:2: rule__IntType__Group__0__Impl rule__IntType__Group__1
+            // InternalJararaca.g:1301:1: ( rule__IntType__Group__0__Impl rule__IntType__Group__1 )
+            // InternalJararaca.g:1302:2: rule__IntType__Group__0__Impl rule__IntType__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__IntType__Group__0__Impl();
@@ -4063,21 +4103,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntType__Group__0__Impl"
-    // InternalJararaca.g:1303:1: rule__IntType__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:1309:1: rule__IntType__Group__0__Impl : ( () ) ;
     public final void rule__IntType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1307:1: ( ( () ) )
-            // InternalJararaca.g:1308:1: ( () )
+            // InternalJararaca.g:1313:1: ( ( () ) )
+            // InternalJararaca.g:1314:1: ( () )
             {
-            // InternalJararaca.g:1308:1: ( () )
-            // InternalJararaca.g:1309:2: ()
+            // InternalJararaca.g:1314:1: ( () )
+            // InternalJararaca.g:1315:2: ()
             {
              before(grammarAccess.getIntTypeAccess().getIntTypeAction_0()); 
-            // InternalJararaca.g:1310:2: ()
-            // InternalJararaca.g:1310:3: 
+            // InternalJararaca.g:1316:2: ()
+            // InternalJararaca.g:1316:3: 
             {
             }
 
@@ -4100,14 +4140,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntType__Group__1"
-    // InternalJararaca.g:1318:1: rule__IntType__Group__1 : rule__IntType__Group__1__Impl ;
+    // InternalJararaca.g:1324:1: rule__IntType__Group__1 : rule__IntType__Group__1__Impl ;
     public final void rule__IntType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1322:1: ( rule__IntType__Group__1__Impl )
-            // InternalJararaca.g:1323:2: rule__IntType__Group__1__Impl
+            // InternalJararaca.g:1328:1: ( rule__IntType__Group__1__Impl )
+            // InternalJararaca.g:1329:2: rule__IntType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntType__Group__1__Impl();
@@ -4133,17 +4173,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntType__Group__1__Impl"
-    // InternalJararaca.g:1329:1: rule__IntType__Group__1__Impl : ( 'int' ) ;
+    // InternalJararaca.g:1335:1: rule__IntType__Group__1__Impl : ( 'int' ) ;
     public final void rule__IntType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1333:1: ( ( 'int' ) )
-            // InternalJararaca.g:1334:1: ( 'int' )
+            // InternalJararaca.g:1339:1: ( ( 'int' ) )
+            // InternalJararaca.g:1340:1: ( 'int' )
             {
-            // InternalJararaca.g:1334:1: ( 'int' )
-            // InternalJararaca.g:1335:2: 'int'
+            // InternalJararaca.g:1340:1: ( 'int' )
+            // InternalJararaca.g:1341:2: 'int'
             {
              before(grammarAccess.getIntTypeAccess().getIntKeyword_1()); 
             match(input,29,FOLLOW_2); 
@@ -4170,14 +4210,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FloatType__Group__0"
-    // InternalJararaca.g:1345:1: rule__FloatType__Group__0 : rule__FloatType__Group__0__Impl rule__FloatType__Group__1 ;
+    // InternalJararaca.g:1351:1: rule__FloatType__Group__0 : rule__FloatType__Group__0__Impl rule__FloatType__Group__1 ;
     public final void rule__FloatType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1349:1: ( rule__FloatType__Group__0__Impl rule__FloatType__Group__1 )
-            // InternalJararaca.g:1350:2: rule__FloatType__Group__0__Impl rule__FloatType__Group__1
+            // InternalJararaca.g:1355:1: ( rule__FloatType__Group__0__Impl rule__FloatType__Group__1 )
+            // InternalJararaca.g:1356:2: rule__FloatType__Group__0__Impl rule__FloatType__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__FloatType__Group__0__Impl();
@@ -4208,21 +4248,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FloatType__Group__0__Impl"
-    // InternalJararaca.g:1357:1: rule__FloatType__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:1363:1: rule__FloatType__Group__0__Impl : ( () ) ;
     public final void rule__FloatType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1361:1: ( ( () ) )
-            // InternalJararaca.g:1362:1: ( () )
+            // InternalJararaca.g:1367:1: ( ( () ) )
+            // InternalJararaca.g:1368:1: ( () )
             {
-            // InternalJararaca.g:1362:1: ( () )
-            // InternalJararaca.g:1363:2: ()
+            // InternalJararaca.g:1368:1: ( () )
+            // InternalJararaca.g:1369:2: ()
             {
              before(grammarAccess.getFloatTypeAccess().getFloatTypeAction_0()); 
-            // InternalJararaca.g:1364:2: ()
-            // InternalJararaca.g:1364:3: 
+            // InternalJararaca.g:1370:2: ()
+            // InternalJararaca.g:1370:3: 
             {
             }
 
@@ -4245,14 +4285,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FloatType__Group__1"
-    // InternalJararaca.g:1372:1: rule__FloatType__Group__1 : rule__FloatType__Group__1__Impl ;
+    // InternalJararaca.g:1378:1: rule__FloatType__Group__1 : rule__FloatType__Group__1__Impl ;
     public final void rule__FloatType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1376:1: ( rule__FloatType__Group__1__Impl )
-            // InternalJararaca.g:1377:2: rule__FloatType__Group__1__Impl
+            // InternalJararaca.g:1382:1: ( rule__FloatType__Group__1__Impl )
+            // InternalJararaca.g:1383:2: rule__FloatType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FloatType__Group__1__Impl();
@@ -4278,21 +4318,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FloatType__Group__1__Impl"
-    // InternalJararaca.g:1383:1: rule__FloatType__Group__1__Impl : ( 'float' ) ;
+    // InternalJararaca.g:1389:1: rule__FloatType__Group__1__Impl : ( 'decimal' ) ;
     public final void rule__FloatType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1387:1: ( ( 'float' ) )
-            // InternalJararaca.g:1388:1: ( 'float' )
+            // InternalJararaca.g:1393:1: ( ( 'decimal' ) )
+            // InternalJararaca.g:1394:1: ( 'decimal' )
             {
-            // InternalJararaca.g:1388:1: ( 'float' )
-            // InternalJararaca.g:1389:2: 'float'
+            // InternalJararaca.g:1394:1: ( 'decimal' )
+            // InternalJararaca.g:1395:2: 'decimal'
             {
-             before(grammarAccess.getFloatTypeAccess().getFloatKeyword_1()); 
+             before(grammarAccess.getFloatTypeAccess().getDecimalKeyword_1()); 
             match(input,30,FOLLOW_2); 
-             after(grammarAccess.getFloatTypeAccess().getFloatKeyword_1()); 
+             after(grammarAccess.getFloatTypeAccess().getDecimalKeyword_1()); 
 
             }
 
@@ -4315,14 +4355,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BooleanType__Group__0"
-    // InternalJararaca.g:1399:1: rule__BooleanType__Group__0 : rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1 ;
+    // InternalJararaca.g:1405:1: rule__BooleanType__Group__0 : rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1 ;
     public final void rule__BooleanType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1403:1: ( rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1 )
-            // InternalJararaca.g:1404:2: rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1
+            // InternalJararaca.g:1409:1: ( rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1 )
+            // InternalJararaca.g:1410:2: rule__BooleanType__Group__0__Impl rule__BooleanType__Group__1
             {
             pushFollow(FOLLOW_14);
             rule__BooleanType__Group__0__Impl();
@@ -4353,21 +4393,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BooleanType__Group__0__Impl"
-    // InternalJararaca.g:1411:1: rule__BooleanType__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:1417:1: rule__BooleanType__Group__0__Impl : ( () ) ;
     public final void rule__BooleanType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1415:1: ( ( () ) )
-            // InternalJararaca.g:1416:1: ( () )
+            // InternalJararaca.g:1421:1: ( ( () ) )
+            // InternalJararaca.g:1422:1: ( () )
             {
-            // InternalJararaca.g:1416:1: ( () )
-            // InternalJararaca.g:1417:2: ()
+            // InternalJararaca.g:1422:1: ( () )
+            // InternalJararaca.g:1423:2: ()
             {
              before(grammarAccess.getBooleanTypeAccess().getBooleanTypeAction_0()); 
-            // InternalJararaca.g:1418:2: ()
-            // InternalJararaca.g:1418:3: 
+            // InternalJararaca.g:1424:2: ()
+            // InternalJararaca.g:1424:3: 
             {
             }
 
@@ -4390,14 +4430,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BooleanType__Group__1"
-    // InternalJararaca.g:1426:1: rule__BooleanType__Group__1 : rule__BooleanType__Group__1__Impl ;
+    // InternalJararaca.g:1432:1: rule__BooleanType__Group__1 : rule__BooleanType__Group__1__Impl ;
     public final void rule__BooleanType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1430:1: ( rule__BooleanType__Group__1__Impl )
-            // InternalJararaca.g:1431:2: rule__BooleanType__Group__1__Impl
+            // InternalJararaca.g:1436:1: ( rule__BooleanType__Group__1__Impl )
+            // InternalJararaca.g:1437:2: rule__BooleanType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BooleanType__Group__1__Impl();
@@ -4423,17 +4463,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BooleanType__Group__1__Impl"
-    // InternalJararaca.g:1437:1: rule__BooleanType__Group__1__Impl : ( 'boolean' ) ;
+    // InternalJararaca.g:1443:1: rule__BooleanType__Group__1__Impl : ( 'boolean' ) ;
     public final void rule__BooleanType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1441:1: ( ( 'boolean' ) )
-            // InternalJararaca.g:1442:1: ( 'boolean' )
+            // InternalJararaca.g:1447:1: ( ( 'boolean' ) )
+            // InternalJararaca.g:1448:1: ( 'boolean' )
             {
-            // InternalJararaca.g:1442:1: ( 'boolean' )
-            // InternalJararaca.g:1443:2: 'boolean'
+            // InternalJararaca.g:1448:1: ( 'boolean' )
+            // InternalJararaca.g:1449:2: 'boolean'
             {
              before(grammarAccess.getBooleanTypeAccess().getBooleanKeyword_1()); 
             match(input,31,FOLLOW_2); 
@@ -4460,14 +4500,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringType__Group__0"
-    // InternalJararaca.g:1453:1: rule__StringType__Group__0 : rule__StringType__Group__0__Impl rule__StringType__Group__1 ;
+    // InternalJararaca.g:1459:1: rule__StringType__Group__0 : rule__StringType__Group__0__Impl rule__StringType__Group__1 ;
     public final void rule__StringType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1457:1: ( rule__StringType__Group__0__Impl rule__StringType__Group__1 )
-            // InternalJararaca.g:1458:2: rule__StringType__Group__0__Impl rule__StringType__Group__1
+            // InternalJararaca.g:1463:1: ( rule__StringType__Group__0__Impl rule__StringType__Group__1 )
+            // InternalJararaca.g:1464:2: rule__StringType__Group__0__Impl rule__StringType__Group__1
             {
             pushFollow(FOLLOW_7);
             rule__StringType__Group__0__Impl();
@@ -4498,21 +4538,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringType__Group__0__Impl"
-    // InternalJararaca.g:1465:1: rule__StringType__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:1471:1: rule__StringType__Group__0__Impl : ( () ) ;
     public final void rule__StringType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1469:1: ( ( () ) )
-            // InternalJararaca.g:1470:1: ( () )
+            // InternalJararaca.g:1475:1: ( ( () ) )
+            // InternalJararaca.g:1476:1: ( () )
             {
-            // InternalJararaca.g:1470:1: ( () )
-            // InternalJararaca.g:1471:2: ()
+            // InternalJararaca.g:1476:1: ( () )
+            // InternalJararaca.g:1477:2: ()
             {
              before(grammarAccess.getStringTypeAccess().getStringTypeAction_0()); 
-            // InternalJararaca.g:1472:2: ()
-            // InternalJararaca.g:1472:3: 
+            // InternalJararaca.g:1478:2: ()
+            // InternalJararaca.g:1478:3: 
             {
             }
 
@@ -4535,14 +4575,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringType__Group__1"
-    // InternalJararaca.g:1480:1: rule__StringType__Group__1 : rule__StringType__Group__1__Impl ;
+    // InternalJararaca.g:1486:1: rule__StringType__Group__1 : rule__StringType__Group__1__Impl ;
     public final void rule__StringType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1484:1: ( rule__StringType__Group__1__Impl )
-            // InternalJararaca.g:1485:2: rule__StringType__Group__1__Impl
+            // InternalJararaca.g:1490:1: ( rule__StringType__Group__1__Impl )
+            // InternalJararaca.g:1491:2: rule__StringType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StringType__Group__1__Impl();
@@ -4568,17 +4608,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringType__Group__1__Impl"
-    // InternalJararaca.g:1491:1: rule__StringType__Group__1__Impl : ( 'string' ) ;
+    // InternalJararaca.g:1497:1: rule__StringType__Group__1__Impl : ( 'string' ) ;
     public final void rule__StringType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1495:1: ( ( 'string' ) )
-            // InternalJararaca.g:1496:1: ( 'string' )
+            // InternalJararaca.g:1501:1: ( ( 'string' ) )
+            // InternalJararaca.g:1502:1: ( 'string' )
             {
-            // InternalJararaca.g:1496:1: ( 'string' )
-            // InternalJararaca.g:1497:2: 'string'
+            // InternalJararaca.g:1502:1: ( 'string' )
+            // InternalJararaca.g:1503:2: 'string'
             {
              before(grammarAccess.getStringTypeAccess().getStringKeyword_1()); 
             match(input,32,FOLLOW_2); 
@@ -4605,14 +4645,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__0"
-    // InternalJararaca.g:1507:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
+    // InternalJararaca.g:1513:1: rule__OrExpression__Group__0 : rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 ;
     public final void rule__OrExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1511:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
-            // InternalJararaca.g:1512:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
+            // InternalJararaca.g:1517:1: ( rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1 )
+            // InternalJararaca.g:1518:2: rule__OrExpression__Group__0__Impl rule__OrExpression__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__OrExpression__Group__0__Impl();
@@ -4643,17 +4683,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__0__Impl"
-    // InternalJararaca.g:1519:1: rule__OrExpression__Group__0__Impl : ( ruleAndExpression ) ;
+    // InternalJararaca.g:1525:1: rule__OrExpression__Group__0__Impl : ( ruleAndExpression ) ;
     public final void rule__OrExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1523:1: ( ( ruleAndExpression ) )
-            // InternalJararaca.g:1524:1: ( ruleAndExpression )
+            // InternalJararaca.g:1529:1: ( ( ruleAndExpression ) )
+            // InternalJararaca.g:1530:1: ( ruleAndExpression )
             {
-            // InternalJararaca.g:1524:1: ( ruleAndExpression )
-            // InternalJararaca.g:1525:2: ruleAndExpression
+            // InternalJararaca.g:1530:1: ( ruleAndExpression )
+            // InternalJararaca.g:1531:2: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getAndExpressionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4684,14 +4724,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__1"
-    // InternalJararaca.g:1534:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
+    // InternalJararaca.g:1540:1: rule__OrExpression__Group__1 : rule__OrExpression__Group__1__Impl ;
     public final void rule__OrExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1538:1: ( rule__OrExpression__Group__1__Impl )
-            // InternalJararaca.g:1539:2: rule__OrExpression__Group__1__Impl
+            // InternalJararaca.g:1544:1: ( rule__OrExpression__Group__1__Impl )
+            // InternalJararaca.g:1545:2: rule__OrExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group__1__Impl();
@@ -4717,20 +4757,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group__1__Impl"
-    // InternalJararaca.g:1545:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
+    // InternalJararaca.g:1551:1: rule__OrExpression__Group__1__Impl : ( ( rule__OrExpression__Group_1__0 )* ) ;
     public final void rule__OrExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1549:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
-            // InternalJararaca.g:1550:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalJararaca.g:1555:1: ( ( ( rule__OrExpression__Group_1__0 )* ) )
+            // InternalJararaca.g:1556:1: ( ( rule__OrExpression__Group_1__0 )* )
             {
-            // InternalJararaca.g:1550:1: ( ( rule__OrExpression__Group_1__0 )* )
-            // InternalJararaca.g:1551:2: ( rule__OrExpression__Group_1__0 )*
+            // InternalJararaca.g:1556:1: ( ( rule__OrExpression__Group_1__0 )* )
+            // InternalJararaca.g:1557:2: ( rule__OrExpression__Group_1__0 )*
             {
              before(grammarAccess.getOrExpressionAccess().getGroup_1()); 
-            // InternalJararaca.g:1552:2: ( rule__OrExpression__Group_1__0 )*
+            // InternalJararaca.g:1558:2: ( rule__OrExpression__Group_1__0 )*
             loop11:
             do {
                 int alt11=2;
@@ -4743,7 +4783,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalJararaca.g:1552:3: rule__OrExpression__Group_1__0
+            	    // InternalJararaca.g:1558:3: rule__OrExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__OrExpression__Group_1__0();
@@ -4782,14 +4822,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0"
-    // InternalJararaca.g:1561:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
+    // InternalJararaca.g:1567:1: rule__OrExpression__Group_1__0 : rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 ;
     public final void rule__OrExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1565:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
-            // InternalJararaca.g:1566:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
+            // InternalJararaca.g:1571:1: ( rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1 )
+            // InternalJararaca.g:1572:2: rule__OrExpression__Group_1__0__Impl rule__OrExpression__Group_1__1
             {
             pushFollow(FOLLOW_15);
             rule__OrExpression__Group_1__0__Impl();
@@ -4820,21 +4860,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__0__Impl"
-    // InternalJararaca.g:1573:1: rule__OrExpression__Group_1__0__Impl : ( () ) ;
+    // InternalJararaca.g:1579:1: rule__OrExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__OrExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1577:1: ( ( () ) )
-            // InternalJararaca.g:1578:1: ( () )
+            // InternalJararaca.g:1583:1: ( ( () ) )
+            // InternalJararaca.g:1584:1: ( () )
             {
-            // InternalJararaca.g:1578:1: ( () )
-            // InternalJararaca.g:1579:2: ()
+            // InternalJararaca.g:1584:1: ( () )
+            // InternalJararaca.g:1585:2: ()
             {
              before(grammarAccess.getOrExpressionAccess().getOrExpressionLeftAction_1_0()); 
-            // InternalJararaca.g:1580:2: ()
-            // InternalJararaca.g:1580:3: 
+            // InternalJararaca.g:1586:2: ()
+            // InternalJararaca.g:1586:3: 
             {
             }
 
@@ -4857,14 +4897,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1"
-    // InternalJararaca.g:1588:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 ;
+    // InternalJararaca.g:1594:1: rule__OrExpression__Group_1__1 : rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 ;
     public final void rule__OrExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1592:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
-            // InternalJararaca.g:1593:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
+            // InternalJararaca.g:1598:1: ( rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2 )
+            // InternalJararaca.g:1599:2: rule__OrExpression__Group_1__1__Impl rule__OrExpression__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__OrExpression__Group_1__1__Impl();
@@ -4895,17 +4935,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__1__Impl"
-    // InternalJararaca.g:1600:1: rule__OrExpression__Group_1__1__Impl : ( 'or' ) ;
+    // InternalJararaca.g:1606:1: rule__OrExpression__Group_1__1__Impl : ( 'or' ) ;
     public final void rule__OrExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1604:1: ( ( 'or' ) )
-            // InternalJararaca.g:1605:1: ( 'or' )
+            // InternalJararaca.g:1610:1: ( ( 'or' ) )
+            // InternalJararaca.g:1611:1: ( 'or' )
             {
-            // InternalJararaca.g:1605:1: ( 'or' )
-            // InternalJararaca.g:1606:2: 'or'
+            // InternalJararaca.g:1611:1: ( 'or' )
+            // InternalJararaca.g:1612:2: 'or'
             {
              before(grammarAccess.getOrExpressionAccess().getOrKeyword_1_1()); 
             match(input,33,FOLLOW_2); 
@@ -4932,14 +4972,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__2"
-    // InternalJararaca.g:1615:1: rule__OrExpression__Group_1__2 : rule__OrExpression__Group_1__2__Impl ;
+    // InternalJararaca.g:1621:1: rule__OrExpression__Group_1__2 : rule__OrExpression__Group_1__2__Impl ;
     public final void rule__OrExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1619:1: ( rule__OrExpression__Group_1__2__Impl )
-            // InternalJararaca.g:1620:2: rule__OrExpression__Group_1__2__Impl
+            // InternalJararaca.g:1625:1: ( rule__OrExpression__Group_1__2__Impl )
+            // InternalJararaca.g:1626:2: rule__OrExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__Group_1__2__Impl();
@@ -4965,21 +5005,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__Group_1__2__Impl"
-    // InternalJararaca.g:1626:1: rule__OrExpression__Group_1__2__Impl : ( ( rule__OrExpression__RightAssignment_1_2 ) ) ;
+    // InternalJararaca.g:1632:1: rule__OrExpression__Group_1__2__Impl : ( ( rule__OrExpression__RightAssignment_1_2 ) ) ;
     public final void rule__OrExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1630:1: ( ( ( rule__OrExpression__RightAssignment_1_2 ) ) )
-            // InternalJararaca.g:1631:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1636:1: ( ( ( rule__OrExpression__RightAssignment_1_2 ) ) )
+            // InternalJararaca.g:1637:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
             {
-            // InternalJararaca.g:1631:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
-            // InternalJararaca.g:1632:2: ( rule__OrExpression__RightAssignment_1_2 )
+            // InternalJararaca.g:1637:1: ( ( rule__OrExpression__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1638:2: ( rule__OrExpression__RightAssignment_1_2 )
             {
              before(grammarAccess.getOrExpressionAccess().getRightAssignment_1_2()); 
-            // InternalJararaca.g:1633:2: ( rule__OrExpression__RightAssignment_1_2 )
-            // InternalJararaca.g:1633:3: rule__OrExpression__RightAssignment_1_2
+            // InternalJararaca.g:1639:2: ( rule__OrExpression__RightAssignment_1_2 )
+            // InternalJararaca.g:1639:3: rule__OrExpression__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__OrExpression__RightAssignment_1_2();
@@ -5012,14 +5052,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__0"
-    // InternalJararaca.g:1642:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
+    // InternalJararaca.g:1648:1: rule__AndExpression__Group__0 : rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 ;
     public final void rule__AndExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1646:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
-            // InternalJararaca.g:1647:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
+            // InternalJararaca.g:1652:1: ( rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1 )
+            // InternalJararaca.g:1653:2: rule__AndExpression__Group__0__Impl rule__AndExpression__Group__1
             {
             pushFollow(FOLLOW_17);
             rule__AndExpression__Group__0__Impl();
@@ -5050,25 +5090,25 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__0__Impl"
-    // InternalJararaca.g:1654:1: rule__AndExpression__Group__0__Impl : ( ruleNotExpression ) ;
+    // InternalJararaca.g:1660:1: rule__AndExpression__Group__0__Impl : ( ruleComparison ) ;
     public final void rule__AndExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1658:1: ( ( ruleNotExpression ) )
-            // InternalJararaca.g:1659:1: ( ruleNotExpression )
+            // InternalJararaca.g:1664:1: ( ( ruleComparison ) )
+            // InternalJararaca.g:1665:1: ( ruleComparison )
             {
-            // InternalJararaca.g:1659:1: ( ruleNotExpression )
-            // InternalJararaca.g:1660:2: ruleNotExpression
+            // InternalJararaca.g:1665:1: ( ruleComparison )
+            // InternalJararaca.g:1666:2: ruleComparison
             {
-             before(grammarAccess.getAndExpressionAccess().getNotExpressionParserRuleCall_0()); 
+             before(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            ruleNotExpression();
+            ruleComparison();
 
             state._fsp--;
 
-             after(grammarAccess.getAndExpressionAccess().getNotExpressionParserRuleCall_0()); 
+             after(grammarAccess.getAndExpressionAccess().getComparisonParserRuleCall_0()); 
 
             }
 
@@ -5091,14 +5131,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__1"
-    // InternalJararaca.g:1669:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
+    // InternalJararaca.g:1675:1: rule__AndExpression__Group__1 : rule__AndExpression__Group__1__Impl ;
     public final void rule__AndExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1673:1: ( rule__AndExpression__Group__1__Impl )
-            // InternalJararaca.g:1674:2: rule__AndExpression__Group__1__Impl
+            // InternalJararaca.g:1679:1: ( rule__AndExpression__Group__1__Impl )
+            // InternalJararaca.g:1680:2: rule__AndExpression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group__1__Impl();
@@ -5124,20 +5164,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group__1__Impl"
-    // InternalJararaca.g:1680:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
+    // InternalJararaca.g:1686:1: rule__AndExpression__Group__1__Impl : ( ( rule__AndExpression__Group_1__0 )* ) ;
     public final void rule__AndExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1684:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
-            // InternalJararaca.g:1685:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalJararaca.g:1690:1: ( ( ( rule__AndExpression__Group_1__0 )* ) )
+            // InternalJararaca.g:1691:1: ( ( rule__AndExpression__Group_1__0 )* )
             {
-            // InternalJararaca.g:1685:1: ( ( rule__AndExpression__Group_1__0 )* )
-            // InternalJararaca.g:1686:2: ( rule__AndExpression__Group_1__0 )*
+            // InternalJararaca.g:1691:1: ( ( rule__AndExpression__Group_1__0 )* )
+            // InternalJararaca.g:1692:2: ( rule__AndExpression__Group_1__0 )*
             {
              before(grammarAccess.getAndExpressionAccess().getGroup_1()); 
-            // InternalJararaca.g:1687:2: ( rule__AndExpression__Group_1__0 )*
+            // InternalJararaca.g:1693:2: ( rule__AndExpression__Group_1__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -5150,7 +5190,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalJararaca.g:1687:3: rule__AndExpression__Group_1__0
+            	    // InternalJararaca.g:1693:3: rule__AndExpression__Group_1__0
             	    {
             	    pushFollow(FOLLOW_18);
             	    rule__AndExpression__Group_1__0();
@@ -5189,14 +5229,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0"
-    // InternalJararaca.g:1696:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
+    // InternalJararaca.g:1702:1: rule__AndExpression__Group_1__0 : rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 ;
     public final void rule__AndExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1700:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
-            // InternalJararaca.g:1701:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
+            // InternalJararaca.g:1706:1: ( rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1 )
+            // InternalJararaca.g:1707:2: rule__AndExpression__Group_1__0__Impl rule__AndExpression__Group_1__1
             {
             pushFollow(FOLLOW_17);
             rule__AndExpression__Group_1__0__Impl();
@@ -5227,21 +5267,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__0__Impl"
-    // InternalJararaca.g:1708:1: rule__AndExpression__Group_1__0__Impl : ( () ) ;
+    // InternalJararaca.g:1714:1: rule__AndExpression__Group_1__0__Impl : ( () ) ;
     public final void rule__AndExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1712:1: ( ( () ) )
-            // InternalJararaca.g:1713:1: ( () )
+            // InternalJararaca.g:1718:1: ( ( () ) )
+            // InternalJararaca.g:1719:1: ( () )
             {
-            // InternalJararaca.g:1713:1: ( () )
-            // InternalJararaca.g:1714:2: ()
+            // InternalJararaca.g:1719:1: ( () )
+            // InternalJararaca.g:1720:2: ()
             {
              before(grammarAccess.getAndExpressionAccess().getAndExpressionLeftAction_1_0()); 
-            // InternalJararaca.g:1715:2: ()
-            // InternalJararaca.g:1715:3: 
+            // InternalJararaca.g:1721:2: ()
+            // InternalJararaca.g:1721:3: 
             {
             }
 
@@ -5264,14 +5304,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1"
-    // InternalJararaca.g:1723:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 ;
+    // InternalJararaca.g:1729:1: rule__AndExpression__Group_1__1 : rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 ;
     public final void rule__AndExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1727:1: ( rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 )
-            // InternalJararaca.g:1728:2: rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2
+            // InternalJararaca.g:1733:1: ( rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2 )
+            // InternalJararaca.g:1734:2: rule__AndExpression__Group_1__1__Impl rule__AndExpression__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__AndExpression__Group_1__1__Impl();
@@ -5302,17 +5342,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__1__Impl"
-    // InternalJararaca.g:1735:1: rule__AndExpression__Group_1__1__Impl : ( 'and' ) ;
+    // InternalJararaca.g:1741:1: rule__AndExpression__Group_1__1__Impl : ( 'and' ) ;
     public final void rule__AndExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1739:1: ( ( 'and' ) )
-            // InternalJararaca.g:1740:1: ( 'and' )
+            // InternalJararaca.g:1745:1: ( ( 'and' ) )
+            // InternalJararaca.g:1746:1: ( 'and' )
             {
-            // InternalJararaca.g:1740:1: ( 'and' )
-            // InternalJararaca.g:1741:2: 'and'
+            // InternalJararaca.g:1746:1: ( 'and' )
+            // InternalJararaca.g:1747:2: 'and'
             {
              before(grammarAccess.getAndExpressionAccess().getAndKeyword_1_1()); 
             match(input,34,FOLLOW_2); 
@@ -5339,14 +5379,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__2"
-    // InternalJararaca.g:1750:1: rule__AndExpression__Group_1__2 : rule__AndExpression__Group_1__2__Impl ;
+    // InternalJararaca.g:1756:1: rule__AndExpression__Group_1__2 : rule__AndExpression__Group_1__2__Impl ;
     public final void rule__AndExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1754:1: ( rule__AndExpression__Group_1__2__Impl )
-            // InternalJararaca.g:1755:2: rule__AndExpression__Group_1__2__Impl
+            // InternalJararaca.g:1760:1: ( rule__AndExpression__Group_1__2__Impl )
+            // InternalJararaca.g:1761:2: rule__AndExpression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__Group_1__2__Impl();
@@ -5372,21 +5412,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__Group_1__2__Impl"
-    // InternalJararaca.g:1761:1: rule__AndExpression__Group_1__2__Impl : ( ( rule__AndExpression__RightAssignment_1_2 ) ) ;
+    // InternalJararaca.g:1767:1: rule__AndExpression__Group_1__2__Impl : ( ( rule__AndExpression__RightAssignment_1_2 ) ) ;
     public final void rule__AndExpression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1765:1: ( ( ( rule__AndExpression__RightAssignment_1_2 ) ) )
-            // InternalJararaca.g:1766:1: ( ( rule__AndExpression__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1771:1: ( ( ( rule__AndExpression__RightAssignment_1_2 ) ) )
+            // InternalJararaca.g:1772:1: ( ( rule__AndExpression__RightAssignment_1_2 ) )
             {
-            // InternalJararaca.g:1766:1: ( ( rule__AndExpression__RightAssignment_1_2 ) )
-            // InternalJararaca.g:1767:2: ( rule__AndExpression__RightAssignment_1_2 )
+            // InternalJararaca.g:1772:1: ( ( rule__AndExpression__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1773:2: ( rule__AndExpression__RightAssignment_1_2 )
             {
              before(grammarAccess.getAndExpressionAccess().getRightAssignment_1_2()); 
-            // InternalJararaca.g:1768:2: ( rule__AndExpression__RightAssignment_1_2 )
-            // InternalJararaca.g:1768:3: rule__AndExpression__RightAssignment_1_2
+            // InternalJararaca.g:1774:2: ( rule__AndExpression__RightAssignment_1_2 )
+            // InternalJararaca.g:1774:3: rule__AndExpression__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__AndExpression__RightAssignment_1_2();
@@ -5418,247 +5458,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__AndExpression__Group_1__2__Impl"
 
 
-    // $ANTLR start "rule__NotExpression__Group_0__0"
-    // InternalJararaca.g:1777:1: rule__NotExpression__Group_0__0 : rule__NotExpression__Group_0__0__Impl rule__NotExpression__Group_0__1 ;
-    public final void rule__NotExpression__Group_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1781:1: ( rule__NotExpression__Group_0__0__Impl rule__NotExpression__Group_0__1 )
-            // InternalJararaca.g:1782:2: rule__NotExpression__Group_0__0__Impl rule__NotExpression__Group_0__1
-            {
-            pushFollow(FOLLOW_19);
-            rule__NotExpression__Group_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__NotExpression__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__0"
-
-
-    // $ANTLR start "rule__NotExpression__Group_0__0__Impl"
-    // InternalJararaca.g:1789:1: rule__NotExpression__Group_0__0__Impl : ( () ) ;
-    public final void rule__NotExpression__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1793:1: ( ( () ) )
-            // InternalJararaca.g:1794:1: ( () )
-            {
-            // InternalJararaca.g:1794:1: ( () )
-            // InternalJararaca.g:1795:2: ()
-            {
-             before(grammarAccess.getNotExpressionAccess().getNotExpressionAction_0_0()); 
-            // InternalJararaca.g:1796:2: ()
-            // InternalJararaca.g:1796:3: 
-            {
-            }
-
-             after(grammarAccess.getNotExpressionAccess().getNotExpressionAction_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__NotExpression__Group_0__1"
-    // InternalJararaca.g:1804:1: rule__NotExpression__Group_0__1 : rule__NotExpression__Group_0__1__Impl rule__NotExpression__Group_0__2 ;
-    public final void rule__NotExpression__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1808:1: ( rule__NotExpression__Group_0__1__Impl rule__NotExpression__Group_0__2 )
-            // InternalJararaca.g:1809:2: rule__NotExpression__Group_0__1__Impl rule__NotExpression__Group_0__2
-            {
-            pushFollow(FOLLOW_9);
-            rule__NotExpression__Group_0__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__NotExpression__Group_0__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__1"
-
-
-    // $ANTLR start "rule__NotExpression__Group_0__1__Impl"
-    // InternalJararaca.g:1816:1: rule__NotExpression__Group_0__1__Impl : ( 'not' ) ;
-    public final void rule__NotExpression__Group_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1820:1: ( ( 'not' ) )
-            // InternalJararaca.g:1821:1: ( 'not' )
-            {
-            // InternalJararaca.g:1821:1: ( 'not' )
-            // InternalJararaca.g:1822:2: 'not'
-            {
-             before(grammarAccess.getNotExpressionAccess().getNotKeyword_0_1()); 
-            match(input,35,FOLLOW_2); 
-             after(grammarAccess.getNotExpressionAccess().getNotKeyword_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__1__Impl"
-
-
-    // $ANTLR start "rule__NotExpression__Group_0__2"
-    // InternalJararaca.g:1831:1: rule__NotExpression__Group_0__2 : rule__NotExpression__Group_0__2__Impl ;
-    public final void rule__NotExpression__Group_0__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1835:1: ( rule__NotExpression__Group_0__2__Impl )
-            // InternalJararaca.g:1836:2: rule__NotExpression__Group_0__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__NotExpression__Group_0__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__2"
-
-
-    // $ANTLR start "rule__NotExpression__Group_0__2__Impl"
-    // InternalJararaca.g:1842:1: rule__NotExpression__Group_0__2__Impl : ( ( rule__NotExpression__OperandAssignment_0_2 ) ) ;
-    public final void rule__NotExpression__Group_0__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:1846:1: ( ( ( rule__NotExpression__OperandAssignment_0_2 ) ) )
-            // InternalJararaca.g:1847:1: ( ( rule__NotExpression__OperandAssignment_0_2 ) )
-            {
-            // InternalJararaca.g:1847:1: ( ( rule__NotExpression__OperandAssignment_0_2 ) )
-            // InternalJararaca.g:1848:2: ( rule__NotExpression__OperandAssignment_0_2 )
-            {
-             before(grammarAccess.getNotExpressionAccess().getOperandAssignment_0_2()); 
-            // InternalJararaca.g:1849:2: ( rule__NotExpression__OperandAssignment_0_2 )
-            // InternalJararaca.g:1849:3: rule__NotExpression__OperandAssignment_0_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__NotExpression__OperandAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNotExpressionAccess().getOperandAssignment_0_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__Group_0__2__Impl"
-
-
     // $ANTLR start "rule__Comparison__Group__0"
-    // InternalJararaca.g:1858:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
+    // InternalJararaca.g:1783:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
     public final void rule__Comparison__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1862:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
-            // InternalJararaca.g:1863:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
+            // InternalJararaca.g:1787:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
+            // InternalJararaca.g:1788:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__Comparison__Group__0__Impl();
 
             state._fsp--;
@@ -5687,17 +5497,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__0__Impl"
-    // InternalJararaca.g:1870:1: rule__Comparison__Group__0__Impl : ( ruleAddition ) ;
+    // InternalJararaca.g:1795:1: rule__Comparison__Group__0__Impl : ( ruleAddition ) ;
     public final void rule__Comparison__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1874:1: ( ( ruleAddition ) )
-            // InternalJararaca.g:1875:1: ( ruleAddition )
+            // InternalJararaca.g:1799:1: ( ( ruleAddition ) )
+            // InternalJararaca.g:1800:1: ( ruleAddition )
             {
-            // InternalJararaca.g:1875:1: ( ruleAddition )
-            // InternalJararaca.g:1876:2: ruleAddition
+            // InternalJararaca.g:1800:1: ( ruleAddition )
+            // InternalJararaca.g:1801:2: ruleAddition
             {
              before(grammarAccess.getComparisonAccess().getAdditionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -5728,14 +5538,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__1"
-    // InternalJararaca.g:1885:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
+    // InternalJararaca.g:1810:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
     public final void rule__Comparison__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1889:1: ( rule__Comparison__Group__1__Impl )
-            // InternalJararaca.g:1890:2: rule__Comparison__Group__1__Impl
+            // InternalJararaca.g:1814:1: ( rule__Comparison__Group__1__Impl )
+            // InternalJararaca.g:1815:2: rule__Comparison__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group__1__Impl();
@@ -5761,40 +5571,47 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group__1__Impl"
-    // InternalJararaca.g:1896:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )? ) ;
+    // InternalJararaca.g:1821:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
     public final void rule__Comparison__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1900:1: ( ( ( rule__Comparison__Group_1__0 )? ) )
-            // InternalJararaca.g:1901:1: ( ( rule__Comparison__Group_1__0 )? )
+            // InternalJararaca.g:1825:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
+            // InternalJararaca.g:1826:1: ( ( rule__Comparison__Group_1__0 )* )
             {
-            // InternalJararaca.g:1901:1: ( ( rule__Comparison__Group_1__0 )? )
-            // InternalJararaca.g:1902:2: ( rule__Comparison__Group_1__0 )?
+            // InternalJararaca.g:1826:1: ( ( rule__Comparison__Group_1__0 )* )
+            // InternalJararaca.g:1827:2: ( rule__Comparison__Group_1__0 )*
             {
              before(grammarAccess.getComparisonAccess().getGroup_1()); 
-            // InternalJararaca.g:1903:2: ( rule__Comparison__Group_1__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalJararaca.g:1828:2: ( rule__Comparison__Group_1__0 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-            if ( ((LA13_0>=12 && LA13_0<=17)) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalJararaca.g:1903:3: rule__Comparison__Group_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Comparison__Group_1__0();
-
-                    state._fsp--;
+                if ( ((LA13_0>=12 && LA13_0<=17)) ) {
+                    alt13=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt13) {
+            	case 1 :
+            	    // InternalJararaca.g:1828:3: rule__Comparison__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_20);
+            	    rule__Comparison__Group_1__0();
 
-            }
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
 
              after(grammarAccess.getComparisonAccess().getGroup_1()); 
 
@@ -5819,16 +5636,16 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__0"
-    // InternalJararaca.g:1912:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
+    // InternalJararaca.g:1837:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
     public final void rule__Comparison__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1916:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
-            // InternalJararaca.g:1917:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
+            // InternalJararaca.g:1841:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
+            // InternalJararaca.g:1842:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__Comparison__Group_1__0__Impl();
 
             state._fsp--;
@@ -5857,21 +5674,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__0__Impl"
-    // InternalJararaca.g:1924:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
+    // InternalJararaca.g:1849:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
     public final void rule__Comparison__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1928:1: ( ( () ) )
-            // InternalJararaca.g:1929:1: ( () )
+            // InternalJararaca.g:1853:1: ( ( () ) )
+            // InternalJararaca.g:1854:1: ( () )
             {
-            // InternalJararaca.g:1929:1: ( () )
-            // InternalJararaca.g:1930:2: ()
+            // InternalJararaca.g:1854:1: ( () )
+            // InternalJararaca.g:1855:2: ()
             {
              before(grammarAccess.getComparisonAccess().getComparisonLeftAction_1_0()); 
-            // InternalJararaca.g:1931:2: ()
-            // InternalJararaca.g:1931:3: 
+            // InternalJararaca.g:1856:2: ()
+            // InternalJararaca.g:1856:3: 
             {
             }
 
@@ -5894,14 +5711,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__1"
-    // InternalJararaca.g:1939:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
+    // InternalJararaca.g:1864:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
     public final void rule__Comparison__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1943:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
-            // InternalJararaca.g:1944:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
+            // InternalJararaca.g:1868:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
+            // InternalJararaca.g:1869:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__Comparison__Group_1__1__Impl();
@@ -5932,21 +5749,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__1__Impl"
-    // InternalJararaca.g:1951:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__OperatorAssignment_1_1 ) ) ;
+    // InternalJararaca.g:1876:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__OperatorAssignment_1_1 ) ) ;
     public final void rule__Comparison__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1955:1: ( ( ( rule__Comparison__OperatorAssignment_1_1 ) ) )
-            // InternalJararaca.g:1956:1: ( ( rule__Comparison__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:1880:1: ( ( ( rule__Comparison__OperatorAssignment_1_1 ) ) )
+            // InternalJararaca.g:1881:1: ( ( rule__Comparison__OperatorAssignment_1_1 ) )
             {
-            // InternalJararaca.g:1956:1: ( ( rule__Comparison__OperatorAssignment_1_1 ) )
-            // InternalJararaca.g:1957:2: ( rule__Comparison__OperatorAssignment_1_1 )
+            // InternalJararaca.g:1881:1: ( ( rule__Comparison__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:1882:2: ( rule__Comparison__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getComparisonAccess().getOperatorAssignment_1_1()); 
-            // InternalJararaca.g:1958:2: ( rule__Comparison__OperatorAssignment_1_1 )
-            // InternalJararaca.g:1958:3: rule__Comparison__OperatorAssignment_1_1
+            // InternalJararaca.g:1883:2: ( rule__Comparison__OperatorAssignment_1_1 )
+            // InternalJararaca.g:1883:3: rule__Comparison__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__OperatorAssignment_1_1();
@@ -5979,14 +5796,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__2"
-    // InternalJararaca.g:1966:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
+    // InternalJararaca.g:1891:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
     public final void rule__Comparison__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1970:1: ( rule__Comparison__Group_1__2__Impl )
-            // InternalJararaca.g:1971:2: rule__Comparison__Group_1__2__Impl
+            // InternalJararaca.g:1895:1: ( rule__Comparison__Group_1__2__Impl )
+            // InternalJararaca.g:1896:2: rule__Comparison__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1__2__Impl();
@@ -6012,21 +5829,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__Group_1__2__Impl"
-    // InternalJararaca.g:1977:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
+    // InternalJararaca.g:1902:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
     public final void rule__Comparison__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1981:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
-            // InternalJararaca.g:1982:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1906:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
+            // InternalJararaca.g:1907:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
             {
-            // InternalJararaca.g:1982:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
-            // InternalJararaca.g:1983:2: ( rule__Comparison__RightAssignment_1_2 )
+            // InternalJararaca.g:1907:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // InternalJararaca.g:1908:2: ( rule__Comparison__RightAssignment_1_2 )
             {
              before(grammarAccess.getComparisonAccess().getRightAssignment_1_2()); 
-            // InternalJararaca.g:1984:2: ( rule__Comparison__RightAssignment_1_2 )
-            // InternalJararaca.g:1984:3: rule__Comparison__RightAssignment_1_2
+            // InternalJararaca.g:1909:2: ( rule__Comparison__RightAssignment_1_2 )
+            // InternalJararaca.g:1909:3: rule__Comparison__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__RightAssignment_1_2();
@@ -6059,14 +5876,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group__0"
-    // InternalJararaca.g:1993:1: rule__Addition__Group__0 : rule__Addition__Group__0__Impl rule__Addition__Group__1 ;
+    // InternalJararaca.g:1918:1: rule__Addition__Group__0 : rule__Addition__Group__0__Impl rule__Addition__Group__1 ;
     public final void rule__Addition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:1997:1: ( rule__Addition__Group__0__Impl rule__Addition__Group__1 )
-            // InternalJararaca.g:1998:2: rule__Addition__Group__0__Impl rule__Addition__Group__1
+            // InternalJararaca.g:1922:1: ( rule__Addition__Group__0__Impl rule__Addition__Group__1 )
+            // InternalJararaca.g:1923:2: rule__Addition__Group__0__Impl rule__Addition__Group__1
             {
             pushFollow(FOLLOW_21);
             rule__Addition__Group__0__Impl();
@@ -6097,17 +5914,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group__0__Impl"
-    // InternalJararaca.g:2005:1: rule__Addition__Group__0__Impl : ( ruleMultiplication ) ;
+    // InternalJararaca.g:1930:1: rule__Addition__Group__0__Impl : ( ruleMultiplication ) ;
     public final void rule__Addition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2009:1: ( ( ruleMultiplication ) )
-            // InternalJararaca.g:2010:1: ( ruleMultiplication )
+            // InternalJararaca.g:1934:1: ( ( ruleMultiplication ) )
+            // InternalJararaca.g:1935:1: ( ruleMultiplication )
             {
-            // InternalJararaca.g:2010:1: ( ruleMultiplication )
-            // InternalJararaca.g:2011:2: ruleMultiplication
+            // InternalJararaca.g:1935:1: ( ruleMultiplication )
+            // InternalJararaca.g:1936:2: ruleMultiplication
             {
              before(grammarAccess.getAdditionAccess().getMultiplicationParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -6138,14 +5955,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group__1"
-    // InternalJararaca.g:2020:1: rule__Addition__Group__1 : rule__Addition__Group__1__Impl ;
+    // InternalJararaca.g:1945:1: rule__Addition__Group__1 : rule__Addition__Group__1__Impl ;
     public final void rule__Addition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2024:1: ( rule__Addition__Group__1__Impl )
-            // InternalJararaca.g:2025:2: rule__Addition__Group__1__Impl
+            // InternalJararaca.g:1949:1: ( rule__Addition__Group__1__Impl )
+            // InternalJararaca.g:1950:2: rule__Addition__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group__1__Impl();
@@ -6171,20 +5988,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group__1__Impl"
-    // InternalJararaca.g:2031:1: rule__Addition__Group__1__Impl : ( ( rule__Addition__Group_1__0 )* ) ;
+    // InternalJararaca.g:1956:1: rule__Addition__Group__1__Impl : ( ( rule__Addition__Group_1__0 )* ) ;
     public final void rule__Addition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2035:1: ( ( ( rule__Addition__Group_1__0 )* ) )
-            // InternalJararaca.g:2036:1: ( ( rule__Addition__Group_1__0 )* )
+            // InternalJararaca.g:1960:1: ( ( ( rule__Addition__Group_1__0 )* ) )
+            // InternalJararaca.g:1961:1: ( ( rule__Addition__Group_1__0 )* )
             {
-            // InternalJararaca.g:2036:1: ( ( rule__Addition__Group_1__0 )* )
-            // InternalJararaca.g:2037:2: ( rule__Addition__Group_1__0 )*
+            // InternalJararaca.g:1961:1: ( ( rule__Addition__Group_1__0 )* )
+            // InternalJararaca.g:1962:2: ( rule__Addition__Group_1__0 )*
             {
              before(grammarAccess.getAdditionAccess().getGroup_1()); 
-            // InternalJararaca.g:2038:2: ( rule__Addition__Group_1__0 )*
+            // InternalJararaca.g:1963:2: ( rule__Addition__Group_1__0 )*
             loop14:
             do {
                 int alt14=2;
@@ -6197,7 +6014,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalJararaca.g:2038:3: rule__Addition__Group_1__0
+            	    // InternalJararaca.g:1963:3: rule__Addition__Group_1__0
             	    {
             	    pushFollow(FOLLOW_22);
             	    rule__Addition__Group_1__0();
@@ -6236,14 +6053,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__0"
-    // InternalJararaca.g:2047:1: rule__Addition__Group_1__0 : rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 ;
+    // InternalJararaca.g:1972:1: rule__Addition__Group_1__0 : rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 ;
     public final void rule__Addition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2051:1: ( rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 )
-            // InternalJararaca.g:2052:2: rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1
+            // InternalJararaca.g:1976:1: ( rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1 )
+            // InternalJararaca.g:1977:2: rule__Addition__Group_1__0__Impl rule__Addition__Group_1__1
             {
             pushFollow(FOLLOW_21);
             rule__Addition__Group_1__0__Impl();
@@ -6274,21 +6091,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__0__Impl"
-    // InternalJararaca.g:2059:1: rule__Addition__Group_1__0__Impl : ( () ) ;
+    // InternalJararaca.g:1984:1: rule__Addition__Group_1__0__Impl : ( () ) ;
     public final void rule__Addition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2063:1: ( ( () ) )
-            // InternalJararaca.g:2064:1: ( () )
+            // InternalJararaca.g:1988:1: ( ( () ) )
+            // InternalJararaca.g:1989:1: ( () )
             {
-            // InternalJararaca.g:2064:1: ( () )
-            // InternalJararaca.g:2065:2: ()
+            // InternalJararaca.g:1989:1: ( () )
+            // InternalJararaca.g:1990:2: ()
             {
              before(grammarAccess.getAdditionAccess().getAdditionLeftAction_1_0()); 
-            // InternalJararaca.g:2066:2: ()
-            // InternalJararaca.g:2066:3: 
+            // InternalJararaca.g:1991:2: ()
+            // InternalJararaca.g:1991:3: 
             {
             }
 
@@ -6311,14 +6128,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__1"
-    // InternalJararaca.g:2074:1: rule__Addition__Group_1__1 : rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2 ;
+    // InternalJararaca.g:1999:1: rule__Addition__Group_1__1 : rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2 ;
     public final void rule__Addition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2078:1: ( rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2 )
-            // InternalJararaca.g:2079:2: rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2
+            // InternalJararaca.g:2003:1: ( rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2 )
+            // InternalJararaca.g:2004:2: rule__Addition__Group_1__1__Impl rule__Addition__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__Addition__Group_1__1__Impl();
@@ -6349,21 +6166,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__1__Impl"
-    // InternalJararaca.g:2086:1: rule__Addition__Group_1__1__Impl : ( ( rule__Addition__OperatorAssignment_1_1 ) ) ;
+    // InternalJararaca.g:2011:1: rule__Addition__Group_1__1__Impl : ( ( rule__Addition__OperatorAssignment_1_1 ) ) ;
     public final void rule__Addition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2090:1: ( ( ( rule__Addition__OperatorAssignment_1_1 ) ) )
-            // InternalJararaca.g:2091:1: ( ( rule__Addition__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:2015:1: ( ( ( rule__Addition__OperatorAssignment_1_1 ) ) )
+            // InternalJararaca.g:2016:1: ( ( rule__Addition__OperatorAssignment_1_1 ) )
             {
-            // InternalJararaca.g:2091:1: ( ( rule__Addition__OperatorAssignment_1_1 ) )
-            // InternalJararaca.g:2092:2: ( rule__Addition__OperatorAssignment_1_1 )
+            // InternalJararaca.g:2016:1: ( ( rule__Addition__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:2017:2: ( rule__Addition__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getAdditionAccess().getOperatorAssignment_1_1()); 
-            // InternalJararaca.g:2093:2: ( rule__Addition__OperatorAssignment_1_1 )
-            // InternalJararaca.g:2093:3: rule__Addition__OperatorAssignment_1_1
+            // InternalJararaca.g:2018:2: ( rule__Addition__OperatorAssignment_1_1 )
+            // InternalJararaca.g:2018:3: rule__Addition__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Addition__OperatorAssignment_1_1();
@@ -6396,14 +6213,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__2"
-    // InternalJararaca.g:2101:1: rule__Addition__Group_1__2 : rule__Addition__Group_1__2__Impl ;
+    // InternalJararaca.g:2026:1: rule__Addition__Group_1__2 : rule__Addition__Group_1__2__Impl ;
     public final void rule__Addition__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2105:1: ( rule__Addition__Group_1__2__Impl )
-            // InternalJararaca.g:2106:2: rule__Addition__Group_1__2__Impl
+            // InternalJararaca.g:2030:1: ( rule__Addition__Group_1__2__Impl )
+            // InternalJararaca.g:2031:2: rule__Addition__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Addition__Group_1__2__Impl();
@@ -6429,21 +6246,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__Group_1__2__Impl"
-    // InternalJararaca.g:2112:1: rule__Addition__Group_1__2__Impl : ( ( rule__Addition__RightAssignment_1_2 ) ) ;
+    // InternalJararaca.g:2037:1: rule__Addition__Group_1__2__Impl : ( ( rule__Addition__RightAssignment_1_2 ) ) ;
     public final void rule__Addition__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2116:1: ( ( ( rule__Addition__RightAssignment_1_2 ) ) )
-            // InternalJararaca.g:2117:1: ( ( rule__Addition__RightAssignment_1_2 ) )
+            // InternalJararaca.g:2041:1: ( ( ( rule__Addition__RightAssignment_1_2 ) ) )
+            // InternalJararaca.g:2042:1: ( ( rule__Addition__RightAssignment_1_2 ) )
             {
-            // InternalJararaca.g:2117:1: ( ( rule__Addition__RightAssignment_1_2 ) )
-            // InternalJararaca.g:2118:2: ( rule__Addition__RightAssignment_1_2 )
+            // InternalJararaca.g:2042:1: ( ( rule__Addition__RightAssignment_1_2 ) )
+            // InternalJararaca.g:2043:2: ( rule__Addition__RightAssignment_1_2 )
             {
              before(grammarAccess.getAdditionAccess().getRightAssignment_1_2()); 
-            // InternalJararaca.g:2119:2: ( rule__Addition__RightAssignment_1_2 )
-            // InternalJararaca.g:2119:3: rule__Addition__RightAssignment_1_2
+            // InternalJararaca.g:2044:2: ( rule__Addition__RightAssignment_1_2 )
+            // InternalJararaca.g:2044:3: rule__Addition__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Addition__RightAssignment_1_2();
@@ -6476,14 +6293,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group__0"
-    // InternalJararaca.g:2128:1: rule__Multiplication__Group__0 : rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 ;
+    // InternalJararaca.g:2053:1: rule__Multiplication__Group__0 : rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 ;
     public final void rule__Multiplication__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2132:1: ( rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 )
-            // InternalJararaca.g:2133:2: rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1
+            // InternalJararaca.g:2057:1: ( rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1 )
+            // InternalJararaca.g:2058:2: rule__Multiplication__Group__0__Impl rule__Multiplication__Group__1
             {
             pushFollow(FOLLOW_23);
             rule__Multiplication__Group__0__Impl();
@@ -6514,25 +6331,25 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group__0__Impl"
-    // InternalJararaca.g:2140:1: rule__Multiplication__Group__0__Impl : ( rulePrimary ) ;
+    // InternalJararaca.g:2065:1: rule__Multiplication__Group__0__Impl : ( ruleUnary ) ;
     public final void rule__Multiplication__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2144:1: ( ( rulePrimary ) )
-            // InternalJararaca.g:2145:1: ( rulePrimary )
+            // InternalJararaca.g:2069:1: ( ( ruleUnary ) )
+            // InternalJararaca.g:2070:1: ( ruleUnary )
             {
-            // InternalJararaca.g:2145:1: ( rulePrimary )
-            // InternalJararaca.g:2146:2: rulePrimary
+            // InternalJararaca.g:2070:1: ( ruleUnary )
+            // InternalJararaca.g:2071:2: ruleUnary
             {
-             before(grammarAccess.getMultiplicationAccess().getPrimaryParserRuleCall_0()); 
+             before(grammarAccess.getMultiplicationAccess().getUnaryParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            rulePrimary();
+            ruleUnary();
 
             state._fsp--;
 
-             after(grammarAccess.getMultiplicationAccess().getPrimaryParserRuleCall_0()); 
+             after(grammarAccess.getMultiplicationAccess().getUnaryParserRuleCall_0()); 
 
             }
 
@@ -6555,14 +6372,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group__1"
-    // InternalJararaca.g:2155:1: rule__Multiplication__Group__1 : rule__Multiplication__Group__1__Impl ;
+    // InternalJararaca.g:2080:1: rule__Multiplication__Group__1 : rule__Multiplication__Group__1__Impl ;
     public final void rule__Multiplication__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2159:1: ( rule__Multiplication__Group__1__Impl )
-            // InternalJararaca.g:2160:2: rule__Multiplication__Group__1__Impl
+            // InternalJararaca.g:2084:1: ( rule__Multiplication__Group__1__Impl )
+            // InternalJararaca.g:2085:2: rule__Multiplication__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group__1__Impl();
@@ -6588,20 +6405,20 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group__1__Impl"
-    // InternalJararaca.g:2166:1: rule__Multiplication__Group__1__Impl : ( ( rule__Multiplication__Group_1__0 )* ) ;
+    // InternalJararaca.g:2091:1: rule__Multiplication__Group__1__Impl : ( ( rule__Multiplication__Group_1__0 )* ) ;
     public final void rule__Multiplication__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2170:1: ( ( ( rule__Multiplication__Group_1__0 )* ) )
-            // InternalJararaca.g:2171:1: ( ( rule__Multiplication__Group_1__0 )* )
+            // InternalJararaca.g:2095:1: ( ( ( rule__Multiplication__Group_1__0 )* ) )
+            // InternalJararaca.g:2096:1: ( ( rule__Multiplication__Group_1__0 )* )
             {
-            // InternalJararaca.g:2171:1: ( ( rule__Multiplication__Group_1__0 )* )
-            // InternalJararaca.g:2172:2: ( rule__Multiplication__Group_1__0 )*
+            // InternalJararaca.g:2096:1: ( ( rule__Multiplication__Group_1__0 )* )
+            // InternalJararaca.g:2097:2: ( rule__Multiplication__Group_1__0 )*
             {
              before(grammarAccess.getMultiplicationAccess().getGroup_1()); 
-            // InternalJararaca.g:2173:2: ( rule__Multiplication__Group_1__0 )*
+            // InternalJararaca.g:2098:2: ( rule__Multiplication__Group_1__0 )*
             loop15:
             do {
                 int alt15=2;
@@ -6614,7 +6431,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalJararaca.g:2173:3: rule__Multiplication__Group_1__0
+            	    // InternalJararaca.g:2098:3: rule__Multiplication__Group_1__0
             	    {
             	    pushFollow(FOLLOW_24);
             	    rule__Multiplication__Group_1__0();
@@ -6653,14 +6470,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__0"
-    // InternalJararaca.g:2182:1: rule__Multiplication__Group_1__0 : rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 ;
+    // InternalJararaca.g:2107:1: rule__Multiplication__Group_1__0 : rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 ;
     public final void rule__Multiplication__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2186:1: ( rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 )
-            // InternalJararaca.g:2187:2: rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1
+            // InternalJararaca.g:2111:1: ( rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1 )
+            // InternalJararaca.g:2112:2: rule__Multiplication__Group_1__0__Impl rule__Multiplication__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__Multiplication__Group_1__0__Impl();
@@ -6691,21 +6508,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__0__Impl"
-    // InternalJararaca.g:2194:1: rule__Multiplication__Group_1__0__Impl : ( () ) ;
+    // InternalJararaca.g:2119:1: rule__Multiplication__Group_1__0__Impl : ( () ) ;
     public final void rule__Multiplication__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2198:1: ( ( () ) )
-            // InternalJararaca.g:2199:1: ( () )
+            // InternalJararaca.g:2123:1: ( ( () ) )
+            // InternalJararaca.g:2124:1: ( () )
             {
-            // InternalJararaca.g:2199:1: ( () )
-            // InternalJararaca.g:2200:2: ()
+            // InternalJararaca.g:2124:1: ( () )
+            // InternalJararaca.g:2125:2: ()
             {
              before(grammarAccess.getMultiplicationAccess().getMultiplicationLeftAction_1_0()); 
-            // InternalJararaca.g:2201:2: ()
-            // InternalJararaca.g:2201:3: 
+            // InternalJararaca.g:2126:2: ()
+            // InternalJararaca.g:2126:3: 
             {
             }
 
@@ -6728,14 +6545,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__1"
-    // InternalJararaca.g:2209:1: rule__Multiplication__Group_1__1 : rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2 ;
+    // InternalJararaca.g:2134:1: rule__Multiplication__Group_1__1 : rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2 ;
     public final void rule__Multiplication__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2213:1: ( rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2 )
-            // InternalJararaca.g:2214:2: rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2
+            // InternalJararaca.g:2138:1: ( rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2 )
+            // InternalJararaca.g:2139:2: rule__Multiplication__Group_1__1__Impl rule__Multiplication__Group_1__2
             {
             pushFollow(FOLLOW_9);
             rule__Multiplication__Group_1__1__Impl();
@@ -6766,21 +6583,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__1__Impl"
-    // InternalJararaca.g:2221:1: rule__Multiplication__Group_1__1__Impl : ( ( rule__Multiplication__OperatorAssignment_1_1 ) ) ;
+    // InternalJararaca.g:2146:1: rule__Multiplication__Group_1__1__Impl : ( ( rule__Multiplication__OperatorAssignment_1_1 ) ) ;
     public final void rule__Multiplication__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2225:1: ( ( ( rule__Multiplication__OperatorAssignment_1_1 ) ) )
-            // InternalJararaca.g:2226:1: ( ( rule__Multiplication__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:2150:1: ( ( ( rule__Multiplication__OperatorAssignment_1_1 ) ) )
+            // InternalJararaca.g:2151:1: ( ( rule__Multiplication__OperatorAssignment_1_1 ) )
             {
-            // InternalJararaca.g:2226:1: ( ( rule__Multiplication__OperatorAssignment_1_1 ) )
-            // InternalJararaca.g:2227:2: ( rule__Multiplication__OperatorAssignment_1_1 )
+            // InternalJararaca.g:2151:1: ( ( rule__Multiplication__OperatorAssignment_1_1 ) )
+            // InternalJararaca.g:2152:2: ( rule__Multiplication__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getMultiplicationAccess().getOperatorAssignment_1_1()); 
-            // InternalJararaca.g:2228:2: ( rule__Multiplication__OperatorAssignment_1_1 )
-            // InternalJararaca.g:2228:3: rule__Multiplication__OperatorAssignment_1_1
+            // InternalJararaca.g:2153:2: ( rule__Multiplication__OperatorAssignment_1_1 )
+            // InternalJararaca.g:2153:3: rule__Multiplication__OperatorAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__OperatorAssignment_1_1();
@@ -6813,14 +6630,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__2"
-    // InternalJararaca.g:2236:1: rule__Multiplication__Group_1__2 : rule__Multiplication__Group_1__2__Impl ;
+    // InternalJararaca.g:2161:1: rule__Multiplication__Group_1__2 : rule__Multiplication__Group_1__2__Impl ;
     public final void rule__Multiplication__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2240:1: ( rule__Multiplication__Group_1__2__Impl )
-            // InternalJararaca.g:2241:2: rule__Multiplication__Group_1__2__Impl
+            // InternalJararaca.g:2165:1: ( rule__Multiplication__Group_1__2__Impl )
+            // InternalJararaca.g:2166:2: rule__Multiplication__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__Group_1__2__Impl();
@@ -6846,21 +6663,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__Group_1__2__Impl"
-    // InternalJararaca.g:2247:1: rule__Multiplication__Group_1__2__Impl : ( ( rule__Multiplication__RightAssignment_1_2 ) ) ;
+    // InternalJararaca.g:2172:1: rule__Multiplication__Group_1__2__Impl : ( ( rule__Multiplication__RightAssignment_1_2 ) ) ;
     public final void rule__Multiplication__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2251:1: ( ( ( rule__Multiplication__RightAssignment_1_2 ) ) )
-            // InternalJararaca.g:2252:1: ( ( rule__Multiplication__RightAssignment_1_2 ) )
+            // InternalJararaca.g:2176:1: ( ( ( rule__Multiplication__RightAssignment_1_2 ) ) )
+            // InternalJararaca.g:2177:1: ( ( rule__Multiplication__RightAssignment_1_2 ) )
             {
-            // InternalJararaca.g:2252:1: ( ( rule__Multiplication__RightAssignment_1_2 ) )
-            // InternalJararaca.g:2253:2: ( rule__Multiplication__RightAssignment_1_2 )
+            // InternalJararaca.g:2177:1: ( ( rule__Multiplication__RightAssignment_1_2 ) )
+            // InternalJararaca.g:2178:2: ( rule__Multiplication__RightAssignment_1_2 )
             {
              before(grammarAccess.getMultiplicationAccess().getRightAssignment_1_2()); 
-            // InternalJararaca.g:2254:2: ( rule__Multiplication__RightAssignment_1_2 )
-            // InternalJararaca.g:2254:3: rule__Multiplication__RightAssignment_1_2
+            // InternalJararaca.g:2179:2: ( rule__Multiplication__RightAssignment_1_2 )
+            // InternalJararaca.g:2179:3: rule__Multiplication__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__RightAssignment_1_2();
@@ -6892,17 +6709,477 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Multiplication__Group_1__2__Impl"
 
 
+    // $ANTLR start "rule__Unary__Group_0__0"
+    // InternalJararaca.g:2188:1: rule__Unary__Group_0__0 : rule__Unary__Group_0__0__Impl rule__Unary__Group_0__1 ;
+    public final void rule__Unary__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2192:1: ( rule__Unary__Group_0__0__Impl rule__Unary__Group_0__1 )
+            // InternalJararaca.g:2193:2: rule__Unary__Group_0__0__Impl rule__Unary__Group_0__1
+            {
+            pushFollow(FOLLOW_25);
+            rule__Unary__Group_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__0"
+
+
+    // $ANTLR start "rule__Unary__Group_0__0__Impl"
+    // InternalJararaca.g:2200:1: rule__Unary__Group_0__0__Impl : ( () ) ;
+    public final void rule__Unary__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2204:1: ( ( () ) )
+            // InternalJararaca.g:2205:1: ( () )
+            {
+            // InternalJararaca.g:2205:1: ( () )
+            // InternalJararaca.g:2206:2: ()
+            {
+             before(grammarAccess.getUnaryAccess().getNotExpressionAction_0_0()); 
+            // InternalJararaca.g:2207:2: ()
+            // InternalJararaca.g:2207:3: 
+            {
+            }
+
+             after(grammarAccess.getUnaryAccess().getNotExpressionAction_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__Unary__Group_0__1"
+    // InternalJararaca.g:2215:1: rule__Unary__Group_0__1 : rule__Unary__Group_0__1__Impl rule__Unary__Group_0__2 ;
+    public final void rule__Unary__Group_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2219:1: ( rule__Unary__Group_0__1__Impl rule__Unary__Group_0__2 )
+            // InternalJararaca.g:2220:2: rule__Unary__Group_0__1__Impl rule__Unary__Group_0__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__Unary__Group_0__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_0__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__1"
+
+
+    // $ANTLR start "rule__Unary__Group_0__1__Impl"
+    // InternalJararaca.g:2227:1: rule__Unary__Group_0__1__Impl : ( 'not' ) ;
+    public final void rule__Unary__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2231:1: ( ( 'not' ) )
+            // InternalJararaca.g:2232:1: ( 'not' )
+            {
+            // InternalJararaca.g:2232:1: ( 'not' )
+            // InternalJararaca.g:2233:2: 'not'
+            {
+             before(grammarAccess.getUnaryAccess().getNotKeyword_0_1()); 
+            match(input,35,FOLLOW_2); 
+             after(grammarAccess.getUnaryAccess().getNotKeyword_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__Unary__Group_0__2"
+    // InternalJararaca.g:2242:1: rule__Unary__Group_0__2 : rule__Unary__Group_0__2__Impl ;
+    public final void rule__Unary__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2246:1: ( rule__Unary__Group_0__2__Impl )
+            // InternalJararaca.g:2247:2: rule__Unary__Group_0__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_0__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__2"
+
+
+    // $ANTLR start "rule__Unary__Group_0__2__Impl"
+    // InternalJararaca.g:2253:1: rule__Unary__Group_0__2__Impl : ( ( rule__Unary__OperandAssignment_0_2 ) ) ;
+    public final void rule__Unary__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2257:1: ( ( ( rule__Unary__OperandAssignment_0_2 ) ) )
+            // InternalJararaca.g:2258:1: ( ( rule__Unary__OperandAssignment_0_2 ) )
+            {
+            // InternalJararaca.g:2258:1: ( ( rule__Unary__OperandAssignment_0_2 ) )
+            // InternalJararaca.g:2259:2: ( rule__Unary__OperandAssignment_0_2 )
+            {
+             before(grammarAccess.getUnaryAccess().getOperandAssignment_0_2()); 
+            // InternalJararaca.g:2260:2: ( rule__Unary__OperandAssignment_0_2 )
+            // InternalJararaca.g:2260:3: rule__Unary__OperandAssignment_0_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Unary__OperandAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnaryAccess().getOperandAssignment_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__Unary__Group_1__0"
+    // InternalJararaca.g:2269:1: rule__Unary__Group_1__0 : rule__Unary__Group_1__0__Impl rule__Unary__Group_1__1 ;
+    public final void rule__Unary__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2273:1: ( rule__Unary__Group_1__0__Impl rule__Unary__Group_1__1 )
+            // InternalJararaca.g:2274:2: rule__Unary__Group_1__0__Impl rule__Unary__Group_1__1
+            {
+            pushFollow(FOLLOW_26);
+            rule__Unary__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__0"
+
+
+    // $ANTLR start "rule__Unary__Group_1__0__Impl"
+    // InternalJararaca.g:2281:1: rule__Unary__Group_1__0__Impl : ( () ) ;
+    public final void rule__Unary__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2285:1: ( ( () ) )
+            // InternalJararaca.g:2286:1: ( () )
+            {
+            // InternalJararaca.g:2286:1: ( () )
+            // InternalJararaca.g:2287:2: ()
+            {
+             before(grammarAccess.getUnaryAccess().getNegativeAction_1_0()); 
+            // InternalJararaca.g:2288:2: ()
+            // InternalJararaca.g:2288:3: 
+            {
+            }
+
+             after(grammarAccess.getUnaryAccess().getNegativeAction_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__Unary__Group_1__1"
+    // InternalJararaca.g:2296:1: rule__Unary__Group_1__1 : rule__Unary__Group_1__1__Impl rule__Unary__Group_1__2 ;
+    public final void rule__Unary__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2300:1: ( rule__Unary__Group_1__1__Impl rule__Unary__Group_1__2 )
+            // InternalJararaca.g:2301:2: rule__Unary__Group_1__1__Impl rule__Unary__Group_1__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__Unary__Group_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__1"
+
+
+    // $ANTLR start "rule__Unary__Group_1__1__Impl"
+    // InternalJararaca.g:2308:1: rule__Unary__Group_1__1__Impl : ( '-' ) ;
+    public final void rule__Unary__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2312:1: ( ( '-' ) )
+            // InternalJararaca.g:2313:1: ( '-' )
+            {
+            // InternalJararaca.g:2313:1: ( '-' )
+            // InternalJararaca.g:2314:2: '-'
+            {
+             before(grammarAccess.getUnaryAccess().getHyphenMinusKeyword_1_1()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getUnaryAccess().getHyphenMinusKeyword_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__Unary__Group_1__2"
+    // InternalJararaca.g:2323:1: rule__Unary__Group_1__2 : rule__Unary__Group_1__2__Impl ;
+    public final void rule__Unary__Group_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2327:1: ( rule__Unary__Group_1__2__Impl )
+            // InternalJararaca.g:2328:2: rule__Unary__Group_1__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Unary__Group_1__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__2"
+
+
+    // $ANTLR start "rule__Unary__Group_1__2__Impl"
+    // InternalJararaca.g:2334:1: rule__Unary__Group_1__2__Impl : ( ( rule__Unary__OperandAssignment_1_2 ) ) ;
+    public final void rule__Unary__Group_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2338:1: ( ( ( rule__Unary__OperandAssignment_1_2 ) ) )
+            // InternalJararaca.g:2339:1: ( ( rule__Unary__OperandAssignment_1_2 ) )
+            {
+            // InternalJararaca.g:2339:1: ( ( rule__Unary__OperandAssignment_1_2 ) )
+            // InternalJararaca.g:2340:2: ( rule__Unary__OperandAssignment_1_2 )
+            {
+             before(grammarAccess.getUnaryAccess().getOperandAssignment_1_2()); 
+            // InternalJararaca.g:2341:2: ( rule__Unary__OperandAssignment_1_2 )
+            // InternalJararaca.g:2341:3: rule__Unary__OperandAssignment_1_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Unary__OperandAssignment_1_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnaryAccess().getOperandAssignment_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__Group_1__2__Impl"
+
+
     // $ANTLR start "rule__Primary__Group_0__0"
-    // InternalJararaca.g:2263:1: rule__Primary__Group_0__0 : rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 ;
+    // InternalJararaca.g:2350:1: rule__Primary__Group_0__0 : rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 ;
     public final void rule__Primary__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2267:1: ( rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 )
-            // InternalJararaca.g:2268:2: rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1
+            // InternalJararaca.g:2354:1: ( rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1 )
+            // InternalJararaca.g:2355:2: rule__Primary__Group_0__0__Impl rule__Primary__Group_0__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_27);
             rule__Primary__Group_0__0__Impl();
 
             state._fsp--;
@@ -6931,21 +7208,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__0__Impl"
-    // InternalJararaca.g:2275:1: rule__Primary__Group_0__0__Impl : ( () ) ;
+    // InternalJararaca.g:2362:1: rule__Primary__Group_0__0__Impl : ( () ) ;
     public final void rule__Primary__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2279:1: ( ( () ) )
-            // InternalJararaca.g:2280:1: ( () )
+            // InternalJararaca.g:2366:1: ( ( () ) )
+            // InternalJararaca.g:2367:1: ( () )
             {
-            // InternalJararaca.g:2280:1: ( () )
-            // InternalJararaca.g:2281:2: ()
+            // InternalJararaca.g:2367:1: ( () )
+            // InternalJararaca.g:2368:2: ()
             {
              before(grammarAccess.getPrimaryAccess().getParenExpressionAction_0_0()); 
-            // InternalJararaca.g:2282:2: ()
-            // InternalJararaca.g:2282:3: 
+            // InternalJararaca.g:2369:2: ()
+            // InternalJararaca.g:2369:3: 
             {
             }
 
@@ -6968,14 +7245,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__1"
-    // InternalJararaca.g:2290:1: rule__Primary__Group_0__1 : rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 ;
+    // InternalJararaca.g:2377:1: rule__Primary__Group_0__1 : rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 ;
     public final void rule__Primary__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2294:1: ( rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 )
-            // InternalJararaca.g:2295:2: rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2
+            // InternalJararaca.g:2381:1: ( rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2 )
+            // InternalJararaca.g:2382:2: rule__Primary__Group_0__1__Impl rule__Primary__Group_0__2
             {
             pushFollow(FOLLOW_9);
             rule__Primary__Group_0__1__Impl();
@@ -7006,17 +7283,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__1__Impl"
-    // InternalJararaca.g:2302:1: rule__Primary__Group_0__1__Impl : ( '(' ) ;
+    // InternalJararaca.g:2389:1: rule__Primary__Group_0__1__Impl : ( '(' ) ;
     public final void rule__Primary__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2306:1: ( ( '(' ) )
-            // InternalJararaca.g:2307:1: ( '(' )
+            // InternalJararaca.g:2393:1: ( ( '(' ) )
+            // InternalJararaca.g:2394:1: ( '(' )
             {
-            // InternalJararaca.g:2307:1: ( '(' )
-            // InternalJararaca.g:2308:2: '('
+            // InternalJararaca.g:2394:1: ( '(' )
+            // InternalJararaca.g:2395:2: '('
             {
              before(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_1()); 
             match(input,36,FOLLOW_2); 
@@ -7043,16 +7320,16 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__2"
-    // InternalJararaca.g:2317:1: rule__Primary__Group_0__2 : rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3 ;
+    // InternalJararaca.g:2404:1: rule__Primary__Group_0__2 : rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3 ;
     public final void rule__Primary__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2321:1: ( rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3 )
-            // InternalJararaca.g:2322:2: rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3
+            // InternalJararaca.g:2408:1: ( rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3 )
+            // InternalJararaca.g:2409:2: rule__Primary__Group_0__2__Impl rule__Primary__Group_0__3
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_28);
             rule__Primary__Group_0__2__Impl();
 
             state._fsp--;
@@ -7081,21 +7358,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__2__Impl"
-    // InternalJararaca.g:2329:1: rule__Primary__Group_0__2__Impl : ( ( rule__Primary__InnerAssignment_0_2 ) ) ;
+    // InternalJararaca.g:2416:1: rule__Primary__Group_0__2__Impl : ( ( rule__Primary__InnerAssignment_0_2 ) ) ;
     public final void rule__Primary__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2333:1: ( ( ( rule__Primary__InnerAssignment_0_2 ) ) )
-            // InternalJararaca.g:2334:1: ( ( rule__Primary__InnerAssignment_0_2 ) )
+            // InternalJararaca.g:2420:1: ( ( ( rule__Primary__InnerAssignment_0_2 ) ) )
+            // InternalJararaca.g:2421:1: ( ( rule__Primary__InnerAssignment_0_2 ) )
             {
-            // InternalJararaca.g:2334:1: ( ( rule__Primary__InnerAssignment_0_2 ) )
-            // InternalJararaca.g:2335:2: ( rule__Primary__InnerAssignment_0_2 )
+            // InternalJararaca.g:2421:1: ( ( rule__Primary__InnerAssignment_0_2 ) )
+            // InternalJararaca.g:2422:2: ( rule__Primary__InnerAssignment_0_2 )
             {
              before(grammarAccess.getPrimaryAccess().getInnerAssignment_0_2()); 
-            // InternalJararaca.g:2336:2: ( rule__Primary__InnerAssignment_0_2 )
-            // InternalJararaca.g:2336:3: rule__Primary__InnerAssignment_0_2
+            // InternalJararaca.g:2423:2: ( rule__Primary__InnerAssignment_0_2 )
+            // InternalJararaca.g:2423:3: rule__Primary__InnerAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__Primary__InnerAssignment_0_2();
@@ -7128,14 +7405,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__3"
-    // InternalJararaca.g:2344:1: rule__Primary__Group_0__3 : rule__Primary__Group_0__3__Impl ;
+    // InternalJararaca.g:2431:1: rule__Primary__Group_0__3 : rule__Primary__Group_0__3__Impl ;
     public final void rule__Primary__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2348:1: ( rule__Primary__Group_0__3__Impl )
-            // InternalJararaca.g:2349:2: rule__Primary__Group_0__3__Impl
+            // InternalJararaca.g:2435:1: ( rule__Primary__Group_0__3__Impl )
+            // InternalJararaca.g:2436:2: rule__Primary__Group_0__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Primary__Group_0__3__Impl();
@@ -7161,17 +7438,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Primary__Group_0__3__Impl"
-    // InternalJararaca.g:2355:1: rule__Primary__Group_0__3__Impl : ( ')' ) ;
+    // InternalJararaca.g:2442:1: rule__Primary__Group_0__3__Impl : ( ')' ) ;
     public final void rule__Primary__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2359:1: ( ( ')' ) )
-            // InternalJararaca.g:2360:1: ( ')' )
+            // InternalJararaca.g:2446:1: ( ( ')' ) )
+            // InternalJararaca.g:2447:1: ( ')' )
             {
-            // InternalJararaca.g:2360:1: ( ')' )
-            // InternalJararaca.g:2361:2: ')'
+            // InternalJararaca.g:2447:1: ( ')' )
+            // InternalJararaca.g:2448:2: ')'
             {
              before(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_0_3()); 
             match(input,37,FOLLOW_2); 
@@ -7198,16 +7475,16 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrueLiteral__Group__0"
-    // InternalJararaca.g:2371:1: rule__TrueLiteral__Group__0 : rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1 ;
+    // InternalJararaca.g:2458:1: rule__TrueLiteral__Group__0 : rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1 ;
     public final void rule__TrueLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2375:1: ( rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1 )
-            // InternalJararaca.g:2376:2: rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1
+            // InternalJararaca.g:2462:1: ( rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1 )
+            // InternalJararaca.g:2463:2: rule__TrueLiteral__Group__0__Impl rule__TrueLiteral__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_29);
             rule__TrueLiteral__Group__0__Impl();
 
             state._fsp--;
@@ -7236,21 +7513,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrueLiteral__Group__0__Impl"
-    // InternalJararaca.g:2383:1: rule__TrueLiteral__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:2470:1: rule__TrueLiteral__Group__0__Impl : ( () ) ;
     public final void rule__TrueLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2387:1: ( ( () ) )
-            // InternalJararaca.g:2388:1: ( () )
+            // InternalJararaca.g:2474:1: ( ( () ) )
+            // InternalJararaca.g:2475:1: ( () )
             {
-            // InternalJararaca.g:2388:1: ( () )
-            // InternalJararaca.g:2389:2: ()
+            // InternalJararaca.g:2475:1: ( () )
+            // InternalJararaca.g:2476:2: ()
             {
              before(grammarAccess.getTrueLiteralAccess().getTrueLiteralAction_0()); 
-            // InternalJararaca.g:2390:2: ()
-            // InternalJararaca.g:2390:3: 
+            // InternalJararaca.g:2477:2: ()
+            // InternalJararaca.g:2477:3: 
             {
             }
 
@@ -7273,14 +7550,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrueLiteral__Group__1"
-    // InternalJararaca.g:2398:1: rule__TrueLiteral__Group__1 : rule__TrueLiteral__Group__1__Impl ;
+    // InternalJararaca.g:2485:1: rule__TrueLiteral__Group__1 : rule__TrueLiteral__Group__1__Impl ;
     public final void rule__TrueLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2402:1: ( rule__TrueLiteral__Group__1__Impl )
-            // InternalJararaca.g:2403:2: rule__TrueLiteral__Group__1__Impl
+            // InternalJararaca.g:2489:1: ( rule__TrueLiteral__Group__1__Impl )
+            // InternalJararaca.g:2490:2: rule__TrueLiteral__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TrueLiteral__Group__1__Impl();
@@ -7306,17 +7583,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TrueLiteral__Group__1__Impl"
-    // InternalJararaca.g:2409:1: rule__TrueLiteral__Group__1__Impl : ( 'true' ) ;
+    // InternalJararaca.g:2496:1: rule__TrueLiteral__Group__1__Impl : ( 'true' ) ;
     public final void rule__TrueLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2413:1: ( ( 'true' ) )
-            // InternalJararaca.g:2414:1: ( 'true' )
+            // InternalJararaca.g:2500:1: ( ( 'true' ) )
+            // InternalJararaca.g:2501:1: ( 'true' )
             {
-            // InternalJararaca.g:2414:1: ( 'true' )
-            // InternalJararaca.g:2415:2: 'true'
+            // InternalJararaca.g:2501:1: ( 'true' )
+            // InternalJararaca.g:2502:2: 'true'
             {
              before(grammarAccess.getTrueLiteralAccess().getTrueKeyword_1()); 
             match(input,38,FOLLOW_2); 
@@ -7343,16 +7620,16 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FalseLiteral__Group__0"
-    // InternalJararaca.g:2425:1: rule__FalseLiteral__Group__0 : rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1 ;
+    // InternalJararaca.g:2512:1: rule__FalseLiteral__Group__0 : rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1 ;
     public final void rule__FalseLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2429:1: ( rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1 )
-            // InternalJararaca.g:2430:2: rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1
+            // InternalJararaca.g:2516:1: ( rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1 )
+            // InternalJararaca.g:2517:2: rule__FalseLiteral__Group__0__Impl rule__FalseLiteral__Group__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_30);
             rule__FalseLiteral__Group__0__Impl();
 
             state._fsp--;
@@ -7381,21 +7658,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FalseLiteral__Group__0__Impl"
-    // InternalJararaca.g:2437:1: rule__FalseLiteral__Group__0__Impl : ( () ) ;
+    // InternalJararaca.g:2524:1: rule__FalseLiteral__Group__0__Impl : ( () ) ;
     public final void rule__FalseLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2441:1: ( ( () ) )
-            // InternalJararaca.g:2442:1: ( () )
+            // InternalJararaca.g:2528:1: ( ( () ) )
+            // InternalJararaca.g:2529:1: ( () )
             {
-            // InternalJararaca.g:2442:1: ( () )
-            // InternalJararaca.g:2443:2: ()
+            // InternalJararaca.g:2529:1: ( () )
+            // InternalJararaca.g:2530:2: ()
             {
              before(grammarAccess.getFalseLiteralAccess().getFalseLiteralAction_0()); 
-            // InternalJararaca.g:2444:2: ()
-            // InternalJararaca.g:2444:3: 
+            // InternalJararaca.g:2531:2: ()
+            // InternalJararaca.g:2531:3: 
             {
             }
 
@@ -7418,14 +7695,14 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FalseLiteral__Group__1"
-    // InternalJararaca.g:2452:1: rule__FalseLiteral__Group__1 : rule__FalseLiteral__Group__1__Impl ;
+    // InternalJararaca.g:2539:1: rule__FalseLiteral__Group__1 : rule__FalseLiteral__Group__1__Impl ;
     public final void rule__FalseLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2456:1: ( rule__FalseLiteral__Group__1__Impl )
-            // InternalJararaca.g:2457:2: rule__FalseLiteral__Group__1__Impl
+            // InternalJararaca.g:2543:1: ( rule__FalseLiteral__Group__1__Impl )
+            // InternalJararaca.g:2544:2: rule__FalseLiteral__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FalseLiteral__Group__1__Impl();
@@ -7451,17 +7728,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FalseLiteral__Group__1__Impl"
-    // InternalJararaca.g:2463:1: rule__FalseLiteral__Group__1__Impl : ( 'false' ) ;
+    // InternalJararaca.g:2550:1: rule__FalseLiteral__Group__1__Impl : ( 'false' ) ;
     public final void rule__FalseLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2467:1: ( ( 'false' ) )
-            // InternalJararaca.g:2468:1: ( 'false' )
+            // InternalJararaca.g:2554:1: ( ( 'false' ) )
+            // InternalJararaca.g:2555:1: ( 'false' )
             {
-            // InternalJararaca.g:2468:1: ( 'false' )
-            // InternalJararaca.g:2469:2: 'false'
+            // InternalJararaca.g:2555:1: ( 'false' )
+            // InternalJararaca.g:2556:2: 'false'
             {
              before(grammarAccess.getFalseLiteralAccess().getFalseKeyword_1()); 
             match(input,39,FOLLOW_2); 
@@ -7488,17 +7765,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Program__StatementsAssignment_2"
-    // InternalJararaca.g:2479:1: rule__Program__StatementsAssignment_2 : ( ruleStatement ) ;
+    // InternalJararaca.g:2566:1: rule__Program__StatementsAssignment_2 : ( ruleStatement ) ;
     public final void rule__Program__StatementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2483:1: ( ( ruleStatement ) )
-            // InternalJararaca.g:2484:2: ( ruleStatement )
+            // InternalJararaca.g:2570:1: ( ( ruleStatement ) )
+            // InternalJararaca.g:2571:2: ( ruleStatement )
             {
-            // InternalJararaca.g:2484:2: ( ruleStatement )
-            // InternalJararaca.g:2485:3: ruleStatement
+            // InternalJararaca.g:2571:2: ( ruleStatement )
+            // InternalJararaca.g:2572:3: ruleStatement
             {
              before(grammarAccess.getProgramAccess().getStatementsStatementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7529,17 +7806,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__NameAssignment_1"
-    // InternalJararaca.g:2494:1: rule__VariableDeclaration__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalJararaca.g:2581:1: rule__VariableDeclaration__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__VariableDeclaration__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2498:1: ( ( RULE_ID ) )
-            // InternalJararaca.g:2499:2: ( RULE_ID )
+            // InternalJararaca.g:2585:1: ( ( RULE_ID ) )
+            // InternalJararaca.g:2586:2: ( RULE_ID )
             {
-            // InternalJararaca.g:2499:2: ( RULE_ID )
-            // InternalJararaca.g:2500:3: RULE_ID
+            // InternalJararaca.g:2586:2: ( RULE_ID )
+            // InternalJararaca.g:2587:3: RULE_ID
             {
              before(grammarAccess.getVariableDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7566,17 +7843,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__TypeAssignment_2"
-    // InternalJararaca.g:2509:1: rule__VariableDeclaration__TypeAssignment_2 : ( ruleType ) ;
+    // InternalJararaca.g:2596:1: rule__VariableDeclaration__TypeAssignment_2 : ( ruleType ) ;
     public final void rule__VariableDeclaration__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2513:1: ( ( ruleType ) )
-            // InternalJararaca.g:2514:2: ( ruleType )
+            // InternalJararaca.g:2600:1: ( ( ruleType ) )
+            // InternalJararaca.g:2601:2: ( ruleType )
             {
-            // InternalJararaca.g:2514:2: ( ruleType )
-            // InternalJararaca.g:2515:3: ruleType
+            // InternalJararaca.g:2601:2: ( ruleType )
+            // InternalJararaca.g:2602:3: ruleType
             {
              before(grammarAccess.getVariableDeclarationAccess().getTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7607,17 +7884,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableDeclaration__InitialValueAssignment_3_1"
-    // InternalJararaca.g:2524:1: rule__VariableDeclaration__InitialValueAssignment_3_1 : ( ruleExpression ) ;
+    // InternalJararaca.g:2611:1: rule__VariableDeclaration__InitialValueAssignment_3_1 : ( ruleExpression ) ;
     public final void rule__VariableDeclaration__InitialValueAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2528:1: ( ( ruleExpression ) )
-            // InternalJararaca.g:2529:2: ( ruleExpression )
+            // InternalJararaca.g:2615:1: ( ( ruleExpression ) )
+            // InternalJararaca.g:2616:2: ( ruleExpression )
             {
-            // InternalJararaca.g:2529:2: ( ruleExpression )
-            // InternalJararaca.g:2530:3: ruleExpression
+            // InternalJararaca.g:2616:2: ( ruleExpression )
+            // InternalJararaca.g:2617:3: ruleExpression
             {
              before(grammarAccess.getVariableDeclarationAccess().getInitialValueExpressionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7648,17 +7925,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__NameAssignment_0"
-    // InternalJararaca.g:2539:1: rule__Assignment__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalJararaca.g:2626:1: rule__Assignment__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Assignment__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2543:1: ( ( RULE_ID ) )
-            // InternalJararaca.g:2544:2: ( RULE_ID )
+            // InternalJararaca.g:2630:1: ( ( RULE_ID ) )
+            // InternalJararaca.g:2631:2: ( RULE_ID )
             {
-            // InternalJararaca.g:2544:2: ( RULE_ID )
-            // InternalJararaca.g:2545:3: RULE_ID
+            // InternalJararaca.g:2631:2: ( RULE_ID )
+            // InternalJararaca.g:2632:3: RULE_ID
             {
              before(grammarAccess.getAssignmentAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7685,17 +7962,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Assignment__ValueAssignment_2"
-    // InternalJararaca.g:2554:1: rule__Assignment__ValueAssignment_2 : ( ruleExpression ) ;
+    // InternalJararaca.g:2641:1: rule__Assignment__ValueAssignment_2 : ( ruleExpression ) ;
     public final void rule__Assignment__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2558:1: ( ( ruleExpression ) )
-            // InternalJararaca.g:2559:2: ( ruleExpression )
+            // InternalJararaca.g:2645:1: ( ( ruleExpression ) )
+            // InternalJararaca.g:2646:2: ( ruleExpression )
             {
-            // InternalJararaca.g:2559:2: ( ruleExpression )
-            // InternalJararaca.g:2560:3: ruleExpression
+            // InternalJararaca.g:2646:2: ( ruleExpression )
+            // InternalJararaca.g:2647:3: ruleExpression
             {
              before(grammarAccess.getAssignmentAccess().getValueExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7726,17 +8003,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__OrExpression__RightAssignment_1_2"
-    // InternalJararaca.g:2569:1: rule__OrExpression__RightAssignment_1_2 : ( ruleAndExpression ) ;
+    // InternalJararaca.g:2656:1: rule__OrExpression__RightAssignment_1_2 : ( ruleAndExpression ) ;
     public final void rule__OrExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2573:1: ( ( ruleAndExpression ) )
-            // InternalJararaca.g:2574:2: ( ruleAndExpression )
+            // InternalJararaca.g:2660:1: ( ( ruleAndExpression ) )
+            // InternalJararaca.g:2661:2: ( ruleAndExpression )
             {
-            // InternalJararaca.g:2574:2: ( ruleAndExpression )
-            // InternalJararaca.g:2575:3: ruleAndExpression
+            // InternalJararaca.g:2661:2: ( ruleAndExpression )
+            // InternalJararaca.g:2662:3: ruleAndExpression
             {
              before(grammarAccess.getOrExpressionAccess().getRightAndExpressionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7767,25 +8044,25 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AndExpression__RightAssignment_1_2"
-    // InternalJararaca.g:2584:1: rule__AndExpression__RightAssignment_1_2 : ( ruleNotExpression ) ;
+    // InternalJararaca.g:2671:1: rule__AndExpression__RightAssignment_1_2 : ( ruleComparison ) ;
     public final void rule__AndExpression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2588:1: ( ( ruleNotExpression ) )
-            // InternalJararaca.g:2589:2: ( ruleNotExpression )
+            // InternalJararaca.g:2675:1: ( ( ruleComparison ) )
+            // InternalJararaca.g:2676:2: ( ruleComparison )
             {
-            // InternalJararaca.g:2589:2: ( ruleNotExpression )
-            // InternalJararaca.g:2590:3: ruleNotExpression
+            // InternalJararaca.g:2676:2: ( ruleComparison )
+            // InternalJararaca.g:2677:3: ruleComparison
             {
-             before(grammarAccess.getAndExpressionAccess().getRightNotExpressionParserRuleCall_1_2_0()); 
+             before(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleNotExpression();
+            ruleComparison();
 
             state._fsp--;
 
-             after(grammarAccess.getAndExpressionAccess().getRightNotExpressionParserRuleCall_1_2_0()); 
+             after(grammarAccess.getAndExpressionAccess().getRightComparisonParserRuleCall_1_2_0()); 
 
             }
 
@@ -7807,63 +8084,22 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__AndExpression__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__NotExpression__OperandAssignment_0_2"
-    // InternalJararaca.g:2599:1: rule__NotExpression__OperandAssignment_0_2 : ( ruleNotExpression ) ;
-    public final void rule__NotExpression__OperandAssignment_0_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJararaca.g:2603:1: ( ( ruleNotExpression ) )
-            // InternalJararaca.g:2604:2: ( ruleNotExpression )
-            {
-            // InternalJararaca.g:2604:2: ( ruleNotExpression )
-            // InternalJararaca.g:2605:3: ruleNotExpression
-            {
-             before(grammarAccess.getNotExpressionAccess().getOperandNotExpressionParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleNotExpression();
-
-            state._fsp--;
-
-             after(grammarAccess.getNotExpressionAccess().getOperandNotExpressionParserRuleCall_0_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NotExpression__OperandAssignment_0_2"
-
-
     // $ANTLR start "rule__Comparison__OperatorAssignment_1_1"
-    // InternalJararaca.g:2614:1: rule__Comparison__OperatorAssignment_1_1 : ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) ) ;
+    // InternalJararaca.g:2686:1: rule__Comparison__OperatorAssignment_1_1 : ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) ) ;
     public final void rule__Comparison__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2618:1: ( ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) ) )
-            // InternalJararaca.g:2619:2: ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2690:1: ( ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) ) )
+            // InternalJararaca.g:2691:2: ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) )
             {
-            // InternalJararaca.g:2619:2: ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) )
-            // InternalJararaca.g:2620:3: ( rule__Comparison__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2691:2: ( ( rule__Comparison__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2692:3: ( rule__Comparison__OperatorAlternatives_1_1_0 )
             {
              before(grammarAccess.getComparisonAccess().getOperatorAlternatives_1_1_0()); 
-            // InternalJararaca.g:2621:3: ( rule__Comparison__OperatorAlternatives_1_1_0 )
-            // InternalJararaca.g:2621:4: rule__Comparison__OperatorAlternatives_1_1_0
+            // InternalJararaca.g:2693:3: ( rule__Comparison__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2693:4: rule__Comparison__OperatorAlternatives_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__OperatorAlternatives_1_1_0();
@@ -7896,17 +8132,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Comparison__RightAssignment_1_2"
-    // InternalJararaca.g:2629:1: rule__Comparison__RightAssignment_1_2 : ( ruleAddition ) ;
+    // InternalJararaca.g:2701:1: rule__Comparison__RightAssignment_1_2 : ( ruleAddition ) ;
     public final void rule__Comparison__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2633:1: ( ( ruleAddition ) )
-            // InternalJararaca.g:2634:2: ( ruleAddition )
+            // InternalJararaca.g:2705:1: ( ( ruleAddition ) )
+            // InternalJararaca.g:2706:2: ( ruleAddition )
             {
-            // InternalJararaca.g:2634:2: ( ruleAddition )
-            // InternalJararaca.g:2635:3: ruleAddition
+            // InternalJararaca.g:2706:2: ( ruleAddition )
+            // InternalJararaca.g:2707:3: ruleAddition
             {
              before(grammarAccess.getComparisonAccess().getRightAdditionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7937,21 +8173,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__OperatorAssignment_1_1"
-    // InternalJararaca.g:2644:1: rule__Addition__OperatorAssignment_1_1 : ( ( rule__Addition__OperatorAlternatives_1_1_0 ) ) ;
+    // InternalJararaca.g:2716:1: rule__Addition__OperatorAssignment_1_1 : ( ( rule__Addition__OperatorAlternatives_1_1_0 ) ) ;
     public final void rule__Addition__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2648:1: ( ( ( rule__Addition__OperatorAlternatives_1_1_0 ) ) )
-            // InternalJararaca.g:2649:2: ( ( rule__Addition__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2720:1: ( ( ( rule__Addition__OperatorAlternatives_1_1_0 ) ) )
+            // InternalJararaca.g:2721:2: ( ( rule__Addition__OperatorAlternatives_1_1_0 ) )
             {
-            // InternalJararaca.g:2649:2: ( ( rule__Addition__OperatorAlternatives_1_1_0 ) )
-            // InternalJararaca.g:2650:3: ( rule__Addition__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2721:2: ( ( rule__Addition__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2722:3: ( rule__Addition__OperatorAlternatives_1_1_0 )
             {
              before(grammarAccess.getAdditionAccess().getOperatorAlternatives_1_1_0()); 
-            // InternalJararaca.g:2651:3: ( rule__Addition__OperatorAlternatives_1_1_0 )
-            // InternalJararaca.g:2651:4: rule__Addition__OperatorAlternatives_1_1_0
+            // InternalJararaca.g:2723:3: ( rule__Addition__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2723:4: rule__Addition__OperatorAlternatives_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Addition__OperatorAlternatives_1_1_0();
@@ -7984,17 +8220,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Addition__RightAssignment_1_2"
-    // InternalJararaca.g:2659:1: rule__Addition__RightAssignment_1_2 : ( ruleMultiplication ) ;
+    // InternalJararaca.g:2731:1: rule__Addition__RightAssignment_1_2 : ( ruleMultiplication ) ;
     public final void rule__Addition__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2663:1: ( ( ruleMultiplication ) )
-            // InternalJararaca.g:2664:2: ( ruleMultiplication )
+            // InternalJararaca.g:2735:1: ( ( ruleMultiplication ) )
+            // InternalJararaca.g:2736:2: ( ruleMultiplication )
             {
-            // InternalJararaca.g:2664:2: ( ruleMultiplication )
-            // InternalJararaca.g:2665:3: ruleMultiplication
+            // InternalJararaca.g:2736:2: ( ruleMultiplication )
+            // InternalJararaca.g:2737:3: ruleMultiplication
             {
              before(grammarAccess.getAdditionAccess().getRightMultiplicationParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -8025,21 +8261,21 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__OperatorAssignment_1_1"
-    // InternalJararaca.g:2674:1: rule__Multiplication__OperatorAssignment_1_1 : ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) ) ;
+    // InternalJararaca.g:2746:1: rule__Multiplication__OperatorAssignment_1_1 : ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) ) ;
     public final void rule__Multiplication__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2678:1: ( ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) ) )
-            // InternalJararaca.g:2679:2: ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2750:1: ( ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) ) )
+            // InternalJararaca.g:2751:2: ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) )
             {
-            // InternalJararaca.g:2679:2: ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) )
-            // InternalJararaca.g:2680:3: ( rule__Multiplication__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2751:2: ( ( rule__Multiplication__OperatorAlternatives_1_1_0 ) )
+            // InternalJararaca.g:2752:3: ( rule__Multiplication__OperatorAlternatives_1_1_0 )
             {
              before(grammarAccess.getMultiplicationAccess().getOperatorAlternatives_1_1_0()); 
-            // InternalJararaca.g:2681:3: ( rule__Multiplication__OperatorAlternatives_1_1_0 )
-            // InternalJararaca.g:2681:4: rule__Multiplication__OperatorAlternatives_1_1_0
+            // InternalJararaca.g:2753:3: ( rule__Multiplication__OperatorAlternatives_1_1_0 )
+            // InternalJararaca.g:2753:4: rule__Multiplication__OperatorAlternatives_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Multiplication__OperatorAlternatives_1_1_0();
@@ -8072,25 +8308,25 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Multiplication__RightAssignment_1_2"
-    // InternalJararaca.g:2689:1: rule__Multiplication__RightAssignment_1_2 : ( rulePrimary ) ;
+    // InternalJararaca.g:2761:1: rule__Multiplication__RightAssignment_1_2 : ( ruleUnary ) ;
     public final void rule__Multiplication__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2693:1: ( ( rulePrimary ) )
-            // InternalJararaca.g:2694:2: ( rulePrimary )
+            // InternalJararaca.g:2765:1: ( ( ruleUnary ) )
+            // InternalJararaca.g:2766:2: ( ruleUnary )
             {
-            // InternalJararaca.g:2694:2: ( rulePrimary )
-            // InternalJararaca.g:2695:3: rulePrimary
+            // InternalJararaca.g:2766:2: ( ruleUnary )
+            // InternalJararaca.g:2767:3: ruleUnary
             {
-             before(grammarAccess.getMultiplicationAccess().getRightPrimaryParserRuleCall_1_2_0()); 
+             before(grammarAccess.getMultiplicationAccess().getRightUnaryParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
-            rulePrimary();
+            ruleUnary();
 
             state._fsp--;
 
-             after(grammarAccess.getMultiplicationAccess().getRightPrimaryParserRuleCall_1_2_0()); 
+             after(grammarAccess.getMultiplicationAccess().getRightUnaryParserRuleCall_1_2_0()); 
 
             }
 
@@ -8112,18 +8348,100 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__Multiplication__RightAssignment_1_2"
 
 
+    // $ANTLR start "rule__Unary__OperandAssignment_0_2"
+    // InternalJararaca.g:2776:1: rule__Unary__OperandAssignment_0_2 : ( ruleUnary ) ;
+    public final void rule__Unary__OperandAssignment_0_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2780:1: ( ( ruleUnary ) )
+            // InternalJararaca.g:2781:2: ( ruleUnary )
+            {
+            // InternalJararaca.g:2781:2: ( ruleUnary )
+            // InternalJararaca.g:2782:3: ruleUnary
+            {
+             before(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_0_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleUnary();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_0_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__OperandAssignment_0_2"
+
+
+    // $ANTLR start "rule__Unary__OperandAssignment_1_2"
+    // InternalJararaca.g:2791:1: rule__Unary__OperandAssignment_1_2 : ( ruleUnary ) ;
+    public final void rule__Unary__OperandAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalJararaca.g:2795:1: ( ( ruleUnary ) )
+            // InternalJararaca.g:2796:2: ( ruleUnary )
+            {
+            // InternalJararaca.g:2796:2: ( ruleUnary )
+            // InternalJararaca.g:2797:3: ruleUnary
+            {
+             before(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleUnary();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnaryAccess().getOperandUnaryParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Unary__OperandAssignment_1_2"
+
+
     // $ANTLR start "rule__Primary__InnerAssignment_0_2"
-    // InternalJararaca.g:2704:1: rule__Primary__InnerAssignment_0_2 : ( ruleExpression ) ;
+    // InternalJararaca.g:2806:1: rule__Primary__InnerAssignment_0_2 : ( ruleExpression ) ;
     public final void rule__Primary__InnerAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2708:1: ( ( ruleExpression ) )
-            // InternalJararaca.g:2709:2: ( ruleExpression )
+            // InternalJararaca.g:2810:1: ( ( ruleExpression ) )
+            // InternalJararaca.g:2811:2: ( ruleExpression )
             {
-            // InternalJararaca.g:2709:2: ( ruleExpression )
-            // InternalJararaca.g:2710:3: ruleExpression
+            // InternalJararaca.g:2811:2: ( ruleExpression )
+            // InternalJararaca.g:2812:3: ruleExpression
             {
              before(grammarAccess.getPrimaryAccess().getInnerExpressionParserRuleCall_0_2_0()); 
             pushFollow(FOLLOW_2);
@@ -8154,17 +8472,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__IntLiteral__ValueAssignment"
-    // InternalJararaca.g:2719:1: rule__IntLiteral__ValueAssignment : ( RULE_INT ) ;
+    // InternalJararaca.g:2821:1: rule__IntLiteral__ValueAssignment : ( RULE_INT ) ;
     public final void rule__IntLiteral__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2723:1: ( ( RULE_INT ) )
-            // InternalJararaca.g:2724:2: ( RULE_INT )
+            // InternalJararaca.g:2825:1: ( ( RULE_INT ) )
+            // InternalJararaca.g:2826:2: ( RULE_INT )
             {
-            // InternalJararaca.g:2724:2: ( RULE_INT )
-            // InternalJararaca.g:2725:3: RULE_INT
+            // InternalJararaca.g:2826:2: ( RULE_INT )
+            // InternalJararaca.g:2827:3: RULE_INT
             {
              before(grammarAccess.getIntLiteralAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -8191,17 +8509,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__FloatLiteral__ValueAssignment"
-    // InternalJararaca.g:2734:1: rule__FloatLiteral__ValueAssignment : ( RULE_FLOAT ) ;
+    // InternalJararaca.g:2836:1: rule__FloatLiteral__ValueAssignment : ( RULE_FLOAT ) ;
     public final void rule__FloatLiteral__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2738:1: ( ( RULE_FLOAT ) )
-            // InternalJararaca.g:2739:2: ( RULE_FLOAT )
+            // InternalJararaca.g:2840:1: ( ( RULE_FLOAT ) )
+            // InternalJararaca.g:2841:2: ( RULE_FLOAT )
             {
-            // InternalJararaca.g:2739:2: ( RULE_FLOAT )
-            // InternalJararaca.g:2740:3: RULE_FLOAT
+            // InternalJararaca.g:2841:2: ( RULE_FLOAT )
+            // InternalJararaca.g:2842:3: RULE_FLOAT
             {
              before(grammarAccess.getFloatLiteralAccess().getValueFLOATTerminalRuleCall_0()); 
             match(input,RULE_FLOAT,FOLLOW_2); 
@@ -8228,17 +8546,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__StringLiteral__ValueAssignment"
-    // InternalJararaca.g:2749:1: rule__StringLiteral__ValueAssignment : ( RULE_STRING ) ;
+    // InternalJararaca.g:2851:1: rule__StringLiteral__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringLiteral__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2753:1: ( ( RULE_STRING ) )
-            // InternalJararaca.g:2754:2: ( RULE_STRING )
+            // InternalJararaca.g:2855:1: ( ( RULE_STRING ) )
+            // InternalJararaca.g:2856:2: ( RULE_STRING )
             {
-            // InternalJararaca.g:2754:2: ( RULE_STRING )
-            // InternalJararaca.g:2755:3: RULE_STRING
+            // InternalJararaca.g:2856:2: ( RULE_STRING )
+            // InternalJararaca.g:2857:3: RULE_STRING
             {
              before(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -8265,17 +8583,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__VariableReference__NameAssignment"
-    // InternalJararaca.g:2764:1: rule__VariableReference__NameAssignment : ( RULE_ID ) ;
+    // InternalJararaca.g:2866:1: rule__VariableReference__NameAssignment : ( RULE_ID ) ;
     public final void rule__VariableReference__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJararaca.g:2768:1: ( ( RULE_ID ) )
-            // InternalJararaca.g:2769:2: ( RULE_ID )
+            // InternalJararaca.g:2870:1: ( ( RULE_ID ) )
+            // InternalJararaca.g:2871:2: ( RULE_ID )
             {
-            // InternalJararaca.g:2769:2: ( RULE_ID )
-            // InternalJararaca.g:2770:3: RULE_ID
+            // InternalJararaca.g:2871:2: ( RULE_ID )
+            // InternalJararaca.g:2872:3: RULE_ID
             {
              before(grammarAccess.getVariableReferenceAccess().getNameIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -8313,7 +8631,7 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x000000D8000000F0L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x000000D8000800F0L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000020000000L});
@@ -8323,15 +8641,17 @@ public class InternalJararacaParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000400000002L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x000000000003F000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000000003F000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x000000000003F002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x00000000000C0000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000000C0002L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000700000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000700002L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x000000C000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x000000C000000000L});
 
 }

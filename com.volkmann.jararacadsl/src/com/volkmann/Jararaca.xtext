@@ -1,4 +1,4 @@
-grammar com.volkmann.Jararaca with org.eclipse.xtext.common.Terminals
+grammar com.volkmann.Jararaca with org.eclipse.xtext.common.Terminals hidden(WS, ML_COMMENT, SL_COMMENT)
 
 generate jararaca "http://www.volkmann.com/Jararaca"
 
@@ -25,7 +25,7 @@ IntType:
 	{IntType} 'int';
 
 FloatType:
-	{FloatType} 'float';
+	{FloatType} 'decimal';
 
 BooleanType:
 	{BooleanType} 'boolean';
@@ -40,19 +40,21 @@ OrExpression returns Expression:
 	AndExpression ({OrExpression.left=current} 'or' right=AndExpression)*;
 
 AndExpression returns Expression:
-	NotExpression ({AndExpression.left=current} 'and' right=NotExpression)*;
-
-NotExpression returns Expression:
-	{NotExpression} 'not' operand=NotExpression | Comparison;
+	Comparison ({AndExpression.left=current} 'and' right=Comparison)*;
 
 Comparison returns Expression:
-	Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)?;
+	Addition ({Comparison.left=current} operator=('==' | '!=' | '<=' | '>=' | '<' | '>') right=Addition)*;
 
 Addition returns Expression:
 	Multiplication ({Addition.left=current} operator=('+' | '-') right=Multiplication)*;
 
 Multiplication returns Expression:
-	Primary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Primary)*;
+	Unary ({Multiplication.left=current} operator=('*' | '/' | '%') right=Unary)*;
+
+Unary returns Expression:
+	{NotExpression} 'not' operand=Unary
+	| {Negative} '-' operand=Unary
+	| Primary;
 
 Primary returns Expression:
 	{ParenExpression} '(' inner=Expression ')'
@@ -85,3 +87,9 @@ VariableReference:
 
 terminal FLOAT returns ecore::EDouble:
 	('0'..'9')+ '.' ('0'..'9')+;
+
+terminal SL_COMMENT:
+	'//' !('\n' | '\r')* ('\n' | '\r')?;
+
+terminal ML_COMMENT:
+	'/*' -> '*/';

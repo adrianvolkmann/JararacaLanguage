@@ -2,7 +2,7 @@
 
 Este documento guarda as estruturas de repetição. O `while`, o `do while` e o `for` seguem a forma do Java. As chaves são obrigatórias, mesmo quando há uma ação só.
 
-A condição fica entre parênteses. O resultado dela é `boolean`, como no `if`. Uma comparação ou uma operação lógica servem. Um `int`, um `float` ou um `string` sozinhos não servem. A linguagem não converte outro tipo em lógico.
+A condição fica entre parênteses. O resultado dela é `boolean`, como no `if`. Uma comparação ou uma operação lógica servem. Um `int`, um `decimal` ou um `string` sozinhos não servem. A linguagem não converte outro tipo em lógico.
 
 ## while
 

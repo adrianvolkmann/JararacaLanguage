@@ -15,8 +15,8 @@
 '>='=15
 'and'=34
 'boolean'=31
+'decimal'=30
 'false'=39
-'float'=30
 'int'=29
 'not'=35
 'or'=33
@@ -30,8 +30,8 @@ RULE_ANY_OTHER=11
 RULE_FLOAT=6
 RULE_ID=4
 RULE_INT=5
-RULE_ML_COMMENT=8
-RULE_SL_COMMENT=9
+RULE_ML_COMMENT=9
+RULE_SL_COMMENT=8
 RULE_STRING=7
 RULE_WS=10
 T__12=12

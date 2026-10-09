@@ -195,15 +195,6 @@ public interface JararacaFactory extends EFactory
   AndExpression createAndExpression();
 
   /**
-   * Returns a new object of class '<em>Not Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Not Expression</em>'.
-   * @generated
-   */
-  NotExpression createNotExpression();
-
-  /**
    * Returns a new object of class '<em>Comparison</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +220,24 @@ public interface JararacaFactory extends EFactory
    * @generated
    */
   Multiplication createMultiplication();
+
+  /**
+   * Returns a new object of class '<em>Not Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not Expression</em>'.
+   * @generated
+   */
+  NotExpression createNotExpression();
+
+  /**
+   * Returns a new object of class '<em>Negative</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Negative</em>'.
+   * @generated
+   */
+  Negative createNegative();
 
   /**
    * Returns a new object of class '<em>Paren Expression</em>'.
