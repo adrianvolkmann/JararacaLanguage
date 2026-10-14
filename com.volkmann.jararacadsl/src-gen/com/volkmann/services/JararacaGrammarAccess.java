@@ -63,12 +63,15 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cVariableDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cAssignmentParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIfStatementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWhileStatementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cDoWhileStatementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Statement:
-		//    VariableDeclaration | Assignment;
+		//    VariableDeclaration | Assignment | IfStatement | WhileStatement | DoWhileStatement;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//VariableDeclaration | Assignment
+		//VariableDeclaration | Assignment | IfStatement | WhileStatement | DoWhileStatement
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//VariableDeclaration
@@ -76,6 +79,204 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//Assignment
 		public RuleCall getAssignmentParserRuleCall_1() { return cAssignmentParserRuleCall_1; }
+		
+		//IfStatement
+		public RuleCall getIfStatementParserRuleCall_2() { return cIfStatementParserRuleCall_2; }
+		
+		//WhileStatement
+		public RuleCall getWhileStatementParserRuleCall_3() { return cWhileStatementParserRuleCall_3; }
+		
+		//DoWhileStatement
+		public RuleCall getDoWhileStatementParserRuleCall_4() { return cDoWhileStatementParserRuleCall_4; }
+	}
+	public class BlockElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.Block");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cStatementsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStatementsStatementParserRuleCall_1_0 = (RuleCall)cStatementsAssignment_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//Block:
+		//    '{' statements+=Statement* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'{' statements+=Statement* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+		
+		//statements+=Statement*
+		public Assignment getStatementsAssignment_1() { return cStatementsAssignment_1; }
+		
+		//Statement
+		public RuleCall getStatementsStatementParserRuleCall_1_0() { return cStatementsStatementParserRuleCall_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
+	}
+	public class IfStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.IfStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cBlockBlockParserRuleCall_4_0 = (RuleCall)cBlockAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cElseKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cElsePartAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cElsePartElsePartParserRuleCall_5_1_0 = (RuleCall)cElsePartAssignment_5_1.eContents().get(0);
+		
+		//IfStatement:
+		//    'if' '(' condition=Expression ')' block=Block
+		//    ('else' elsePart=ElsePart)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if' '(' condition=Expression ')' block=Block
+		//('else' elsePart=ElsePart)?
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//block=Block
+		public Assignment getBlockAssignment_4() { return cBlockAssignment_4; }
+		
+		//Block
+		public RuleCall getBlockBlockParserRuleCall_4_0() { return cBlockBlockParserRuleCall_4_0; }
+		
+		//('else' elsePart=ElsePart)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'else'
+		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
+		
+		//elsePart=ElsePart
+		public Assignment getElsePartAssignment_5_1() { return cElsePartAssignment_5_1; }
+		
+		//ElsePart
+		public RuleCall getElsePartElsePartParserRuleCall_5_1_0() { return cElsePartElsePartParserRuleCall_5_1_0; }
+	}
+	public class ElsePartElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.ElsePart");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIfStatementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBlockParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ElsePart:
+		//    IfStatement | Block;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//IfStatement | Block
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//IfStatement
+		public RuleCall getIfStatementParserRuleCall_0() { return cIfStatementParserRuleCall_0; }
+		
+		//Block
+		public RuleCall getBlockParserRuleCall_1() { return cBlockParserRuleCall_1; }
+	}
+	public class WhileStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.WhileStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cBlockAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cBlockBlockParserRuleCall_4_0 = (RuleCall)cBlockAssignment_4.eContents().get(0);
+		
+		//WhileStatement:
+		//    'while' '(' condition=Expression ')' block=Block;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'while' '(' condition=Expression ')' block=Block
+		public Group getGroup() { return cGroup; }
+		
+		//'while'
+		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		
+		//block=Block
+		public Assignment getBlockAssignment_4() { return cBlockAssignment_4; }
+		
+		//Block
+		public RuleCall getBlockBlockParserRuleCall_4_0() { return cBlockBlockParserRuleCall_4_0; }
+	}
+	public class DoWhileStatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.DoWhileStatement");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cBlockAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBlockBlockParserRuleCall_1_0 = (RuleCall)cBlockAssignment_1.eContents().get(0);
+		private final Keyword cWhileKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConditionExpressionParserRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cSemicolonKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//DoWhileStatement:
+		//    'do' block=Block 'while' '(' condition=Expression ')' ';';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'do' block=Block 'while' '(' condition=Expression ')' ';'
+		public Group getGroup() { return cGroup; }
+		
+		//'do'
+		public Keyword getDoKeyword_0() { return cDoKeyword_0; }
+		
+		//block=Block
+		public Assignment getBlockAssignment_1() { return cBlockAssignment_1; }
+		
+		//Block
+		public RuleCall getBlockBlockParserRuleCall_1_0() { return cBlockBlockParserRuleCall_1_0; }
+		
+		//'while'
+		public Keyword getWhileKeyword_2() { return cWhileKeyword_2; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
+		
+		//condition=Expression
+		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
+		
+		//Expression
+		public RuleCall getConditionExpressionParserRuleCall_4_0() { return cConditionExpressionParserRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//';'
+		public Keyword getSemicolonKeyword_6() { return cSemicolonKeyword_6; }
 	}
 	public class VariableDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.volkmann.Jararaca.VariableDeclaration");
@@ -753,6 +954,11 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	private final ProgramElements pProgram;
 	private final StatementElements pStatement;
+	private final BlockElements pBlock;
+	private final IfStatementElements pIfStatement;
+	private final ElsePartElements pElsePart;
+	private final WhileStatementElements pWhileStatement;
+	private final DoWhileStatementElements pDoWhileStatement;
 	private final VariableDeclarationElements pVariableDeclaration;
 	private final AssignmentElements pAssignment;
 	private final TypeElements pType;
@@ -790,6 +996,11 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
 		this.pStatement = new StatementElements();
+		this.pBlock = new BlockElements();
+		this.pIfStatement = new IfStatementElements();
+		this.pElsePart = new ElsePartElements();
+		this.pWhileStatement = new WhileStatementElements();
+		this.pDoWhileStatement = new DoWhileStatementElements();
 		this.pVariableDeclaration = new VariableDeclarationElements();
 		this.pAssignment = new AssignmentElements();
 		this.pType = new TypeElements();
@@ -857,13 +1068,64 @@ public class JararacaGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Statement:
-	//    VariableDeclaration | Assignment;
+	//    VariableDeclaration | Assignment | IfStatement | WhileStatement | DoWhileStatement;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
 	
 	public ParserRule getStatementRule() {
 		return getStatementAccess().getRule();
+	}
+	
+	//Block:
+	//    '{' statements+=Statement* '}';
+	public BlockElements getBlockAccess() {
+		return pBlock;
+	}
+	
+	public ParserRule getBlockRule() {
+		return getBlockAccess().getRule();
+	}
+	
+	//IfStatement:
+	//    'if' '(' condition=Expression ')' block=Block
+	//    ('else' elsePart=ElsePart)?;
+	public IfStatementElements getIfStatementAccess() {
+		return pIfStatement;
+	}
+	
+	public ParserRule getIfStatementRule() {
+		return getIfStatementAccess().getRule();
+	}
+	
+	//ElsePart:
+	//    IfStatement | Block;
+	public ElsePartElements getElsePartAccess() {
+		return pElsePart;
+	}
+	
+	public ParserRule getElsePartRule() {
+		return getElsePartAccess().getRule();
+	}
+	
+	//WhileStatement:
+	//    'while' '(' condition=Expression ')' block=Block;
+	public WhileStatementElements getWhileStatementAccess() {
+		return pWhileStatement;
+	}
+	
+	public ParserRule getWhileStatementRule() {
+		return getWhileStatementAccess().getRule();
+	}
+	
+	//DoWhileStatement:
+	//    'do' block=Block 'while' '(' condition=Expression ')' ';';
+	public DoWhileStatementElements getDoWhileStatementAccess() {
+		return pDoWhileStatement;
+	}
+	
+	public ParserRule getDoWhileStatementRule() {
+		return getDoWhileStatementAccess().getRule();
 	}
 	
 	//VariableDeclaration:

@@ -3,7 +3,9 @@
  */
 package com.volkmann.validation;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
+import java.util.IdentityHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
@@ -13,12 +15,15 @@ import org.eclipse.xtext.validation.Check;
 import com.volkmann.jararaca.Addition;
 import com.volkmann.jararaca.AndExpression;
 import com.volkmann.jararaca.Assignment;
+import com.volkmann.jararaca.Block;
 import com.volkmann.jararaca.BooleanLiteral;
 import com.volkmann.jararaca.BooleanType;
 import com.volkmann.jararaca.Comparison;
+import com.volkmann.jararaca.DoWhileStatement;
 import com.volkmann.jararaca.Expression;
 import com.volkmann.jararaca.FloatLiteral;
 import com.volkmann.jararaca.FloatType;
+import com.volkmann.jararaca.IfStatement;
 import com.volkmann.jararaca.IntLiteral;
 import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaPackage;
@@ -34,6 +39,7 @@ import com.volkmann.jararaca.StringType;
 import com.volkmann.jararaca.Type;
 import com.volkmann.jararaca.VariableDeclaration;
 import com.volkmann.jararaca.VariableReference;
+import com.volkmann.jararaca.WhileStatement;
 
 /**
  * Regras semânticas: nomes, tipos, valor atribuído antes da leitura e operações.
@@ -51,23 +57,118 @@ public class JararacaValidator extends AbstractJararacaValidator {
 
 	@Check
 	public void checkProgram(Program program) {
-		Map<String, Binding> scope = new LinkedHashMap<>();
+		Scope scope = new Scope(null);
 		for (Statement statement : program.getStatements()) {
-			if (statement instanceof VariableDeclaration declaration) {
-				checkDeclaration(declaration, scope);
-			} else if (statement instanceof Assignment assignment) {
-				checkAssignment(assignment, scope);
+			checkStatement(statement, scope);
+		}
+	}
+
+	private void checkStatement(Statement statement, Scope scope) {
+		if (statement instanceof VariableDeclaration declaration) {
+			checkDeclaration(declaration, scope);
+		} else if (statement instanceof Assignment assignment) {
+			checkAssignment(assignment, scope);
+		} else if (statement instanceof IfStatement ifStatement) {
+			checkIf(ifStatement, scope);
+		} else if (statement instanceof WhileStatement whileStatement) {
+			checkWhile(whileStatement, scope);
+		} else if (statement instanceof DoWhileStatement doWhileStatement) {
+			checkDoWhile(doWhileStatement, scope);
+		}
+	}
+
+	private void checkBlock(Block block, Scope parent) {
+		if (block == null) {
+			return;
+		}
+		Scope scope = new Scope(parent);
+		for (Statement statement : block.getStatements()) {
+			checkStatement(statement, scope);
+		}
+	}
+
+	private void checkIf(IfStatement statement, Scope scope) {
+		requireBoolean(statement.getCondition(), statement, JararacaPackage.Literals.IF_STATEMENT__CONDITION, scope);
+		Map<Binding, Boolean> before = snapshot(scope);
+		List<Map<Binding, Boolean>> branches = new ArrayList<>();
+		boolean hasFinalElse = false;
+		checkBlock(statement.getBlock(), scope);
+		branches.add(snapshot(scope));
+		restore(before);
+		EObject elsePart = statement.getElsePart();
+		while (elsePart != null) {
+			if (elsePart instanceof IfStatement elseIf) {
+				requireBoolean(elseIf.getCondition(), elseIf, JararacaPackage.Literals.IF_STATEMENT__CONDITION, scope);
+				checkBlock(elseIf.getBlock(), scope);
+				branches.add(snapshot(scope));
+				restore(before);
+				elsePart = elseIf.getElsePart();
+			} else if (elsePart instanceof Block elseBlock) {
+				checkBlock(elseBlock, scope);
+				branches.add(snapshot(scope));
+				restore(before);
+				hasFinalElse = true;
+				elsePart = null;
+			} else {
+				elsePart = null;
+			}
+		}
+		if (hasFinalElse) {
+			for (Binding binding : before.keySet()) {
+				boolean assignedOnEveryPath = true;
+				for (Map<Binding, Boolean> branch : branches) {
+					if (!Boolean.TRUE.equals(branch.get(binding))) {
+						assignedOnEveryPath = false;
+					}
+				}
+				binding.assigned = assignedOnEveryPath;
 			}
 		}
 	}
 
-	private void checkDeclaration(VariableDeclaration declaration, Map<String, Binding> scope) {
+	private void checkWhile(WhileStatement statement, Scope scope) {
+		requireBoolean(statement.getCondition(), statement, JararacaPackage.Literals.WHILE_STATEMENT__CONDITION, scope);
+		Map<Binding, Boolean> before = snapshot(scope);
+		checkBlock(statement.getBlock(), scope);
+		restore(before);
+	}
+
+	private void checkDoWhile(DoWhileStatement statement, Scope scope) {
+		checkBlock(statement.getBlock(), scope);
+		requireBoolean(statement.getCondition(), statement, JararacaPackage.Literals.DO_WHILE_STATEMENT__CONDITION,
+				scope);
+	}
+
+	private void requireBoolean(Expression condition, EObject owner, EStructuralFeature feature, Scope scope) {
+		Value value = checkExpression(condition, scope);
+		if (value != null && value.type != null && value.type != TypeKind.BOOLEAN) {
+			error("A condição precisa ser boolean.", owner, feature, TYPE_MISMATCH);
+		}
+	}
+
+	private Map<Binding, Boolean> snapshot(Scope scope) {
+		Map<Binding, Boolean> saved = new IdentityHashMap<>();
+		for (Scope current = scope; current != null; current = current.parent) {
+			for (Binding binding : current.locals.values()) {
+				saved.put(binding, binding.assigned);
+			}
+		}
+		return saved;
+	}
+
+	private void restore(Map<Binding, Boolean> saved) {
+		for (Map.Entry<Binding, Boolean> entry : saved.entrySet()) {
+			entry.getKey().assigned = entry.getValue();
+		}
+	}
+
+	private void checkDeclaration(VariableDeclaration declaration, Scope scope) {
 		String name = declaration.getName();
 		if (name == null) {
 			return;
 		}
-		if (scope.containsKey(name)) {
-			error("O nome '" + name + "' já foi declarado.", declaration, JararacaPackage.Literals.STATEMENT__NAME,
+		if (scope.find(name) != null) {
+			error("O nome '" + name + "' já foi declarado.", declaration, JararacaPackage.Literals.VARIABLE_DECLARATION__NAME,
 					DUPLICATE_VARIABLE);
 			checkExpression(declaration.getInitialValue(), scope);
 			return;
@@ -80,17 +181,17 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		}
 		boolean assigned = declaration.getInitialValue() != null && value != null && value.defined && value.type != null
 				&& (declared == null || value.type == declared);
-		scope.put(name, new Binding(declared, assigned));
+		scope.locals.put(name, new Binding(declared, assigned));
 	}
 
-	private void checkAssignment(Assignment assignment, Map<String, Binding> scope) {
+	private void checkAssignment(Assignment assignment, Scope scope) {
 		String name = assignment.getName();
 		if (name == null) {
 			return;
 		}
-		Binding binding = scope.get(name);
+		Binding binding = scope.find(name);
 		if (binding == null) {
-			error("O nome '" + name + "' não foi declarado.", assignment, JararacaPackage.Literals.STATEMENT__NAME,
+			error("O nome '" + name + "' não foi declarado.", assignment, JararacaPackage.Literals.ASSIGNMENT__NAME,
 					UNDECLARED_VARIABLE);
 		}
 		Value value = checkExpression(assignment.getValue(), scope);
@@ -104,7 +205,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		}
 	}
 
-	private Value checkExpression(Expression expression, Map<String, Binding> scope) {
+	private Value checkExpression(Expression expression, Scope scope) {
 		if (expression == null) {
 			return null;
 		}
@@ -166,7 +267,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 
 	private Value checkLogic(Expression left, Expression right, EObject parent,
 			EStructuralFeature leftFeature, EStructuralFeature rightFeature, String operator,
-			Map<String, Binding> scope) {
+			Scope scope) {
 		Value leftValue = checkExpression(left, scope);
 		Value rightValue = checkExpression(right, scope);
 		if (leftValue != null && leftValue.type != null && leftValue.type != TypeKind.BOOLEAN) {
@@ -178,7 +279,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.bool(defined(leftValue) && defined(rightValue));
 	}
 
-	private Value checkNot(NotExpression expression, Map<String, Binding> scope) {
+	private Value checkNot(NotExpression expression, Scope scope) {
 		Value value = checkExpression(expression.getOperand(), scope);
 		if (unwrap(expression.getOperand()) instanceof NotExpression) {
 			error("not não se aplica a outro not.", expression, JararacaPackage.Literals.NOT_EXPRESSION__OPERAND,
@@ -193,7 +294,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.bool(defined(value));
 	}
 
-	private Value checkComparison(Comparison comparison, Map<String, Binding> scope) {
+	private Value checkComparison(Comparison comparison, Scope scope) {
 		Value left = checkExpression(comparison.getLeft(), scope);
 		Value right = checkExpression(comparison.getRight(), scope);
 		if (comparison.getLeft() instanceof Comparison) {
@@ -214,7 +315,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.bool(defined(left) && defined(right));
 	}
 
-	private Value checkAddition(Addition addition, Map<String, Binding> scope) {
+	private Value checkAddition(Addition addition, Scope scope) {
 		Value left = checkExpression(addition.getLeft(), scope);
 		Value right = checkExpression(addition.getRight(), scope);
 		String operator = addition.getOperator();
@@ -237,7 +338,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.of(left.type, defined(left) && defined(right));
 	}
 
-	private Value checkMultiplication(Multiplication multiplication, Map<String, Binding> scope) {
+	private Value checkMultiplication(Multiplication multiplication, Scope scope) {
 		Value left = checkExpression(multiplication.getLeft(), scope);
 		Value right = checkExpression(multiplication.getRight(), scope);
 		String operator = multiplication.getOperator();
@@ -278,7 +379,7 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.of(left.type, defined(left) && defined(right));
 	}
 
-	private Value checkNegative(Negative negative, Map<String, Binding> scope) {
+	private Value checkNegative(Negative negative, Scope scope) {
 		Value value = checkExpression(negative.getOperand(), scope);
 		if (negative.getOperand() instanceof Negative) {
 			error("Dois sinais seguidos exigem parênteses.", negative,
@@ -296,12 +397,12 @@ public class JararacaValidator extends AbstractJararacaValidator {
 		return Value.of(value.type, value.defined);
 	}
 
-	private Value checkReference(VariableReference reference, Map<String, Binding> scope) {
+	private Value checkReference(VariableReference reference, Scope scope) {
 		String name = reference.getName();
 		if (name == null) {
 			return null;
 		}
-		Binding binding = scope.get(name);
+		Binding binding = scope.find(name);
 		EStructuralFeature feature = JararacaPackage.Literals.VARIABLE_REFERENCE__NAME;
 		if (binding == null) {
 			error("O nome '" + name + "' não foi declarado.", reference, feature, UNDECLARED_VARIABLE);
@@ -375,6 +476,23 @@ public class JararacaValidator extends AbstractJararacaValidator {
 
 		boolean numeric() {
 			return numeric;
+		}
+	}
+
+	private static final class Scope {
+		final Scope parent;
+		final Map<String, Binding> locals = new java.util.LinkedHashMap<>();
+
+		Scope(Scope parent) {
+			this.parent = parent;
+		}
+
+		Binding find(String name) {
+			Binding local = locals.get(name);
+			if (local != null) {
+				return local;
+			}
+			return parent == null ? null : parent.find(name);
 		}
 	}
 

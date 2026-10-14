@@ -92,6 +92,49 @@ if (informado) {
 
 A leitura de `n` depois desse `if` é válida. Os dois caminhos escreveram o valor. Sem o `else`, a leitura seguinte é erro: existe um caminho em que `n` não recebeu nada.
 
+O compilador não calcula se a condição vai ser verdadeira. Uma condição de `while` conta como caminho que pode ser falso, e o corpo como caminho que pode não rodar. Uma atribuição que só está no corpo não garante valor depois do laço.
+
+```text
+var n int;
+while (i < 10) {
+    n = 1;
+}
+var copia int = n;
+```
+
+`copia = n` é erro. Se `i` já for `10`, o corpo não escreve em `n`. O mesmo vale quando a escrita está num `if` dentro do laço: esse `if` também pode não rodar.
+
+Se `n` já tem valor antes do `while`, a leitura depois do laço é válida. O corpo pode não rodar, e o valor anterior continua.
+
+```text
+var n int = 0;
+while (i < 10) {
+    n = n + 1;
+}
+var copia int = n;
+```
+
+No `do while` o corpo roda pelo menos uma vez, antes do teste. Se todos os caminhos desse corpo escrevem em `n`, a leitura depois do laço é válida.
+
+```text
+var n int;
+do {
+    n = 1;
+} while (i < 10);
+var copia int = n;
+```
+
+Um nome declarado com `var` dentro de um bloco existe só nesse bloco. Depois do `}`, o nome não existe. A regra vale para o `if`, o `else if`, o `else`, o `while`, o `do while`, o `for` e o `foreach`.
+
+```text
+if (idade >= 18) {
+    var mensagem string = "adulto";
+}
+mensagem = "outro";
+```
+
+A última linha é erro. `mensagem` nasceu dentro do `if`.
+
 Quando o valor desejado é o zero do tipo, ele é escrito na declaração. Essa é a única forma de obter esse zero.
 
 ```text

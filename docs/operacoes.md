@@ -55,9 +55,15 @@ O resto usa `%`. Os dois lados têm o mesmo tipo, `int` ou `decimal`. O resultad
 
 `10 % 4` vale `2`. `10.5 % 3.0` vale `1.5`.
 
-O divisor escrito `0` ou `0.0` é erro de compilação. `10 % 0` e `10.5 % 0.0` não compilam. Se o divisor é uma variável e vale zero na execução, a linha para com erro, como na divisão. A forma desse erro ainda não está definida.
+O resto é zero ou positivo, e menor que o divisor sem o sinal. O sinal fica na quantidade de grupos, não na sobra. A mesma regra vale para `int` e para `decimal`.
 
-O sinal do resto quando o número é negativo continua em aberto.
+```text
+-10 = 4 * (-3) + 2
+```
+
+`-10 % 4` vale `2`. `10 % -4` vale `2`. `-10 % -4` vale `2`. `-10.5 % 3.0` vale `1.5`. `10.5 % -3.0` vale `1.5`.
+
+O divisor escrito `0` ou `0.0` é erro de compilação. `10 % 0` e `10.5 % 0.0` não compilam. Se o divisor é uma variável e vale zero na execução, a linha para com erro, como na divisão. A forma desse erro ainda não está definida.
 
 ## Bits
 

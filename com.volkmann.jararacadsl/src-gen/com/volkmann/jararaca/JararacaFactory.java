@@ -42,6 +42,51 @@ public interface JararacaFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Block</em>'.
+   * @generated
+   */
+  Block createBlock();
+
+  /**
+   * Returns a new object of class '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>If Statement</em>'.
+   * @generated
+   */
+  IfStatement createIfStatement();
+
+  /**
+   * Returns a new object of class '<em>Else Part</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Else Part</em>'.
+   * @generated
+   */
+  ElsePart createElsePart();
+
+  /**
+   * Returns a new object of class '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>While Statement</em>'.
+   * @generated
+   */
+  WhileStatement createWhileStatement();
+
+  /**
+   * Returns a new object of class '<em>Do While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Do While Statement</em>'.
+   * @generated
+   */
+  DoWhileStatement createDoWhileStatement();
+
+  /**
    * Returns a new object of class '<em>Variable Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

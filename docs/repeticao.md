@@ -4,9 +4,11 @@ Este documento guarda as estruturas de repetição. O `while`, o `do while` e o 
 
 A condição fica entre parênteses. O resultado dela é `boolean`, como no `if`. Uma comparação ou uma operação lógica servem. Um `int`, um `decimal` ou um `string` sozinhos não servem. A linguagem não converte outro tipo em lógico.
 
+Um `var` escrito dentro do bloco existe só nesse bloco. Depois do `}`, o nome não existe. O contador do `for` e o `item` do `foreach` seguem a mesma regra.
+
 ## while
 
-O teste acontece antes do bloco. Se a condição for `false`, o bloco não executa.
+O teste acontece antes do bloco. Se a condição for `false`, o bloco não executa. Uma atribuição que só ocorre nesse bloco não conta como valor garantido depois do laço, como está em [tipos.md](tipos.md).
 
 ```text
 while (idade < 10) {
@@ -16,7 +18,7 @@ while (idade < 10) {
 
 ## do while
 
-O bloco executa uma vez. O teste acontece depois.
+O bloco executa uma vez. O teste acontece depois. Se todos os caminhos do bloco escrevem numa variável, a leitura depois do laço é válida, como está em [tipos.md](tipos.md).
 
 ```text
 do {

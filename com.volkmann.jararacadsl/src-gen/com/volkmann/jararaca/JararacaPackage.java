@@ -96,22 +96,180 @@ public interface JararacaPackage extends EPackage
   int STATEMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATEMENT__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 1;
+  int STATEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.ElsePartImpl <em>Else Part</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.ElsePartImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getElsePart()
+   * @generated
+   */
+  int ELSE_PART = 4;
+
+  /**
+   * The number of structural features of the '<em>Else Part</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELSE_PART_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.BlockImpl <em>Block</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.BlockImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getBlock()
+   * @generated
+   */
+  int BLOCK = 2;
+
+  /**
+   * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__STATEMENTS = ELSE_PART_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Block</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK_FEATURE_COUNT = ELSE_PART_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.IfStatementImpl <em>If Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.IfStatementImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getIfStatement()
+   * @generated
+   */
+  int IF_STATEMENT = 3;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__BLOCK = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Else Part</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT__ELSE_PART = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>If Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.WhileStatementImpl <em>While Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.WhileStatementImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getWhileStatement()
+   * @generated
+   */
+  int WHILE_STATEMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT__BLOCK = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>While Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.volkmann.jararaca.impl.DoWhileStatementImpl <em>Do While Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.volkmann.jararaca.impl.DoWhileStatementImpl
+   * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getDoWhileStatement()
+   * @generated
+   */
+  int DO_WHILE_STATEMENT = 6;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DO_WHILE_STATEMENT__BLOCK = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DO_WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Do While Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DO_WHILE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.volkmann.jararaca.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
@@ -121,7 +279,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getVariableDeclaration()
    * @generated
    */
-  int VARIABLE_DECLARATION = 2;
+  int VARIABLE_DECLARATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,7 +288,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION__NAME = STATEMENT__NAME;
+  int VARIABLE_DECLARATION__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -139,7 +297,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION__TYPE = STATEMENT_FEATURE_COUNT + 0;
+  int VARIABLE_DECLARATION__TYPE = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Initial Value</b></em>' containment reference.
@@ -148,7 +306,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION__INITIAL_VALUE = STATEMENT_FEATURE_COUNT + 1;
+  int VARIABLE_DECLARATION__INITIAL_VALUE = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Variable Declaration</em>' class.
@@ -157,7 +315,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIABLE_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+  int VARIABLE_DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.volkmann.jararaca.impl.AssignmentImpl <em>Assignment</em>}' class.
@@ -167,7 +325,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getAssignment()
    * @generated
    */
-  int ASSIGNMENT = 3;
+  int ASSIGNMENT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -176,7 +334,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT__NAME = STATEMENT__NAME;
+  int ASSIGNMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -185,7 +343,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT__VALUE = STATEMENT_FEATURE_COUNT + 0;
+  int ASSIGNMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Assignment</em>' class.
@@ -194,7 +352,7 @@ public interface JararacaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ASSIGNMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int ASSIGNMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link com.volkmann.jararaca.impl.TypeImpl <em>Type</em>}' class.
@@ -204,7 +362,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getType()
    * @generated
    */
-  int TYPE = 4;
+  int TYPE = 9;
 
   /**
    * The number of structural features of the '<em>Type</em>' class.
@@ -223,7 +381,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getIntType()
    * @generated
    */
-  int INT_TYPE = 5;
+  int INT_TYPE = 10;
 
   /**
    * The number of structural features of the '<em>Int Type</em>' class.
@@ -242,7 +400,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getFloatType()
    * @generated
    */
-  int FLOAT_TYPE = 6;
+  int FLOAT_TYPE = 11;
 
   /**
    * The number of structural features of the '<em>Float Type</em>' class.
@@ -261,7 +419,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getBooleanType()
    * @generated
    */
-  int BOOLEAN_TYPE = 7;
+  int BOOLEAN_TYPE = 12;
 
   /**
    * The number of structural features of the '<em>Boolean Type</em>' class.
@@ -280,7 +438,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getStringType()
    * @generated
    */
-  int STRING_TYPE = 8;
+  int STRING_TYPE = 13;
 
   /**
    * The number of structural features of the '<em>String Type</em>' class.
@@ -299,7 +457,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 9;
+  int EXPRESSION = 14;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -318,7 +476,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getIntLiteral()
    * @generated
    */
-  int INT_LITERAL = 10;
+  int INT_LITERAL = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -346,7 +504,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getFloatLiteral()
    * @generated
    */
-  int FLOAT_LITERAL = 11;
+  int FLOAT_LITERAL = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -374,7 +532,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 12;
+  int BOOLEAN_LITERAL = 17;
 
   /**
    * The number of structural features of the '<em>Boolean Literal</em>' class.
@@ -393,7 +551,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getTrueLiteral()
    * @generated
    */
-  int TRUE_LITERAL = 13;
+  int TRUE_LITERAL = 18;
 
   /**
    * The number of structural features of the '<em>True Literal</em>' class.
@@ -412,7 +570,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getFalseLiteral()
    * @generated
    */
-  int FALSE_LITERAL = 14;
+  int FALSE_LITERAL = 19;
 
   /**
    * The number of structural features of the '<em>False Literal</em>' class.
@@ -431,7 +589,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 15;
+  int STRING_LITERAL = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -459,7 +617,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getVariableReference()
    * @generated
    */
-  int VARIABLE_REFERENCE = 16;
+  int VARIABLE_REFERENCE = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -487,7 +645,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getOrExpression()
    * @generated
    */
-  int OR_EXPRESSION = 17;
+  int OR_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -524,7 +682,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 18;
+  int AND_EXPRESSION = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -561,7 +719,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 19;
+  int COMPARISON = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -607,7 +765,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getAddition()
    * @generated
    */
-  int ADDITION = 20;
+  int ADDITION = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -653,7 +811,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 21;
+  int MULTIPLICATION = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -699,7 +857,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNotExpression()
    * @generated
    */
-  int NOT_EXPRESSION = 22;
+  int NOT_EXPRESSION = 27;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -727,7 +885,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getNegative()
    * @generated
    */
-  int NEGATIVE = 23;
+  int NEGATIVE = 28;
 
   /**
    * The feature id for the '<em><b>Operand</b></em>' containment reference.
@@ -755,7 +913,7 @@ public interface JararacaPackage extends EPackage
    * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getParenExpression()
    * @generated
    */
-  int PAREN_EXPRESSION = 24;
+  int PAREN_EXPRESSION = 29;
 
   /**
    * The feature id for the '<em><b>Inner</b></em>' containment reference.
@@ -808,15 +966,142 @@ public interface JararacaPackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for the attribute '{@link com.volkmann.jararaca.Statement#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link com.volkmann.jararaca.Block <em>Block</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.volkmann.jararaca.Statement#getName()
-   * @see #getStatement()
+   * @return the meta object for class '<em>Block</em>'.
+   * @see com.volkmann.jararaca.Block
    * @generated
    */
-  EAttribute getStatement_Name();
+  EClass getBlock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.volkmann.jararaca.Block#getStatements <em>Statements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Statements</em>'.
+   * @see com.volkmann.jararaca.Block#getStatements()
+   * @see #getBlock()
+   * @generated
+   */
+  EReference getBlock_Statements();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If Statement</em>'.
+   * @see com.volkmann.jararaca.IfStatement
+   * @generated
+   */
+  EClass getIfStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.IfStatement#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see com.volkmann.jararaca.IfStatement#getCondition()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Condition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.IfStatement#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see com.volkmann.jararaca.IfStatement#getBlock()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_Block();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.IfStatement#getElsePart <em>Else Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Else Part</em>'.
+   * @see com.volkmann.jararaca.IfStatement#getElsePart()
+   * @see #getIfStatement()
+   * @generated
+   */
+  EReference getIfStatement_ElsePart();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.ElsePart <em>Else Part</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Else Part</em>'.
+   * @see com.volkmann.jararaca.ElsePart
+   * @generated
+   */
+  EClass getElsePart();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>While Statement</em>'.
+   * @see com.volkmann.jararaca.WhileStatement
+   * @generated
+   */
+  EClass getWhileStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.WhileStatement#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see com.volkmann.jararaca.WhileStatement#getCondition()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Condition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.WhileStatement#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see com.volkmann.jararaca.WhileStatement#getBlock()
+   * @see #getWhileStatement()
+   * @generated
+   */
+  EReference getWhileStatement_Block();
+
+  /**
+   * Returns the meta object for class '{@link com.volkmann.jararaca.DoWhileStatement <em>Do While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Do While Statement</em>'.
+   * @see com.volkmann.jararaca.DoWhileStatement
+   * @generated
+   */
+  EClass getDoWhileStatement();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.DoWhileStatement#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see com.volkmann.jararaca.DoWhileStatement#getBlock()
+   * @see #getDoWhileStatement()
+   * @generated
+   */
+  EReference getDoWhileStatement_Block();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.DoWhileStatement#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see com.volkmann.jararaca.DoWhileStatement#getCondition()
+   * @see #getDoWhileStatement()
+   * @generated
+   */
+  EReference getDoWhileStatement_Condition();
 
   /**
    * Returns the meta object for class '{@link com.volkmann.jararaca.VariableDeclaration <em>Variable Declaration</em>}'.
@@ -827,6 +1112,17 @@ public interface JararacaPackage extends EPackage
    * @generated
    */
   EClass getVariableDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.volkmann.jararaca.VariableDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.volkmann.jararaca.VariableDeclaration#getName()
+   * @see #getVariableDeclaration()
+   * @generated
+   */
+  EAttribute getVariableDeclaration_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.VariableDeclaration#getType <em>Type</em>}'.
@@ -859,6 +1155,17 @@ public interface JararacaPackage extends EPackage
    * @generated
    */
   EClass getAssignment();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.volkmann.jararaca.Assignment#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.volkmann.jararaca.Assignment#getName()
+   * @see #getAssignment()
+   * @generated
+   */
+  EAttribute getAssignment_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link com.volkmann.jararaca.Assignment#getValue <em>Value</em>}'.
@@ -1353,12 +1660,118 @@ public interface JararacaPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.BlockImpl <em>Block</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.BlockImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getBlock()
+     * @generated
+     */
+    EClass BLOCK = eINSTANCE.getBlock();
+
+    /**
+     * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATEMENT__NAME = eINSTANCE.getStatement_Name();
+    EReference BLOCK__STATEMENTS = eINSTANCE.getBlock_Statements();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.IfStatementImpl <em>If Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.IfStatementImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getIfStatement()
+     * @generated
+     */
+    EClass IF_STATEMENT = eINSTANCE.getIfStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__CONDITION = eINSTANCE.getIfStatement_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__BLOCK = eINSTANCE.getIfStatement_Block();
+
+    /**
+     * The meta object literal for the '<em><b>Else Part</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF_STATEMENT__ELSE_PART = eINSTANCE.getIfStatement_ElsePart();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.ElsePartImpl <em>Else Part</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.ElsePartImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getElsePart()
+     * @generated
+     */
+    EClass ELSE_PART = eINSTANCE.getElsePart();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.WhileStatementImpl <em>While Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.WhileStatementImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getWhileStatement()
+     * @generated
+     */
+    EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__CONDITION = eINSTANCE.getWhileStatement_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WHILE_STATEMENT__BLOCK = eINSTANCE.getWhileStatement_Block();
+
+    /**
+     * The meta object literal for the '{@link com.volkmann.jararaca.impl.DoWhileStatementImpl <em>Do While Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.volkmann.jararaca.impl.DoWhileStatementImpl
+     * @see com.volkmann.jararaca.impl.JararacaPackageImpl#getDoWhileStatement()
+     * @generated
+     */
+    EClass DO_WHILE_STATEMENT = eINSTANCE.getDoWhileStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DO_WHILE_STATEMENT__BLOCK = eINSTANCE.getDoWhileStatement_Block();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DO_WHILE_STATEMENT__CONDITION = eINSTANCE.getDoWhileStatement_Condition();
 
     /**
      * The meta object literal for the '{@link com.volkmann.jararaca.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
@@ -1369,6 +1782,14 @@ public interface JararacaPackage extends EPackage
      * @generated
      */
     EClass VARIABLE_DECLARATION = eINSTANCE.getVariableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DECLARATION__NAME = eINSTANCE.getVariableDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
@@ -1395,6 +1816,14 @@ public interface JararacaPackage extends EPackage
      * @generated
      */
     EClass ASSIGNMENT = eINSTANCE.getAssignment();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSIGNMENT__NAME = eINSTANCE.getAssignment_Name();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.

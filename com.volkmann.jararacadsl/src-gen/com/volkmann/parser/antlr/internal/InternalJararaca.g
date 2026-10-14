@@ -143,6 +143,355 @@ ruleStatement returns [EObject current=null]
 			$current = $this_Assignment_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getIfStatementParserRuleCall_2());
+		}
+		this_IfStatement_2=ruleIfStatement
+		{
+			$current = $this_IfStatement_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getWhileStatementParserRuleCall_3());
+		}
+		this_WhileStatement_3=ruleWhileStatement
+		{
+			$current = $this_WhileStatement_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getDoWhileStatementParserRuleCall_4());
+		}
+		this_DoWhileStatement_4=ruleDoWhileStatement
+		{
+			$current = $this_DoWhileStatement_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleBlock
+entryRuleBlock returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBlockRule()); }
+	iv_ruleBlock=ruleBlock
+	{ $current=$iv_ruleBlock.current; }
+	EOF;
+
+// Rule Block
+ruleBlock returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='{'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBlockAccess().getStatementsStatementParserRuleCall_1_0());
+				}
+				lv_statements_1_0=ruleStatement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBlockRule());
+					}
+					add(
+						$current,
+						"statements",
+						lv_statements_1_0,
+						"com.volkmann.Jararaca.Statement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_2='}'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleIfStatement
+entryRuleIfStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIfStatementRule()); }
+	iv_ruleIfStatement=ruleIfStatement
+	{ $current=$iv_ruleIfStatement.current; }
+	EOF;
+
+// Rule IfStatement
+ruleIfStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='if'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getIfStatementAccess().getIfKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIfStatementAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfStatementAccess().getConditionExpressionParserRuleCall_2_0());
+				}
+				lv_condition_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfStatementRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_2_0,
+						"com.volkmann.Jararaca.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getIfStatementAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfStatementAccess().getBlockBlockParserRuleCall_4_0());
+				}
+				lv_block_4_0=ruleBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfStatementRule());
+					}
+					set(
+						$current,
+						"block",
+						lv_block_4_0,
+						"com.volkmann.Jararaca.Block");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_5='else'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getIfStatementAccess().getElseKeyword_5_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIfStatementAccess().getElsePartElsePartParserRuleCall_5_1_0());
+					}
+					lv_elsePart_6_0=ruleElsePart
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIfStatementRule());
+						}
+						set(
+							$current,
+							"elsePart",
+							lv_elsePart_6_0,
+							"com.volkmann.Jararaca.ElsePart");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleElsePart
+entryRuleElsePart returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getElsePartRule()); }
+	iv_ruleElsePart=ruleElsePart
+	{ $current=$iv_ruleElsePart.current; }
+	EOF;
+
+// Rule ElsePart
+ruleElsePart returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getElsePartAccess().getIfStatementParserRuleCall_0());
+		}
+		this_IfStatement_0=ruleIfStatement
+		{
+			$current = $this_IfStatement_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getElsePartAccess().getBlockParserRuleCall_1());
+		}
+		this_Block_1=ruleBlock
+		{
+			$current = $this_Block_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleWhileStatement
+entryRuleWhileStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWhileStatementRule()); }
+	iv_ruleWhileStatement=ruleWhileStatement
+	{ $current=$iv_ruleWhileStatement.current; }
+	EOF;
+
+// Rule WhileStatement
+ruleWhileStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='while'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getWhileStatementAccess().getWhileKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getWhileStatementAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getConditionExpressionParserRuleCall_2_0());
+				}
+				lv_condition_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_2_0,
+						"com.volkmann.Jararaca.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getWhileStatementAccess().getRightParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileStatementAccess().getBlockBlockParserRuleCall_4_0());
+				}
+				lv_block_4_0=ruleBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileStatementRule());
+					}
+					set(
+						$current,
+						"block",
+						lv_block_4_0,
+						"com.volkmann.Jararaca.Block");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDoWhileStatement
+entryRuleDoWhileStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDoWhileStatementRule()); }
+	iv_ruleDoWhileStatement=ruleDoWhileStatement
+	{ $current=$iv_ruleDoWhileStatement.current; }
+	EOF;
+
+// Rule DoWhileStatement
+ruleDoWhileStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='do'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDoWhileStatementAccess().getDoKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDoWhileStatementAccess().getBlockBlockParserRuleCall_1_0());
+				}
+				lv_block_1_0=ruleBlock
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDoWhileStatementRule());
+					}
+					set(
+						$current,
+						"block",
+						lv_block_1_0,
+						"com.volkmann.Jararaca.Block");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='while'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDoWhileStatementAccess().getWhileKeyword_2());
+		}
+		otherlv_3='('
+		{
+			newLeafNode(otherlv_3, grammarAccess.getDoWhileStatementAccess().getLeftParenthesisKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDoWhileStatementAccess().getConditionExpressionParserRuleCall_4_0());
+				}
+				lv_condition_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDoWhileStatementRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_4_0,
+						"com.volkmann.Jararaca.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getDoWhileStatementAccess().getRightParenthesisKeyword_5());
+		}
+		otherlv_6=';'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getDoWhileStatementAccess().getSemicolonKeyword_6());
+		}
 	)
 ;
 

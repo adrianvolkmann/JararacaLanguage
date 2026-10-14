@@ -6,13 +6,17 @@ package com.volkmann.jararaca.impl;
 import com.volkmann.jararaca.Addition;
 import com.volkmann.jararaca.AndExpression;
 import com.volkmann.jararaca.Assignment;
+import com.volkmann.jararaca.Block;
 import com.volkmann.jararaca.BooleanLiteral;
 import com.volkmann.jararaca.BooleanType;
 import com.volkmann.jararaca.Comparison;
+import com.volkmann.jararaca.DoWhileStatement;
+import com.volkmann.jararaca.ElsePart;
 import com.volkmann.jararaca.Expression;
 import com.volkmann.jararaca.FalseLiteral;
 import com.volkmann.jararaca.FloatLiteral;
 import com.volkmann.jararaca.FloatType;
+import com.volkmann.jararaca.IfStatement;
 import com.volkmann.jararaca.IntLiteral;
 import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaFactory;
@@ -30,6 +34,7 @@ import com.volkmann.jararaca.TrueLiteral;
 import com.volkmann.jararaca.Type;
 import com.volkmann.jararaca.VariableDeclaration;
 import com.volkmann.jararaca.VariableReference;
+import com.volkmann.jararaca.WhileStatement;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -59,6 +64,41 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   private EClass statementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass blockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ifStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elsePartEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass whileStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doWhileStatementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -322,9 +362,141 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   @Override
-  public EAttribute getStatement_Name()
+  public EClass getBlock()
   {
-    return (EAttribute)statementEClass.getEStructuralFeatures().get(0);
+    return blockEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBlock_Statements()
+  {
+    return (EReference)blockEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIfStatement()
+  {
+    return ifStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfStatement_Condition()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfStatement_Block()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIfStatement_ElsePart()
+  {
+    return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getElsePart()
+  {
+    return elsePartEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWhileStatement()
+  {
+    return whileStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWhileStatement_Condition()
+  {
+    return (EReference)whileStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWhileStatement_Block()
+  {
+    return (EReference)whileStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDoWhileStatement()
+  {
+    return doWhileStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDoWhileStatement_Block()
+  {
+    return (EReference)doWhileStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDoWhileStatement_Condition()
+  {
+    return (EReference)doWhileStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -344,9 +516,20 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   @Override
+  public EAttribute getVariableDeclaration_Name()
+  {
+    return (EAttribute)variableDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getVariableDeclaration_Type()
   {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(0);
+    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -357,7 +540,7 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
   @Override
   public EReference getVariableDeclaration_InitialValue()
   {
-    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(1);
+    return (EReference)variableDeclarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -377,9 +560,20 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
    * @generated
    */
   @Override
+  public EAttribute getAssignment_Name()
+  {
+    return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getAssignment_Value()
   {
-    return (EReference)assignmentEClass.getEStructuralFeatures().get(0);
+    return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -868,13 +1062,32 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     createEReference(programEClass, PROGRAM__STATEMENTS);
 
     statementEClass = createEClass(STATEMENT);
-    createEAttribute(statementEClass, STATEMENT__NAME);
+
+    blockEClass = createEClass(BLOCK);
+    createEReference(blockEClass, BLOCK__STATEMENTS);
+
+    ifStatementEClass = createEClass(IF_STATEMENT);
+    createEReference(ifStatementEClass, IF_STATEMENT__CONDITION);
+    createEReference(ifStatementEClass, IF_STATEMENT__BLOCK);
+    createEReference(ifStatementEClass, IF_STATEMENT__ELSE_PART);
+
+    elsePartEClass = createEClass(ELSE_PART);
+
+    whileStatementEClass = createEClass(WHILE_STATEMENT);
+    createEReference(whileStatementEClass, WHILE_STATEMENT__CONDITION);
+    createEReference(whileStatementEClass, WHILE_STATEMENT__BLOCK);
+
+    doWhileStatementEClass = createEClass(DO_WHILE_STATEMENT);
+    createEReference(doWhileStatementEClass, DO_WHILE_STATEMENT__BLOCK);
+    createEReference(doWhileStatementEClass, DO_WHILE_STATEMENT__CONDITION);
 
     variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
+    createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__TYPE);
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__INITIAL_VALUE);
 
     assignmentEClass = createEClass(ASSIGNMENT);
+    createEAttribute(assignmentEClass, ASSIGNMENT__NAME);
     createEReference(assignmentEClass, ASSIGNMENT__VALUE);
 
     typeEClass = createEClass(TYPE);
@@ -969,6 +1182,11 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    blockEClass.getESuperTypes().add(this.getElsePart());
+    ifStatementEClass.getESuperTypes().add(this.getStatement());
+    ifStatementEClass.getESuperTypes().add(this.getElsePart());
+    whileStatementEClass.getESuperTypes().add(this.getStatement());
+    doWhileStatementEClass.getESuperTypes().add(this.getStatement());
     variableDeclarationEClass.getESuperTypes().add(this.getStatement());
     assignmentEClass.getESuperTypes().add(this.getStatement());
     intTypeEClass.getESuperTypes().add(this.getType());
@@ -996,13 +1214,32 @@ public class JararacaPackageImpl extends EPackageImpl implements JararacaPackage
     initEReference(getProgram_Statements(), this.getStatement(), null, "statements", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBlock_Statements(), this.getStatement(), null, "statements", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIfStatement_Condition(), this.getExpression(), null, "condition", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_Block(), this.getBlock(), null, "block", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIfStatement_ElsePart(), this.getElsePart(), null, "elsePart", null, 0, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elsePartEClass, ElsePart.class, "ElsePart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWhileStatement_Condition(), this.getExpression(), null, "condition", null, 0, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhileStatement_Block(), this.getBlock(), null, "block", null, 0, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doWhileStatementEClass, DoWhileStatement.class, "DoWhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDoWhileStatement_Block(), this.getBlock(), null, "block", null, 0, 1, DoWhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDoWhileStatement_Condition(), this.getExpression(), null, "condition", null, 0, 1, DoWhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_Type(), this.getType(), null, "type", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariableDeclaration_InitialValue(), this.getExpression(), null, "initialValue", null, 0, 1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAssignment_Value(), this.getExpression(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

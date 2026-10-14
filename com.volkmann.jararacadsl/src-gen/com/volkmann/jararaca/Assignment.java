@@ -13,6 +13,7 @@ package com.volkmann.jararaca;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.volkmann.jararaca.Assignment#getName <em>Name</em>}</li>
  *   <li>{@link com.volkmann.jararaca.Assignment#getValue <em>Value</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package com.volkmann.jararaca;
  */
 public interface Assignment extends Statement
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.volkmann.jararaca.JararacaPackage#getAssignment_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link com.volkmann.jararaca.Assignment#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->

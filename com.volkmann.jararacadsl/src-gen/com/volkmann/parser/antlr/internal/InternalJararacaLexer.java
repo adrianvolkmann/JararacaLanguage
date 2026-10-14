@@ -12,30 +12,15 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalJararacaLexer extends Lexer {
-    public static final int RULE_STRING=7;
-    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=10;
-    public static final int RULE_ANY_OTHER=11;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -44,11 +29,30 @@ public class InternalJararacaLexer extends Lexer {
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
-    public static final int RULE_FLOAT=6;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
+    public static final int RULE_STRING=7;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
+    public static final int T__33=33;
+    public static final int T__34=34;
+    public static final int T__35=35;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_WS=10;
+    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_FLOAT=6;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -129,10 +133,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:14:7: ( 'var' )
-            // InternalJararaca.g:14:9: 'var'
+            // InternalJararaca.g:14:7: ( 'if' )
+            // InternalJararaca.g:14:9: 'if'
             {
-            match("var"); 
+            match("if"); 
 
 
             }
@@ -150,10 +154,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:15:7: ( '=' )
-            // InternalJararaca.g:15:9: '='
+            // InternalJararaca.g:15:7: ( '(' )
+            // InternalJararaca.g:15:9: '('
             {
-            match('='); 
+            match('('); 
 
             }
 
@@ -170,10 +174,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:16:7: ( ';' )
-            // InternalJararaca.g:16:9: ';'
+            // InternalJararaca.g:16:7: ( ')' )
+            // InternalJararaca.g:16:9: ')'
             {
-            match(';'); 
+            match(')'); 
 
             }
 
@@ -190,10 +194,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:17:7: ( 'int' )
-            // InternalJararaca.g:17:9: 'int'
+            // InternalJararaca.g:17:7: ( 'else' )
+            // InternalJararaca.g:17:9: 'else'
             {
-            match("int"); 
+            match("else"); 
 
 
             }
@@ -211,10 +215,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:18:7: ( 'decimal' )
-            // InternalJararaca.g:18:9: 'decimal'
+            // InternalJararaca.g:18:7: ( 'while' )
+            // InternalJararaca.g:18:9: 'while'
             {
-            match("decimal"); 
+            match("while"); 
 
 
             }
@@ -232,10 +236,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:19:7: ( 'boolean' )
-            // InternalJararaca.g:19:9: 'boolean'
+            // InternalJararaca.g:19:7: ( 'do' )
+            // InternalJararaca.g:19:9: 'do'
             {
-            match("boolean"); 
+            match("do"); 
 
 
             }
@@ -253,11 +257,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:20:7: ( 'string' )
-            // InternalJararaca.g:20:9: 'string'
+            // InternalJararaca.g:20:7: ( ';' )
+            // InternalJararaca.g:20:9: ';'
             {
-            match("string"); 
-
+            match(';'); 
 
             }
 
@@ -274,10 +277,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:21:7: ( 'or' )
-            // InternalJararaca.g:21:9: 'or'
+            // InternalJararaca.g:21:7: ( 'var' )
+            // InternalJararaca.g:21:9: 'var'
             {
-            match("or"); 
+            match("var"); 
 
 
             }
@@ -295,11 +298,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:22:7: ( 'and' )
-            // InternalJararaca.g:22:9: 'and'
+            // InternalJararaca.g:22:7: ( '=' )
+            // InternalJararaca.g:22:9: '='
             {
-            match("and"); 
-
+            match('='); 
 
             }
 
@@ -316,10 +318,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:23:7: ( '==' )
-            // InternalJararaca.g:23:9: '=='
+            // InternalJararaca.g:23:7: ( 'int' )
+            // InternalJararaca.g:23:9: 'int'
             {
-            match("=="); 
+            match("int"); 
 
 
             }
@@ -337,10 +339,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:24:7: ( '!=' )
-            // InternalJararaca.g:24:9: '!='
+            // InternalJararaca.g:24:7: ( 'decimal' )
+            // InternalJararaca.g:24:9: 'decimal'
             {
-            match("!="); 
+            match("decimal"); 
 
 
             }
@@ -358,10 +360,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:25:7: ( '<=' )
-            // InternalJararaca.g:25:9: '<='
+            // InternalJararaca.g:25:7: ( 'boolean' )
+            // InternalJararaca.g:25:9: 'boolean'
             {
-            match("<="); 
+            match("boolean"); 
 
 
             }
@@ -379,10 +381,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:26:7: ( '>=' )
-            // InternalJararaca.g:26:9: '>='
+            // InternalJararaca.g:26:7: ( 'string' )
+            // InternalJararaca.g:26:9: 'string'
             {
-            match(">="); 
+            match("string"); 
 
 
             }
@@ -400,10 +402,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:27:7: ( '<' )
-            // InternalJararaca.g:27:9: '<'
+            // InternalJararaca.g:27:7: ( 'or' )
+            // InternalJararaca.g:27:9: 'or'
             {
-            match('<'); 
+            match("or"); 
+
 
             }
 
@@ -420,10 +423,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:28:7: ( '>' )
-            // InternalJararaca.g:28:9: '>'
+            // InternalJararaca.g:28:7: ( 'and' )
+            // InternalJararaca.g:28:9: 'and'
             {
-            match('>'); 
+            match("and"); 
+
 
             }
 
@@ -440,10 +444,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:29:7: ( '+' )
-            // InternalJararaca.g:29:9: '+'
+            // InternalJararaca.g:29:7: ( '==' )
+            // InternalJararaca.g:29:9: '=='
             {
-            match('+'); 
+            match("=="); 
+
 
             }
 
@@ -460,10 +465,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:30:7: ( '-' )
-            // InternalJararaca.g:30:9: '-'
+            // InternalJararaca.g:30:7: ( '!=' )
+            // InternalJararaca.g:30:9: '!='
             {
-            match('-'); 
+            match("!="); 
+
 
             }
 
@@ -480,10 +486,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:31:7: ( '*' )
-            // InternalJararaca.g:31:9: '*'
+            // InternalJararaca.g:31:7: ( '<=' )
+            // InternalJararaca.g:31:9: '<='
             {
-            match('*'); 
+            match("<="); 
+
 
             }
 
@@ -500,10 +507,11 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:32:7: ( '/' )
-            // InternalJararaca.g:32:9: '/'
+            // InternalJararaca.g:32:7: ( '>=' )
+            // InternalJararaca.g:32:9: '>='
             {
-            match('/'); 
+            match(">="); 
+
 
             }
 
@@ -520,10 +528,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:33:7: ( '%' )
-            // InternalJararaca.g:33:9: '%'
+            // InternalJararaca.g:33:7: ( '<' )
+            // InternalJararaca.g:33:9: '<'
             {
-            match('%'); 
+            match('<'); 
 
             }
 
@@ -540,11 +548,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:34:7: ( 'not' )
-            // InternalJararaca.g:34:9: 'not'
+            // InternalJararaca.g:34:7: ( '>' )
+            // InternalJararaca.g:34:9: '>'
             {
-            match("not"); 
-
+            match('>'); 
 
             }
 
@@ -561,10 +568,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:35:7: ( '(' )
-            // InternalJararaca.g:35:9: '('
+            // InternalJararaca.g:35:7: ( '+' )
+            // InternalJararaca.g:35:9: '+'
             {
-            match('('); 
+            match('+'); 
 
             }
 
@@ -581,10 +588,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:36:7: ( ')' )
-            // InternalJararaca.g:36:9: ')'
+            // InternalJararaca.g:36:7: ( '-' )
+            // InternalJararaca.g:36:9: '-'
             {
-            match(')'); 
+            match('-'); 
 
             }
 
@@ -601,11 +608,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:37:7: ( 'true' )
-            // InternalJararaca.g:37:9: 'true'
+            // InternalJararaca.g:37:7: ( '*' )
+            // InternalJararaca.g:37:9: '*'
             {
-            match("true"); 
-
+            match('*'); 
 
             }
 
@@ -622,8 +628,90 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:38:7: ( 'false' )
-            // InternalJararaca.g:38:9: 'false'
+            // InternalJararaca.g:38:7: ( '/' )
+            // InternalJararaca.g:38:9: '/'
+            {
+            match('/'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__39"
+
+    // $ANTLR start "T__40"
+    public final void mT__40() throws RecognitionException {
+        try {
+            int _type = T__40;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJararaca.g:39:7: ( '%' )
+            // InternalJararaca.g:39:9: '%'
+            {
+            match('%'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__40"
+
+    // $ANTLR start "T__41"
+    public final void mT__41() throws RecognitionException {
+        try {
+            int _type = T__41;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJararaca.g:40:7: ( 'not' )
+            // InternalJararaca.g:40:9: 'not'
+            {
+            match("not"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__41"
+
+    // $ANTLR start "T__42"
+    public final void mT__42() throws RecognitionException {
+        try {
+            int _type = T__42;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJararaca.g:41:7: ( 'true' )
+            // InternalJararaca.g:41:9: 'true'
+            {
+            match("true"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__42"
+
+    // $ANTLR start "T__43"
+    public final void mT__43() throws RecognitionException {
+        try {
+            int _type = T__43;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalJararaca.g:42:7: ( 'false' )
+            // InternalJararaca.g:42:9: 'false'
             {
             match("false"); 
 
@@ -636,17 +724,17 @@ public class InternalJararacaLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__39"
+    // $ANTLR end "T__43"
 
     // $ANTLR start "RULE_FLOAT"
     public final void mRULE_FLOAT() throws RecognitionException {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1349:12: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
-            // InternalJararaca.g:1349:14: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
+            // InternalJararaca.g:1698:12: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
+            // InternalJararaca.g:1698:14: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
             {
-            // InternalJararaca.g:1349:14: ( '0' .. '9' )+
+            // InternalJararaca.g:1698:14: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -660,7 +748,7 @@ public class InternalJararacaLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalJararaca.g:1349:15: '0' .. '9'
+            	    // InternalJararaca.g:1698:15: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -677,7 +765,7 @@ public class InternalJararacaLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // InternalJararaca.g:1349:30: ( '0' .. '9' )+
+            // InternalJararaca.g:1698:30: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -691,7 +779,7 @@ public class InternalJararacaLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalJararaca.g:1349:31: '0' .. '9'
+            	    // InternalJararaca.g:1698:31: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -723,12 +811,12 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1351:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\n' | '\\r' )? )
-            // InternalJararaca.g:1351:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\n' | '\\r' )?
+            // InternalJararaca.g:1700:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\n' | '\\r' )? )
+            // InternalJararaca.g:1700:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\n' | '\\r' )?
             {
             match("//"); 
 
-            // InternalJararaca.g:1351:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalJararaca.g:1700:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop3:
             do {
                 int alt3=2;
@@ -741,7 +829,7 @@ public class InternalJararacaLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalJararaca.g:1351:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalJararaca.g:1700:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -761,7 +849,7 @@ public class InternalJararacaLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalJararaca.g:1351:40: ( '\\n' | '\\r' )?
+            // InternalJararaca.g:1700:40: ( '\\n' | '\\r' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -803,12 +891,12 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1353:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalJararaca.g:1353:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalJararaca.g:1702:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalJararaca.g:1702:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalJararaca.g:1353:24: ( options {greedy=false; } : . )*
+            // InternalJararaca.g:1702:24: ( options {greedy=false; } : . )*
             loop5:
             do {
                 int alt5=2;
@@ -833,7 +921,7 @@ public class InternalJararacaLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalJararaca.g:1353:52: .
+            	    // InternalJararaca.g:1702:52: .
             	    {
             	    matchAny(); 
 
@@ -863,10 +951,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1355:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalJararaca.g:1355:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalJararaca.g:1704:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalJararaca.g:1704:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalJararaca.g:1355:11: ( '^' )?
+            // InternalJararaca.g:1704:11: ( '^' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -875,7 +963,7 @@ public class InternalJararacaLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalJararaca.g:1355:11: '^'
+                    // InternalJararaca.g:1704:11: '^'
                     {
                     match('^'); 
 
@@ -893,7 +981,7 @@ public class InternalJararacaLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalJararaca.g:1355:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalJararaca.g:1704:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop7:
             do {
                 int alt7=2;
@@ -942,10 +1030,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1357:10: ( ( '0' .. '9' )+ )
-            // InternalJararaca.g:1357:12: ( '0' .. '9' )+
+            // InternalJararaca.g:1706:10: ( ( '0' .. '9' )+ )
+            // InternalJararaca.g:1706:12: ( '0' .. '9' )+
             {
-            // InternalJararaca.g:1357:12: ( '0' .. '9' )+
+            // InternalJararaca.g:1706:12: ( '0' .. '9' )+
             int cnt8=0;
             loop8:
             do {
@@ -959,7 +1047,7 @@ public class InternalJararacaLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalJararaca.g:1357:13: '0' .. '9'
+            	    // InternalJararaca.g:1706:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -991,10 +1079,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1359:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalJararaca.g:1359:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalJararaca.g:1708:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalJararaca.g:1708:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalJararaca.g:1359:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalJararaca.g:1708:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1012,10 +1100,10 @@ public class InternalJararacaLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalJararaca.g:1359:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalJararaca.g:1708:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalJararaca.g:1359:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalJararaca.g:1708:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -1031,7 +1119,7 @@ public class InternalJararacaLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // InternalJararaca.g:1359:21: '\\\\' .
+                    	    // InternalJararaca.g:1708:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1039,7 +1127,7 @@ public class InternalJararacaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalJararaca.g:1359:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalJararaca.g:1708:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1064,10 +1152,10 @@ public class InternalJararacaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalJararaca.g:1359:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalJararaca.g:1708:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalJararaca.g:1359:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalJararaca.g:1708:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -1083,7 +1171,7 @@ public class InternalJararacaLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // InternalJararaca.g:1359:54: '\\\\' .
+                    	    // InternalJararaca.g:1708:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1091,7 +1179,7 @@ public class InternalJararacaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalJararaca.g:1359:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalJararaca.g:1708:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1134,10 +1222,10 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1361:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalJararaca.g:1361:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalJararaca.g:1710:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalJararaca.g:1710:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalJararaca.g:1361:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalJararaca.g:1710:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1191,8 +1279,8 @@ public class InternalJararacaLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalJararaca.g:1363:16: ( . )
-            // InternalJararaca.g:1363:18: .
+            // InternalJararaca.g:1712:16: ( . )
+            // InternalJararaca.g:1712:18: .
             {
             matchAny(); 
 
@@ -1207,8 +1295,8 @@ public class InternalJararacaLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalJararaca.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_FLOAT | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_WS | RULE_ANY_OTHER )
-        int alt13=36;
+        // InternalJararaca.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_FLOAT | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_WS | RULE_ANY_OTHER )
+        int alt13=40;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
@@ -1408,56 +1496,84 @@ public class InternalJararacaLexer extends Lexer {
                 }
                 break;
             case 29 :
-                // InternalJararaca.g:1:178: RULE_FLOAT
+                // InternalJararaca.g:1:178: T__40
+                {
+                mT__40(); 
+
+                }
+                break;
+            case 30 :
+                // InternalJararaca.g:1:184: T__41
+                {
+                mT__41(); 
+
+                }
+                break;
+            case 31 :
+                // InternalJararaca.g:1:190: T__42
+                {
+                mT__42(); 
+
+                }
+                break;
+            case 32 :
+                // InternalJararaca.g:1:196: T__43
+                {
+                mT__43(); 
+
+                }
+                break;
+            case 33 :
+                // InternalJararaca.g:1:202: RULE_FLOAT
                 {
                 mRULE_FLOAT(); 
 
                 }
                 break;
-            case 30 :
-                // InternalJararaca.g:1:189: RULE_SL_COMMENT
+            case 34 :
+                // InternalJararaca.g:1:213: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 31 :
-                // InternalJararaca.g:1:205: RULE_ML_COMMENT
+            case 35 :
+                // InternalJararaca.g:1:229: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 32 :
-                // InternalJararaca.g:1:221: RULE_ID
+            case 36 :
+                // InternalJararaca.g:1:245: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 33 :
-                // InternalJararaca.g:1:229: RULE_INT
+            case 37 :
+                // InternalJararaca.g:1:253: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 34 :
-                // InternalJararaca.g:1:238: RULE_STRING
+            case 38 :
+                // InternalJararaca.g:1:262: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 35 :
-                // InternalJararaca.g:1:250: RULE_WS
+            case 39 :
+                // InternalJararaca.g:1:274: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 36 :
-                // InternalJararaca.g:1:258: RULE_ANY_OTHER
+            case 40 :
+                // InternalJararaca.g:1:282: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1471,122 +1587,137 @@ public class InternalJararacaLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\1\42\2\uffff\1\42\1\47\1\uffff\6\42\1\40\1\61\1\63\3\uffff\1\71\1\uffff\1\42\2\uffff\2\42\1\100\1\40\1\uffff\2\40\2\uffff\1\42\3\uffff\1\42\3\uffff\4\42\1\113\1\42\14\uffff\1\42\2\uffff\2\42\1\uffff\1\100\3\uffff\1\42\1\121\1\122\3\42\1\uffff\1\126\1\127\3\42\2\uffff\3\42\2\uffff\1\136\5\42\1\uffff\1\144\3\42\1\150\1\uffff\1\151\1\152\1\153\4\uffff";
+        "\1\uffff\1\44\2\uffff\1\44\2\uffff\3\44\1\uffff\1\44\1\62\4\44\1\42\1\71\1\73\3\uffff\1\101\1\uffff\3\44\1\110\1\42\1\uffff\2\42\2\uffff\1\44\3\uffff\1\114\1\44\2\uffff\2\44\1\120\1\44\1\uffff\1\44\2\uffff\2\44\1\125\1\44\14\uffff\3\44\1\uffff\1\110\3\uffff\1\44\1\uffff\1\133\2\44\1\uffff\1\44\1\137\2\44\1\uffff\1\142\1\143\3\44\1\uffff\1\147\2\44\1\uffff\2\44\2\uffff\1\154\2\44\1\uffff\1\157\3\44\1\uffff\1\163\1\44\1\uffff\2\44\1\167\1\uffff\1\170\1\171\1\172\4\uffff";
     static final String DFA13_eofS =
-        "\154\uffff";
+        "\173\uffff";
     static final String DFA13_minS =
-        "\1\0\1\162\2\uffff\1\141\1\75\1\uffff\1\156\1\145\1\157\1\164\1\162\1\156\3\75\3\uffff\1\52\1\uffff\1\157\2\uffff\1\162\1\141\1\56\1\101\1\uffff\2\0\2\uffff\1\157\3\uffff\1\162\3\uffff\1\164\1\143\1\157\1\162\1\60\1\144\14\uffff\1\164\2\uffff\1\165\1\154\1\uffff\1\56\3\uffff\1\147\2\60\1\151\1\154\1\151\1\uffff\2\60\1\145\1\163\1\162\2\uffff\1\155\1\145\1\156\2\uffff\1\60\1\145\3\141\1\147\1\uffff\1\60\1\155\1\154\1\156\1\60\1\uffff\3\60\4\uffff";
+        "\1\0\1\162\2\uffff\1\146\2\uffff\1\154\1\150\1\145\1\uffff\1\141\1\75\1\157\1\164\1\162\1\156\3\75\3\uffff\1\52\1\uffff\1\157\1\162\1\141\1\56\1\101\1\uffff\2\0\2\uffff\1\157\3\uffff\1\60\1\164\2\uffff\1\163\1\151\1\60\1\143\1\uffff\1\162\2\uffff\1\157\1\162\1\60\1\144\14\uffff\1\164\1\165\1\154\1\uffff\1\56\3\uffff\1\147\1\uffff\1\60\1\145\1\154\1\uffff\1\151\1\60\1\154\1\151\1\uffff\2\60\1\145\1\163\1\162\1\uffff\1\60\1\145\1\155\1\uffff\1\145\1\156\2\uffff\1\60\1\145\1\141\1\uffff\1\60\2\141\1\147\1\uffff\1\60\1\155\1\uffff\1\154\1\156\1\60\1\uffff\3\60\4\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\162\2\uffff\1\141\1\75\1\uffff\1\156\1\145\1\157\1\164\1\162\1\156\3\75\3\uffff\1\57\1\uffff\1\157\2\uffff\1\162\1\141\1\71\1\172\1\uffff\2\uffff\2\uffff\1\157\3\uffff\1\162\3\uffff\1\164\1\143\1\157\1\162\1\172\1\144\14\uffff\1\164\2\uffff\1\165\1\154\1\uffff\1\71\3\uffff\1\147\2\172\1\151\1\154\1\151\1\uffff\2\172\1\145\1\163\1\162\2\uffff\1\155\1\145\1\156\2\uffff\1\172\1\145\3\141\1\147\1\uffff\1\172\1\155\1\154\1\156\1\172\1\uffff\3\172\4\uffff";
+        "\1\uffff\1\162\2\uffff\1\156\2\uffff\1\154\1\150\1\157\1\uffff\1\141\1\75\1\157\1\164\1\162\1\156\3\75\3\uffff\1\57\1\uffff\1\157\1\162\1\141\1\71\1\172\1\uffff\2\uffff\2\uffff\1\157\3\uffff\1\172\1\164\2\uffff\1\163\1\151\1\172\1\143\1\uffff\1\162\2\uffff\1\157\1\162\1\172\1\144\14\uffff\1\164\1\165\1\154\1\uffff\1\71\3\uffff\1\147\1\uffff\1\172\1\145\1\154\1\uffff\1\151\1\172\1\154\1\151\1\uffff\2\172\1\145\1\163\1\162\1\uffff\1\172\1\145\1\155\1\uffff\1\145\1\156\2\uffff\1\172\1\145\1\141\1\uffff\1\172\2\141\1\147\1\uffff\1\172\1\155\1\uffff\1\154\1\156\1\172\1\uffff\3\172\4\uffff";
     static final String DFA13_acceptS =
-        "\2\uffff\1\2\1\3\2\uffff\1\6\11\uffff\1\23\1\24\1\25\1\uffff\1\27\1\uffff\1\31\1\32\4\uffff\1\40\2\uffff\1\43\1\44\1\uffff\1\40\1\2\1\3\1\uffff\1\15\1\5\1\6\6\uffff\1\16\1\17\1\21\1\20\1\22\1\23\1\24\1\25\1\36\1\37\1\26\1\27\1\uffff\1\31\1\32\2\uffff\1\41\1\uffff\1\35\1\42\1\43\6\uffff\1\13\5\uffff\1\4\1\7\3\uffff\1\14\1\30\6\uffff\1\33\5\uffff\1\34\3\uffff\1\12\1\1\1\10\1\11";
+        "\2\uffff\1\2\1\3\1\uffff\1\5\1\6\3\uffff\1\12\11\uffff\1\31\1\32\1\33\1\uffff\1\35\5\uffff\1\44\2\uffff\1\47\1\50\1\uffff\1\44\1\2\1\3\2\uffff\1\5\1\6\4\uffff\1\12\1\uffff\1\23\1\14\4\uffff\1\24\1\25\1\27\1\26\1\30\1\31\1\32\1\33\1\42\1\43\1\34\1\35\3\uffff\1\41\1\uffff\1\45\1\46\1\47\1\uffff\1\4\3\uffff\1\11\4\uffff\1\21\5\uffff\1\15\3\uffff\1\13\2\uffff\1\22\1\36\3\uffff\1\7\4\uffff\1\37\2\uffff\1\10\3\uffff\1\40\3\uffff\1\20\1\1\1\16\1\17";
     static final String DFA13_specialS =
-        "\1\1\34\uffff\1\0\1\2\115\uffff}>";
+        "\1\1\36\uffff\1\2\1\0\132\uffff}>";
     static final String[] DFA13_transitionS = {
-            "\11\40\2\37\2\40\1\37\22\40\1\37\1\15\1\35\2\40\1\24\1\40\1\36\1\26\1\27\1\22\1\20\1\40\1\21\1\40\1\23\12\32\1\40\1\6\1\16\1\5\1\17\2\40\32\34\3\40\1\33\1\34\1\40\1\14\1\11\1\34\1\10\1\34\1\31\2\34\1\7\4\34\1\25\1\13\1\1\2\34\1\12\1\30\1\34\1\4\4\34\1\2\1\40\1\3\uff82\40",
-            "\1\41",
+            "\11\42\2\41\2\42\1\41\22\42\1\41\1\21\1\37\2\42\1\30\1\42\1\40\1\5\1\6\1\26\1\24\1\42\1\25\1\42\1\27\12\34\1\42\1\12\1\22\1\14\1\23\2\42\32\36\3\42\1\35\1\36\1\42\1\20\1\15\1\36\1\11\1\7\1\33\2\36\1\4\4\36\1\31\1\17\1\1\2\36\1\16\1\32\1\36\1\13\1\10\3\36\1\2\1\42\1\3\uff82\42",
+            "\1\43",
             "",
             "",
-            "\1\45",
-            "\1\46",
+            "\1\47\7\uffff\1\50",
             "",
-            "\1\51",
-            "\1\52",
+            "",
             "\1\53",
             "\1\54",
-            "\1\55",
-            "\1\56",
-            "\1\57",
+            "\1\56\11\uffff\1\55",
+            "",
             "\1\60",
-            "\1\62",
+            "\1\61",
+            "\1\63",
+            "\1\64",
+            "\1\65",
+            "\1\66",
+            "\1\67",
+            "\1\70",
+            "\1\72",
             "",
             "",
             "",
-            "\1\70\4\uffff\1\67",
+            "\1\100\4\uffff\1\77",
             "",
-            "\1\73",
-            "",
-            "",
-            "\1\76",
-            "\1\77",
-            "\1\102\1\uffff\12\101",
-            "\32\42\4\uffff\1\42\1\uffff\32\42",
-            "",
-            "\0\103",
-            "\0\103",
-            "",
-            "",
+            "\1\103",
+            "\1\104",
             "\1\105",
+            "\1\106\1\uffff\12\107",
+            "\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "\0\111",
+            "\0\111",
+            "",
+            "",
+            "\1\113",
             "",
             "",
             "",
-            "\1\106",
-            "",
-            "",
-            "",
-            "\1\107",
-            "\1\110",
-            "\1\111",
-            "\1\112",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\1\114",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\115",
             "",
             "",
             "\1\116",
             "\1\117",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\121",
             "",
-            "\1\102\1\uffff\12\101",
+            "\1\122",
             "",
             "",
-            "",
-            "\1\120",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "\1\123",
             "\1\124",
-            "\1\125",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\126",
             "",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\127",
             "\1\130",
             "\1\131",
+            "",
+            "\1\106\1\uffff\12\107",
+            "",
+            "",
+            "",
             "\1\132",
             "",
-            "",
-            "\1\133",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\134",
             "\1\135",
             "",
-            "",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\1\137",
+            "\1\136",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\140",
             "\1\141",
-            "\1\142",
-            "\1\143",
             "",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\144",
             "\1\145",
             "\1\146",
-            "\1\147",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
             "",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
-            "\12\42\7\uffff\32\42\4\uffff\1\42\1\uffff\32\42",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\150",
+            "\1\151",
+            "",
+            "\1\152",
+            "\1\153",
+            "",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\155",
+            "\1\156",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\160",
+            "\1\161",
+            "\1\162",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\1\164",
+            "",
+            "\1\165",
+            "\1\166",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
+            "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "",
             "",
             "",
@@ -1623,19 +1754,19 @@ public class InternalJararacaLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_FLOAT | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | RULE_FLOAT | RULE_SL_COMMENT | RULE_ML_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA13_29 = input.LA(1);
+                        int LA13_32 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_29>='\u0000' && LA13_29<='\uFFFF')) ) {s = 67;}
+                        if ( ((LA13_32>='\u0000' && LA13_32<='\uFFFF')) ) {s = 73;}
 
-                        else s = 32;
+                        else s = 34;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1649,73 +1780,77 @@ public class InternalJararacaLexer extends Lexer {
 
                         else if ( (LA13_0=='}') ) {s = 3;}
 
-                        else if ( (LA13_0=='v') ) {s = 4;}
+                        else if ( (LA13_0=='i') ) {s = 4;}
 
-                        else if ( (LA13_0=='=') ) {s = 5;}
+                        else if ( (LA13_0=='(') ) {s = 5;}
 
-                        else if ( (LA13_0==';') ) {s = 6;}
+                        else if ( (LA13_0==')') ) {s = 6;}
 
-                        else if ( (LA13_0=='i') ) {s = 7;}
+                        else if ( (LA13_0=='e') ) {s = 7;}
 
-                        else if ( (LA13_0=='d') ) {s = 8;}
+                        else if ( (LA13_0=='w') ) {s = 8;}
 
-                        else if ( (LA13_0=='b') ) {s = 9;}
+                        else if ( (LA13_0=='d') ) {s = 9;}
 
-                        else if ( (LA13_0=='s') ) {s = 10;}
+                        else if ( (LA13_0==';') ) {s = 10;}
 
-                        else if ( (LA13_0=='o') ) {s = 11;}
+                        else if ( (LA13_0=='v') ) {s = 11;}
 
-                        else if ( (LA13_0=='a') ) {s = 12;}
+                        else if ( (LA13_0=='=') ) {s = 12;}
 
-                        else if ( (LA13_0=='!') ) {s = 13;}
+                        else if ( (LA13_0=='b') ) {s = 13;}
 
-                        else if ( (LA13_0=='<') ) {s = 14;}
+                        else if ( (LA13_0=='s') ) {s = 14;}
 
-                        else if ( (LA13_0=='>') ) {s = 15;}
+                        else if ( (LA13_0=='o') ) {s = 15;}
 
-                        else if ( (LA13_0=='+') ) {s = 16;}
+                        else if ( (LA13_0=='a') ) {s = 16;}
 
-                        else if ( (LA13_0=='-') ) {s = 17;}
+                        else if ( (LA13_0=='!') ) {s = 17;}
 
-                        else if ( (LA13_0=='*') ) {s = 18;}
+                        else if ( (LA13_0=='<') ) {s = 18;}
 
-                        else if ( (LA13_0=='/') ) {s = 19;}
+                        else if ( (LA13_0=='>') ) {s = 19;}
 
-                        else if ( (LA13_0=='%') ) {s = 20;}
+                        else if ( (LA13_0=='+') ) {s = 20;}
 
-                        else if ( (LA13_0=='n') ) {s = 21;}
+                        else if ( (LA13_0=='-') ) {s = 21;}
 
-                        else if ( (LA13_0=='(') ) {s = 22;}
+                        else if ( (LA13_0=='*') ) {s = 22;}
 
-                        else if ( (LA13_0==')') ) {s = 23;}
+                        else if ( (LA13_0=='/') ) {s = 23;}
 
-                        else if ( (LA13_0=='t') ) {s = 24;}
+                        else if ( (LA13_0=='%') ) {s = 24;}
 
-                        else if ( (LA13_0=='f') ) {s = 25;}
+                        else if ( (LA13_0=='n') ) {s = 25;}
 
-                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 26;}
+                        else if ( (LA13_0=='t') ) {s = 26;}
 
-                        else if ( (LA13_0=='^') ) {s = 27;}
+                        else if ( (LA13_0=='f') ) {s = 27;}
 
-                        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='c'||LA13_0=='e'||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='m')||(LA13_0>='q' && LA13_0<='r')||LA13_0=='u'||(LA13_0>='w' && LA13_0<='z')) ) {s = 28;}
+                        else if ( ((LA13_0>='0' && LA13_0<='9')) ) {s = 28;}
 
-                        else if ( (LA13_0=='\"') ) {s = 29;}
+                        else if ( (LA13_0=='^') ) {s = 29;}
 
-                        else if ( (LA13_0=='\'') ) {s = 30;}
+                        else if ( ((LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||LA13_0=='c'||(LA13_0>='g' && LA13_0<='h')||(LA13_0>='j' && LA13_0<='m')||(LA13_0>='q' && LA13_0<='r')||LA13_0=='u'||(LA13_0>='x' && LA13_0<='z')) ) {s = 30;}
 
-                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 31;}
+                        else if ( (LA13_0=='\"') ) {s = 31;}
 
-                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='$')||LA13_0=='&'||LA13_0==','||LA13_0=='.'||LA13_0==':'||(LA13_0>='?' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFF')) ) {s = 32;}
+                        else if ( (LA13_0=='\'') ) {s = 32;}
+
+                        else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 33;}
+
+                        else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||(LA13_0>='#' && LA13_0<='$')||LA13_0=='&'||LA13_0==','||LA13_0=='.'||LA13_0==':'||(LA13_0>='?' && LA13_0<='@')||(LA13_0>='[' && LA13_0<=']')||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFF')) ) {s = 34;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA13_30 = input.LA(1);
+                        int LA13_31 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA13_30>='\u0000' && LA13_30<='\uFFFF')) ) {s = 67;}
+                        if ( ((LA13_31>='\u0000' && LA13_31<='\uFFFF')) ) {s = 73;}
 
-                        else s = 32;
+                        else s = 34;
 
                         if ( s>=0 ) return s;
                         break;

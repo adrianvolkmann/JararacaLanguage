@@ -87,6 +87,46 @@ public class JararacaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JararacaPackage.BLOCK:
+      {
+        Block block = (Block)theEObject;
+        T result = caseBlock(block);
+        if (result == null) result = caseElsePart(block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.IF_STATEMENT:
+      {
+        IfStatement ifStatement = (IfStatement)theEObject;
+        T result = caseIfStatement(ifStatement);
+        if (result == null) result = caseStatement(ifStatement);
+        if (result == null) result = caseElsePart(ifStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.ELSE_PART:
+      {
+        ElsePart elsePart = (ElsePart)theEObject;
+        T result = caseElsePart(elsePart);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.WHILE_STATEMENT:
+      {
+        WhileStatement whileStatement = (WhileStatement)theEObject;
+        T result = caseWhileStatement(whileStatement);
+        if (result == null) result = caseStatement(whileStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JararacaPackage.DO_WHILE_STATEMENT:
+      {
+        DoWhileStatement doWhileStatement = (DoWhileStatement)theEObject;
+        T result = caseDoWhileStatement(doWhileStatement);
+        if (result == null) result = caseStatement(doWhileStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JararacaPackage.VARIABLE_DECLARATION:
       {
         VariableDeclaration variableDeclaration = (VariableDeclaration)theEObject;
@@ -303,6 +343,86 @@ public class JararacaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStatement(Statement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Block</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBlock(Block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIfStatement(IfStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Else Part</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Else Part</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElsePart(ElsePart object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWhileStatement(WhileStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Do While Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Do While Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDoWhileStatement(DoWhileStatement object)
   {
     return null;
   }

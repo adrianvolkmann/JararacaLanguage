@@ -7,11 +7,14 @@ import com.google.inject.Inject;
 import com.volkmann.jararaca.Addition;
 import com.volkmann.jararaca.AndExpression;
 import com.volkmann.jararaca.Assignment;
+import com.volkmann.jararaca.Block;
 import com.volkmann.jararaca.BooleanType;
 import com.volkmann.jararaca.Comparison;
+import com.volkmann.jararaca.DoWhileStatement;
 import com.volkmann.jararaca.FalseLiteral;
 import com.volkmann.jararaca.FloatLiteral;
 import com.volkmann.jararaca.FloatType;
+import com.volkmann.jararaca.IfStatement;
 import com.volkmann.jararaca.IntLiteral;
 import com.volkmann.jararaca.IntType;
 import com.volkmann.jararaca.JararacaPackage;
@@ -26,6 +29,7 @@ import com.volkmann.jararaca.StringType;
 import com.volkmann.jararaca.TrueLiteral;
 import com.volkmann.jararaca.VariableDeclaration;
 import com.volkmann.jararaca.VariableReference;
+import com.volkmann.jararaca.WhileStatement;
 import com.volkmann.services.JararacaGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -61,11 +65,17 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case JararacaPackage.ASSIGNMENT:
 				sequence_Assignment(context, (Assignment) semanticObject); 
 				return; 
+			case JararacaPackage.BLOCK:
+				sequence_Block(context, (Block) semanticObject); 
+				return; 
 			case JararacaPackage.BOOLEAN_TYPE:
 				sequence_BooleanType(context, (BooleanType) semanticObject); 
 				return; 
 			case JararacaPackage.COMPARISON:
 				sequence_Comparison(context, (Comparison) semanticObject); 
+				return; 
+			case JararacaPackage.DO_WHILE_STATEMENT:
+				sequence_DoWhileStatement(context, (DoWhileStatement) semanticObject); 
 				return; 
 			case JararacaPackage.FALSE_LITERAL:
 				sequence_FalseLiteral(context, (FalseLiteral) semanticObject); 
@@ -75,6 +85,9 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case JararacaPackage.FLOAT_TYPE:
 				sequence_FloatType(context, (FloatType) semanticObject); 
+				return; 
+			case JararacaPackage.IF_STATEMENT:
+				sequence_IfStatement(context, (IfStatement) semanticObject); 
 				return; 
 			case JararacaPackage.INT_LITERAL:
 				sequence_IntLiteral(context, (IntLiteral) semanticObject); 
@@ -114,6 +127,9 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case JararacaPackage.VARIABLE_REFERENCE:
 				sequence_VariableReference(context, (VariableReference) semanticObject); 
+				return; 
+			case JararacaPackage.WHILE_STATEMENT:
+				sequence_WhileStatement(context, (WhileStatement) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -181,8 +197,8 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Assignment(ISerializationContext context, Assignment semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.ASSIGNMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.ASSIGNMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.ASSIGNMENT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.ASSIGNMENT__VALUE));
 		}
@@ -190,6 +206,21 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getAssignmentAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getAssignmentAccess().getValueExpressionParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Block returns Block
+	 *     ElsePart returns Block
+	 *
+	 * Constraint:
+	 *     statements+=Statement+
+	 * </pre>
+	 */
+	protected void sequence_Block(ISerializationContext context, Block semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -236,6 +267,30 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Comparison(ISerializationContext context, Comparison semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns DoWhileStatement
+	 *     DoWhileStatement returns DoWhileStatement
+	 *
+	 * Constraint:
+	 *     (block=Block condition=Expression)
+	 * </pre>
+	 */
+	protected void sequence_DoWhileStatement(ISerializationContext context, DoWhileStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.DO_WHILE_STATEMENT__BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.DO_WHILE_STATEMENT__BLOCK));
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.DO_WHILE_STATEMENT__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.DO_WHILE_STATEMENT__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDoWhileStatementAccess().getBlockBlockParserRuleCall_1_0(), semanticObject.getBlock());
+		feeder.accept(grammarAccess.getDoWhileStatementAccess().getConditionExpressionParserRuleCall_4_0(), semanticObject.getCondition());
+		feeder.finish();
 	}
 	
 	
@@ -311,6 +366,22 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 * </pre>
 	 */
 	protected void sequence_FloatType(ISerializationContext context, FloatType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns IfStatement
+	 *     IfStatement returns IfStatement
+	 *     ElsePart returns IfStatement
+	 *
+	 * Constraint:
+	 *     (condition=Expression block=Block elsePart=ElsePart?)
+	 * </pre>
+	 */
+	protected void sequence_IfStatement(ISerializationContext context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -640,6 +711,30 @@ public class JararacaSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVariableReferenceAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns WhileStatement
+	 *     WhileStatement returns WhileStatement
+	 *
+	 * Constraint:
+	 *     (condition=Expression block=Block)
+	 * </pre>
+	 */
+	protected void sequence_WhileStatement(ISerializationContext context, WhileStatement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.WHILE_STATEMENT__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.WHILE_STATEMENT__CONDITION));
+			if (transientValues.isValueTransient(semanticObject, JararacaPackage.Literals.WHILE_STATEMENT__BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JararacaPackage.Literals.WHILE_STATEMENT__BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWhileStatementAccess().getConditionExpressionParserRuleCall_2_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getWhileStatementAccess().getBlockBlockParserRuleCall_4_0(), semanticObject.getBlock());
 		feeder.finish();
 	}
 	

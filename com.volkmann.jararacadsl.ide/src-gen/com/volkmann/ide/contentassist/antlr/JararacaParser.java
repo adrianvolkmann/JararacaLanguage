@@ -32,6 +32,7 @@ public class JararacaParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, JararacaGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+			builder.put(grammarAccess.getElsePartAccess().getAlternatives(), "rule__ElsePart__Alternatives");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getComparisonAccess().getOperatorAlternatives_1_1_0(), "rule__Comparison__OperatorAlternatives_1_1_0");
 			builder.put(grammarAccess.getAdditionAccess().getOperatorAlternatives_1_1_0(), "rule__Addition__OperatorAlternatives_1_1_0");
@@ -40,6 +41,11 @@ public class JararacaParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 			builder.put(grammarAccess.getBooleanLiteralAccess().getAlternatives(), "rule__BooleanLiteral__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
+			builder.put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
+			builder.put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
+			builder.put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
+			builder.put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
+			builder.put(grammarAccess.getDoWhileStatementAccess().getGroup(), "rule__DoWhileStatement__Group__0");
 			builder.put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
 			builder.put(grammarAccess.getVariableDeclarationAccess().getGroup_3(), "rule__VariableDeclaration__Group_3__0");
 			builder.put(grammarAccess.getAssignmentAccess().getGroup(), "rule__Assignment__Group__0");
@@ -63,6 +69,14 @@ public class JararacaParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTrueLiteralAccess().getGroup(), "rule__TrueLiteral__Group__0");
 			builder.put(grammarAccess.getFalseLiteralAccess().getGroup(), "rule__FalseLiteral__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementsAssignment_2(), "rule__Program__StatementsAssignment_2");
+			builder.put(grammarAccess.getBlockAccess().getStatementsAssignment_1(), "rule__Block__StatementsAssignment_1");
+			builder.put(grammarAccess.getIfStatementAccess().getConditionAssignment_2(), "rule__IfStatement__ConditionAssignment_2");
+			builder.put(grammarAccess.getIfStatementAccess().getBlockAssignment_4(), "rule__IfStatement__BlockAssignment_4");
+			builder.put(grammarAccess.getIfStatementAccess().getElsePartAssignment_5_1(), "rule__IfStatement__ElsePartAssignment_5_1");
+			builder.put(grammarAccess.getWhileStatementAccess().getConditionAssignment_2(), "rule__WhileStatement__ConditionAssignment_2");
+			builder.put(grammarAccess.getWhileStatementAccess().getBlockAssignment_4(), "rule__WhileStatement__BlockAssignment_4");
+			builder.put(grammarAccess.getDoWhileStatementAccess().getBlockAssignment_1(), "rule__DoWhileStatement__BlockAssignment_1");
+			builder.put(grammarAccess.getDoWhileStatementAccess().getConditionAssignment_4(), "rule__DoWhileStatement__ConditionAssignment_4");
 			builder.put(grammarAccess.getVariableDeclarationAccess().getNameAssignment_1(), "rule__VariableDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getVariableDeclarationAccess().getTypeAssignment_2(), "rule__VariableDeclaration__TypeAssignment_2");
 			builder.put(grammarAccess.getVariableDeclarationAccess().getInitialValueAssignment_3_1(), "rule__VariableDeclaration__InitialValueAssignment_3_1");

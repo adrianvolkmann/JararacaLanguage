@@ -10,10 +10,6 @@ Não há decisão sobre registro, função, entrada e saída, `break`, `continue
 
 ## Detalhes em aberto
 
-Um nome declarado dentro de um `if` ou de um `while` não tem regra de escopo. Não está dito se ele existe depois do bloco. Também não está dito se uma atribuição que só ocorre no corpo do `while` conta como valor garantido depois do laço.
-
-O resto vale para `int` e para `decimal`. Não está dito qual é o sinal do resto quando o número é negativo.
-
 A divisão por zero e o resto por zero param a linha com erro. A forma desse erro ainda não está definida.
 
 O `item` do `foreach` não diz se é uma cópia ou a própria posição da lista.
@@ -22,9 +18,9 @@ A lista tem `add`, `get`, `set` e `size`. Não está dito se ela remove um valor
 
 ## Tensões com as diretrizes
 
-A frase sobre o que a linguagem produz, em [diretrizes.md](diretrizes.md), cita programa, variáveis e operações. Seleção, repetição e lista já estão decididas nos outros documentos e não entram nessa frase. Essas três também ainda não estão na gramática.
+A frase sobre o que a linguagem produz, em [diretrizes.md](diretrizes.md), cita programa, variáveis e operações. Seleção, repetição e lista já estão decididas nos outros documentos e não entram nessa frase. O `if`, o `while` e o `do while` já estão na gramática. O `for`, o `foreach` e a lista ainda não.
 
-[tipos.md](tipos.md) fala em escopo global. [programa.md](programa.md) só tem o bloco `program`. O contador do `for` e o `item` do `foreach` só existem dentro do bloco, e não há uma regra geral para os outros blocos.
+[tipos.md](tipos.md) fala em escopo global. [programa.md](programa.md) só tem o bloco `program`. Um nome declarado dentro de um bloco já existe só nesse bloco.
 
 `+` tem dois sentidos: soma número e concatena texto. A exceção está em [operacoes.md](operacoes.md), marcada para mudar quando existir conversão para `string`.
 

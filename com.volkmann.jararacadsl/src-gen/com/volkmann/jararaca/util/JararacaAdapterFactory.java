@@ -86,6 +86,31 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
+      public Adapter caseBlock(Block object)
+      {
+        return createBlockAdapter();
+      }
+      @Override
+      public Adapter caseIfStatement(IfStatement object)
+      {
+        return createIfStatementAdapter();
+      }
+      @Override
+      public Adapter caseElsePart(ElsePart object)
+      {
+        return createElsePartAdapter();
+      }
+      @Override
+      public Adapter caseWhileStatement(WhileStatement object)
+      {
+        return createWhileStatementAdapter();
+      }
+      @Override
+      public Adapter caseDoWhileStatement(DoWhileStatement object)
+      {
+        return createDoWhileStatementAdapter();
+      }
+      @Override
       public Adapter caseVariableDeclaration(VariableDeclaration object)
       {
         return createVariableDeclarationAdapter();
@@ -248,6 +273,81 @@ public class JararacaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.Block <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.Block
+   * @generated
+   */
+  public Adapter createBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.IfStatement <em>If Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.IfStatement
+   * @generated
+   */
+  public Adapter createIfStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.ElsePart <em>Else Part</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.ElsePart
+   * @generated
+   */
+  public Adapter createElsePartAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.WhileStatement <em>While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.WhileStatement
+   * @generated
+   */
+  public Adapter createWhileStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.volkmann.jararaca.DoWhileStatement <em>Do While Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.volkmann.jararaca.DoWhileStatement
+   * @generated
+   */
+  public Adapter createDoWhileStatementAdapter()
   {
     return null;
   }

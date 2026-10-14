@@ -9,14 +9,31 @@
     <genClasses ecoreClass="Jararaca.ecore#//Program">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//Program/statements"/>
     </genClasses>
-    <genClasses ecoreClass="Jararaca.ecore#//Statement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jararaca.ecore#//Statement/name"/>
+    <genClasses ecoreClass="Jararaca.ecore#//Statement"/>
+    <genClasses ecoreClass="Jararaca.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//Block/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="Jararaca.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//IfStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//IfStatement/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//IfStatement/elsePart"/>
+    </genClasses>
+    <genClasses ecoreClass="Jararaca.ecore#//ElsePart"/>
+    <genClasses ecoreClass="Jararaca.ecore#//WhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//WhileStatement/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//WhileStatement/block"/>
+    </genClasses>
+    <genClasses ecoreClass="Jararaca.ecore#//DoWhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//DoWhileStatement/block"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//DoWhileStatement/condition"/>
     </genClasses>
     <genClasses ecoreClass="Jararaca.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jararaca.ecore#//VariableDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//VariableDeclaration/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//VariableDeclaration/initialValue"/>
     </genClasses>
     <genClasses ecoreClass="Jararaca.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jararaca.ecore#//Assignment/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jararaca.ecore#//Assignment/value"/>
     </genClasses>
     <genClasses ecoreClass="Jararaca.ecore#//Type"/>

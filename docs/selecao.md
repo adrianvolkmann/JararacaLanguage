@@ -20,6 +20,8 @@ Cada ramo abre com `{` e fecha com `}`. A ação dentro do ramo termina com `;`.
 
 `else if` e `else` podem faltar. Quando existem, também usam chaves. Há uma forma só para cada ramo.
 
+Um `var` escrito dentro de um ramo existe só nesse ramo. Depois do `}`, o nome não existe. A mesma regra vale para os blocos de [repeticao.md](repeticao.md).
+
 ```text
 if (ativo) {
     idade = idade + 1;

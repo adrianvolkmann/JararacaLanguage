@@ -13,6 +13,7 @@ package com.volkmann.jararaca;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.volkmann.jararaca.VariableDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link com.volkmann.jararaca.VariableDeclaration#getType <em>Type</em>}</li>
  *   <li>{@link com.volkmann.jararaca.VariableDeclaration#getInitialValue <em>Initial Value</em>}</li>
  * </ul>
@@ -23,6 +24,28 @@ package com.volkmann.jararaca;
  */
 public interface VariableDeclaration extends Statement
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.volkmann.jararaca.JararacaPackage#getVariableDeclaration_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link com.volkmann.jararaca.VariableDeclaration#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->

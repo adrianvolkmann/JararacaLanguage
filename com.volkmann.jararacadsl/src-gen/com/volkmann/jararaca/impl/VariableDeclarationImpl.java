@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.volkmann.jararaca.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.volkmann.jararaca.impl.VariableDeclarationImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.volkmann.jararaca.impl.VariableDeclarationImpl#getInitialValue <em>Initial Value</em>}</li>
  * </ul>
@@ -32,6 +33,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class VariableDeclarationImpl extends StatementImpl implements VariableDeclaration
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -71,6 +92,31 @@ public class VariableDeclarationImpl extends StatementImpl implements VariableDe
   protected EClass eStaticClass()
   {
     return JararacaPackage.Literals.VARIABLE_DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JararacaPackage.VARIABLE_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -201,6 +247,8 @@ public class VariableDeclarationImpl extends StatementImpl implements VariableDe
   {
     switch (featureID)
     {
+      case JararacaPackage.VARIABLE_DECLARATION__NAME:
+        return getName();
       case JararacaPackage.VARIABLE_DECLARATION__TYPE:
         return getType();
       case JararacaPackage.VARIABLE_DECLARATION__INITIAL_VALUE:
@@ -219,6 +267,9 @@ public class VariableDeclarationImpl extends StatementImpl implements VariableDe
   {
     switch (featureID)
     {
+      case JararacaPackage.VARIABLE_DECLARATION__NAME:
+        setName((String)newValue);
+        return;
       case JararacaPackage.VARIABLE_DECLARATION__TYPE:
         setType((Type)newValue);
         return;
@@ -239,6 +290,9 @@ public class VariableDeclarationImpl extends StatementImpl implements VariableDe
   {
     switch (featureID)
     {
+      case JararacaPackage.VARIABLE_DECLARATION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case JararacaPackage.VARIABLE_DECLARATION__TYPE:
         setType((Type)null);
         return;
@@ -259,12 +313,31 @@ public class VariableDeclarationImpl extends StatementImpl implements VariableDe
   {
     switch (featureID)
     {
+      case JararacaPackage.VARIABLE_DECLARATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case JararacaPackage.VARIABLE_DECLARATION__TYPE:
         return type != null;
       case JararacaPackage.VARIABLE_DECLARATION__INITIAL_VALUE:
         return initialValue != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //VariableDeclarationImpl

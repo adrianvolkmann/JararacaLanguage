@@ -67,6 +67,11 @@ public class JararacaFactoryImpl extends EFactoryImpl implements JararacaFactory
     {
       case JararacaPackage.PROGRAM: return createProgram();
       case JararacaPackage.STATEMENT: return createStatement();
+      case JararacaPackage.BLOCK: return createBlock();
+      case JararacaPackage.IF_STATEMENT: return createIfStatement();
+      case JararacaPackage.ELSE_PART: return createElsePart();
+      case JararacaPackage.WHILE_STATEMENT: return createWhileStatement();
+      case JararacaPackage.DO_WHILE_STATEMENT: return createDoWhileStatement();
       case JararacaPackage.VARIABLE_DECLARATION: return createVariableDeclaration();
       case JararacaPackage.ASSIGNMENT: return createAssignment();
       case JararacaPackage.TYPE: return createType();
@@ -117,6 +122,66 @@ public class JararacaFactoryImpl extends EFactoryImpl implements JararacaFactory
   {
     StatementImpl statement = new StatementImpl();
     return statement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Block createBlock()
+  {
+    BlockImpl block = new BlockImpl();
+    return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IfStatement createIfStatement()
+  {
+    IfStatementImpl ifStatement = new IfStatementImpl();
+    return ifStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ElsePart createElsePart()
+  {
+    ElsePartImpl elsePart = new ElsePartImpl();
+    return elsePart;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WhileStatement createWhileStatement()
+  {
+    WhileStatementImpl whileStatement = new WhileStatementImpl();
+    return whileStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DoWhileStatement createDoWhileStatement()
+  {
+    DoWhileStatementImpl doWhileStatement = new DoWhileStatementImpl();
+    return doWhileStatement;
   }
 
   /**
